@@ -1,7 +1,50 @@
-/.settings
-/target
-/.classpath
+##################
+# Compiled files #
+##################
+*.class
+
+##################
+# intellij files #
+##################
+*.iml
+.idea
+*/.idea
+
+#################
+# eclipse files #
+#################
 /.project
-/bin
+/.classpath
+/.settings
+
+#########################
+# maven generated files #
+#########################
+/target
+
+#############
+# Zip files #
+#############
+*.tar
+*.zip
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+
+##############
+# Logs files #
+##############
+*.log
+
+#################
+# test-ng files #
+#################
 /test-output
-/jgeohash.iml
+
+############################
+# Binaries generated files #
+############################
+/bin
