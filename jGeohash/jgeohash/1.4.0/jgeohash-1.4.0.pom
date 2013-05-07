@@ -143,6 +143,13 @@
 								<phase>deploy</phase>
 							</execution>
 						</executions>
+						<dependencies>
+							<dependency>
+								<groupId>org.eclipse.mylyn.github</groupId>
+								<artifactId>org.eclipse.egit.github.core</artifactId>
+								<version>2.0.3</version>
+							</dependency>
+						</dependencies>
 					</plugin>
 
 				</plugins>
