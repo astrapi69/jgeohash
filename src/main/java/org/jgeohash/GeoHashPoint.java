@@ -20,8 +20,7 @@ public class GeoHashPoint extends Point {
 	/**
 	 * The serialVersionUID.
 	 */
-	private static final long serialVersionUID = 6426300356817687239L;
-
+	private static final long serialVersionUID = -3580536765079661097L;
 	/** The Constant GEOHASH_KEY. */
 	public static final String GEOHASH_KEY = "GEOHASH_KEY";
 
@@ -38,10 +37,30 @@ public class GeoHashPoint extends Point {
 	/**
 	 * Instantiates a new geo hash point.
 	 *
+	 * @param latitude the latitude
+	 * @param longitude the longitude
+	 */
+	public GeoHashPoint(final Double latitude, final Double longitude) {
+		super(latitude, longitude);
+	}
+	
+	/**
+	 * Instantiates a new geo hash point.
+	 *
+	 * @param lat the latitude as String object.
+	 * @param lng the longitude as String object.
+	 */
+	public GeoHashPoint(final String lat, final String lng) {
+		super(Double.parseDouble(lat), Double.parseDouble(lng));
+	}
+
+	/**
+	 * Instantiates a new geo hash point.
+	 *
 	 * @param geohash the Geohash code.
 	 */
 	public GeoHashPoint(String geohash){
-		super(GeoHashUtils.decode(geohash)[0],GeoHashUtils.decode(geohash)[1]);
+		super(GeoHashUtils.decode(geohash)[0], GeoHashUtils.decode(geohash)[1]);
 	}
 
 	/**
@@ -73,7 +92,9 @@ public class GeoHashPoint extends Point {
 
 
 	/**
-	 * (non-Javadoc)
+	 * (non-Javadoc).
+	 *
+	 * @return the object
 	 * @see com.sem.base.utils.geocoding.Point#clone()
 	 */
 	public Object clone() {
@@ -120,7 +141,9 @@ public class GeoHashPoint extends Point {
 	}
 
 	/**
-	 * (non-Javadoc)
+	 * (non-Javadoc).
+	 *
+	 * @return the string
 	 * @see com.sem.base.utils.geocoding.Point#toString()
 	 */
 	public String toString() {
