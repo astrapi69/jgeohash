@@ -276,12 +276,15 @@ public class GeoHashUtils {
 	}
 
 
-    /**
-     * Gets the all adjacent areas map.
-     *
-     * @param geohash the geohash
-     * @return the all adjacent areas map
-     */
+	/**
+	 * Gets the geohash cells around the given geohash cell. With other words it
+	 * gets eight cells around the given geohash cell so the first ring
+	 * inclusive the given geohash cell.
+	 * 
+	 * @param geohash
+	 *            the geohash
+	 * @return all geohash cells around the given geohash cell.
+	 */
     public static Map<String, String> getAllAdjacentAreasMap(final String geohash) {
 		if(geohash == null || geohash.isEmpty()){
 			throw new IllegalArgumentException("Argument geohash should not be null.");
@@ -308,6 +311,56 @@ public class GeoHashUtils {
         adjacentAreas.put(Adjacent.BOTTOM_LEFT, bottomleft);
 
         return adjacentAreas;
+    }
+    
+	/**
+	 * Gets the eight cells around the given geohash cell so the first ring
+	 * inclusive the given geohash cell and cells from the second ring. The
+	 * result is 24 cells plus the given geohash cell.
+	 * 
+	 * @param geohash
+	 *            the geohash
+	 * @return the eight cells around the given geohash cell so the first ring
+	 *         inclusive the given geohash cell and cells from the second ring.
+	 */
+    public static Map<String, String> getTwentyFiveAreasMap(final String geohash) {
+    	Map<String, String> adjacentAreas = getAllAdjacentAreasMap(geohash);
+
+    	String topLeftLeft = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.TOP_LEFT), Adjacent.LEFT);
+    	String topLeftLeftTop =  GeoHashUtils.getAdjacent(topLeftLeft, Adjacent.TOP);
+    	String topLeftTop = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.TOP_LEFT), Adjacent.TOP);
+    	String topTop = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.TOP), Adjacent.TOP);
+    	String topRightTop = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.TOP_RIGHT), Adjacent.TOP);
+    	String topRightRight = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.TOP_RIGHT), Adjacent.RIGHT);
+    	String topRightRightTop = GeoHashUtils.getAdjacent(topRightRight, Adjacent.TOP);
+    	String rightRight = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.RIGHT), Adjacent.RIGHT);
+    	String bottomRightRight = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.BOTTOM_RIGHT), Adjacent.RIGHT);
+    	String bottomRightBottom = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.BOTTOM_RIGHT), Adjacent.BOTTOM);
+    	String bottomRightBottomRight = GeoHashUtils.getAdjacent(bottomRightBottom, Adjacent.RIGHT);
+    	String bottomBottom = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.BOTTOM), Adjacent.BOTTOM);
+    	String bottomBottomLeft = GeoHashUtils.getAdjacent(bottomBottom, Adjacent.LEFT);
+    	String bottomBottomLeftLeft = GeoHashUtils.getAdjacent(bottomBottomLeft, Adjacent.LEFT);
+    	String bottomLeftLeft = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.BOTTOM_LEFT), Adjacent.LEFT);
+    	String leftLeft = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.LEFT), Adjacent.LEFT);    	
+
+        adjacentAreas.put(Adjacent.TOP_LEFT_LEFT, topLeftLeft);
+        adjacentAreas.put(Adjacent.TOP_LEFT_LEFT_TOP, topLeftLeftTop);
+        adjacentAreas.put(Adjacent.TOP_LEFT_TOP, topLeftTop);
+        adjacentAreas.put(Adjacent.TOP_TOP, topTop);
+        adjacentAreas.put(Adjacent.TOP_RIGHT_TOP, topRightTop);
+        adjacentAreas.put(Adjacent.TOP_RIGHT_RIGHT, topRightRight);
+        adjacentAreas.put(Adjacent.TOP_RIGHT_RIGHT_TOP, topRightRightTop);
+        adjacentAreas.put(Adjacent.RIGHT_RIGHT, rightRight);
+        adjacentAreas.put(Adjacent.BOTTOM_RIGHT_RIGHT, bottomRightRight);
+        adjacentAreas.put(Adjacent.BOTTOM_RIGHT_BOTTOM, bottomRightBottom);
+        adjacentAreas.put(Adjacent.BOTTOM_RIGHT_BOTTOM_RIGHT, bottomRightBottomRight);
+        adjacentAreas.put(Adjacent.BOTTOM_BOTTOM, bottomBottom);
+        adjacentAreas.put(Adjacent.BOTTOM_BOTTOM_LEFT, bottomBottomLeft);
+        adjacentAreas.put(Adjacent.BOTTOM_BOTTOM_LEFT_LEFT, bottomBottomLeftLeft);
+        adjacentAreas.put(Adjacent.BOTTOM_LEFT_LEFT, bottomLeftLeft);
+        adjacentAreas.put(Adjacent.LEFT_LEFT, leftLeft);
+
+    	return adjacentAreas;
     }
 
 

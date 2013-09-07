@@ -131,4 +131,52 @@ public abstract class Adjacent {
     /** The Constant CENTER. */
     public static final String CENTER = "center";
 
+    /** The Constant TOP_LEFT_TOP_LEFT. */
+    public static final String TOP_LEFT_LEFT_TOP = "topleft_topleft";
+
+    /** The Constant TOP_LEFT_TOP. */
+    public static final String TOP_LEFT_TOP = "topleft_top";
+
+    /** The Constant TOP_TOP. */
+    public static final String TOP_TOP = "top_top";
+
+    /** The Constant TOP_RIGHT_TOP. */
+    public static final String TOP_RIGHT_TOP = "topright_top";
+
+    /** The Constant TOP_RIGHT_RIGHT_TOP. */
+    public static final String TOP_RIGHT_RIGHT_TOP = "topright_right_top";
+
+    /** The Constant TOP_RIGHT_RIGHT. */
+    public static final String TOP_RIGHT_RIGHT = "topright_right";
+
+    /** The Constant RIGHT_RIGHT. */
+    public static final String RIGHT_RIGHT = "right_right";
+
+    /** The Constant BOTTOM_RIGHT_RIGHT. */
+    public static final String BOTTOM_RIGHT_RIGHT = "bottomright_right";
+
+    /** The Constant BOTTOM_RIGHT_BOTTOM_RIGHT. */
+    public static final String BOTTOM_RIGHT_BOTTOM_RIGHT = "bottomright_bottom_right";
+
+    /** The Constant BOTTOM_RIGHT_BOTTOM. */
+    public static final String BOTTOM_RIGHT_BOTTOM = "bottomright_bottom";
+
+    /** The Constant BOTTOM_BOTTOM. */
+    public static final String BOTTOM_BOTTOM = "bottom_bottom";
+
+    /** The Constant BOTTOM_BOTTOM_LEFT. */
+    public static final String BOTTOM_BOTTOM_LEFT = "bottom_bottom_left";
+
+    /** The Constant BOTTOM_BOTTOM_LEFT_LEFT. */
+    public static final String BOTTOM_BOTTOM_LEFT_LEFT = "bottom_bottom_left_left";
+
+    /** The Constant BOTTOM_LEFT_LEFT. */
+    public static final String BOTTOM_LEFT_LEFT = "bottomleft_left";
+
+    /** The Constant LEFT_LEFT. */
+    public static final String LEFT_LEFT = "left_left";
+
+    /** The Constant TOP_LEFT_LEFT. */
+    public static final String TOP_LEFT_LEFT = "topleft_left";
+
 }
