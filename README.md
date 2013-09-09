@@ -10,6 +10,8 @@ License
 
 The source code is under the Apache License V2.0 as published by the Apache Foundation.
 
+If you have suggestions or improvements of bugfixes please contribute back via github.
+
 Examples
 -------
 
