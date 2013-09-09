@@ -43,6 +43,16 @@ public class GeoHashPoint extends Point {
 	public GeoHashPoint(final Double latitude, final Double longitude) {
 		super(latitude, longitude);
 	}
+
+	/**
+	 * Instantiates a new geo hash point.
+	 *
+	 * @param latitude the latitude
+	 * @param longitude the longitude
+	 */
+	public GeoHashPoint(final float latitude, final float longitude) {
+		this(Float.toString(latitude), Float.toString(longitude));
+	}
 	
 	/**
 	 * Instantiates a new geo hash point.
