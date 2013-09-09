@@ -5,6 +5,14 @@ This library is a basic implementation from the GeoHash algorithm written in the
 
 The library is kept simple and have no dependencies to other libraries.
 
+License
+-------
+
+The source code is under the Apache License V2.0 as published by the Apache Foundation.
+
+Examples
+-------
+
 Lets see a simple example:
 
 If we have an address like
