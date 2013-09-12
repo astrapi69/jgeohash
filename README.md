@@ -20,3 +20,20 @@ Examples
 -------
 
 See the wiki page.
+
+Last changes
+----------------------
+
+Version 1.4.2
+-------------
+Added new interface Position for the class Point.
+
+Created new class that calculates distance from two Points or two geohash values in km or miles.
+
+
+Version 1.4.1
+-------------
+
+Added method to get getAdjacent from multiply directions.
+
+Added functionality for get first and second ring neighbors from a geohash cell.
