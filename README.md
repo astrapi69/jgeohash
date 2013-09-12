@@ -24,7 +24,17 @@ To add the dependency to your maven project you have to add to the section repos
 			</snapshots>
 		</repository>
 	</repositories>
+	
+Than you can add the dependency to your dependencies:
 
+	<dependencies>
+		<dependency>
+			<groupId>jGeohash</groupId>
+			<artifactId>jgeohash</artifactId>
+			<version>${jgeohash.version}</version>
+		</dependency>	
+	</dependencies>
+	
 License
 -------
 
