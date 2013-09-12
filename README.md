@@ -9,6 +9,26 @@ This library is a basic implementation from the GeoHash algorithm written in the
 
 The library is kept simple and have no dependencies to other libraries.
 
+Maven dependency
+-------
+
+To add the dependency to your maven project you have to add to the section repositories following repository:
+
+	<repositories>
+...
+		
+		<repository>
+			<id>jgeohash-mvn-repo</id>
+			<url>https://raw.github.com/astrapi69/jgeohash/mvn-repo/</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+		
+...
+	</repositories>
+
 License
 -------
 
