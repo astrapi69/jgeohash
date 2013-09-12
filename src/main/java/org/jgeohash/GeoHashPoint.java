@@ -12,6 +12,8 @@ package org.jgeohash;
 
 import java.math.BigDecimal;
 
+import org.jgeohash.api.Position;
+
 /**
  * The Class GeoHashPoint.
  */
@@ -47,6 +49,15 @@ public class GeoHashPoint extends Point {
 	/**
 	 * Instantiates a new geo hash point.
 	 *
+	 * @param position the position
+	 */
+	public GeoHashPoint(final Position position) {
+		this(position.getLatitude(), position.getLongitude());
+	}
+
+	/**
+	 * Instantiates a new geo hash point.
+	 *
 	 * @param latitude the latitude
 	 * @param longitude the longitude
 	 */
@@ -69,7 +80,7 @@ public class GeoHashPoint extends Point {
 	 *
 	 * @param geohash the Geohash code.
 	 */
-	public GeoHashPoint(String geohash){
+	public GeoHashPoint(String geohash) {
 		super(GeoHashUtils.decode(geohash)[0], GeoHashUtils.decode(geohash)[1]);
 	}
 

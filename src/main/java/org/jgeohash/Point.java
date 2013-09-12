@@ -10,12 +10,12 @@
  */
 package org.jgeohash;
 
-import java.io.Serializable;
+import org.jgeohash.api.Position;
 
 /**
  * The Class Point represents a point on earth with the latitude and longitude.
  */
-public class Point implements Comparable<Point>, Cloneable, Serializable {
+public class Point implements Comparable<Point>, Cloneable, Position {
 
 	/**
 	 * The serialVersionUID.
@@ -46,7 +46,7 @@ public class Point implements Comparable<Point>, Cloneable, Serializable {
 	 * {@inheritDoc}
 	 */
 	public Object clone() {
-		Point inst = new Point(this.latitude, this.longitude);
+		Position inst = new Point(this.latitude, this.longitude);
 		return inst;
 	}
 
@@ -93,18 +93,14 @@ public class Point implements Comparable<Point>, Cloneable, Serializable {
 	}
 
 	/**
-	 * Gets the latitude.
-	 *
-	 * @return the latitude
+	 * {@inheritDoc}
 	 */
 	public double getLatitude() {
 		return latitude;
 	}
 
 	/**
-	 * Gets the longitude.
-	 *
-	 * @return the longitude
+	 * {@inheritDoc}
 	 */
 	public double getLongitude() {
 		return longitude;
@@ -130,9 +126,7 @@ public class Point implements Comparable<Point>, Cloneable, Serializable {
 	}
 
 	/**
-	 * Sets the latitude.
-	 *
-	 * @param latitude the new latitude
+	 * {@inheritDoc}
 	 */
 	public void setLatitude(final double latitude) {
 		if (Math.abs(latitude) > 90 ) {
@@ -142,9 +136,7 @@ public class Point implements Comparable<Point>, Cloneable, Serializable {
 	}
 
 	/**
-	 * Sets the longitude.
-	 *
-	 * @param longitude the new longitude
+	 * {@inheritDoc}
 	 */
 	public void setLongitude(final double longitude) {
 		if (Math.abs(longitude) > 180) {
@@ -156,7 +148,6 @@ public class Point implements Comparable<Point>, Cloneable, Serializable {
 	/**
 	 * {@inheritDoc}
 	 */
-	@Override
 	public String toString() {
 		return "Latitude : " + latitude + "   Longitude  : " + longitude;
 	}

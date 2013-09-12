@@ -162,6 +162,26 @@ public class GeoHashUtils {
 
 		return new double[] {latitude, longitude};
 	}
+	
+	/**
+	 * Gets the latitude from the given geohash value.
+	 *
+	 * @param geohash the geohash
+	 * @return the latitude
+	 */
+	public static double getLatitude(final String geohash) {
+		return decodeAndRound(geohash)[0];
+	}
+	
+	/**
+	 * Gets the longitude from the given geohash value.
+	 *
+	 * @param geohash the geohash
+	 * @return the longitude
+	 */
+	public static double getLongitude(final String geohash) {
+		return decodeAndRound(geohash)[1];
+	}
 
 	/**
 	 * Encodes the given latitude and longitude into a geohash code.
