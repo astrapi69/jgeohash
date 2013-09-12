@@ -15,8 +15,6 @@ Maven dependency
 To add the dependency to your maven project you have to add to the section repositories following repository:
 
 	<repositories>
-...
-		
 		<repository>
 			<id>jgeohash-mvn-repo</id>
 			<url>https://raw.github.com/astrapi69/jgeohash/mvn-repo/</url>
@@ -25,8 +23,6 @@ To add the dependency to your maven project you have to add to the section repos
 				<updatePolicy>always</updatePolicy>
 			</snapshots>
 		</repository>
-		
-...
 	</repositories>
 
 License
