@@ -21,6 +21,10 @@ public class GeoHashUtilsTest {
 		actual = GeoHashUtils.getAdjacent(subGeohash, Adjacent.TOP,
 				Adjacent.LEFT);
 		AssertJUnit.assertEquals(expected, actual);
+		expected = "u1x0etq";
+		actual = GeoHashUtils.getAdjacent(subGeohash, Adjacent.TOP,
+				Adjacent.TOP);
+		AssertJUnit.assertEquals(expected, actual);
 	}
 
 	@Test(enabled = true)
@@ -90,6 +94,32 @@ public class GeoHashUtilsTest {
 		actual = geoHashRegion.getWest();
 		AssertJUnit.assertEquals(expected, actual);
 		expected = "5";
+		actual = geoHashRegion.getNorthWest();
+		AssertJUnit.assertEquals(expected, actual);
+		
+		geoHashRegion = new GeoHashRegion("t");
+		expected = "v";
+		actual = geoHashRegion.getNorth();
+		AssertJUnit.assertEquals(expected, actual);
+		expected = "y";
+		actual = geoHashRegion.getNorthEast();
+		AssertJUnit.assertEquals(expected, actual);
+		expected = "w";
+		actual = geoHashRegion.getEast();
+		AssertJUnit.assertEquals(expected, actual);
+		expected = "q";
+		actual = geoHashRegion.getSouthEast();
+		AssertJUnit.assertEquals(expected, actual);
+		expected = "m";
+		actual = geoHashRegion.getSouth();
+		AssertJUnit.assertEquals(expected, actual);
+		expected = "k";
+		actual = geoHashRegion.getSouthWest();
+		AssertJUnit.assertEquals(expected, actual);
+		expected = "s";
+		actual = geoHashRegion.getWest();
+		AssertJUnit.assertEquals(expected, actual);
+		expected = "u";
 		actual = geoHashRegion.getNorthWest();
 		AssertJUnit.assertEquals(expected, actual);
 				
