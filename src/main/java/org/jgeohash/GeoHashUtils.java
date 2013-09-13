@@ -16,6 +16,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.jgeohash.model.GeoHashRegion;
+
 /**
  * GeoHashUtils is based on http://en.wikipedia.org/wiki/Geohash
  *
@@ -63,12 +65,18 @@ public class GeoHashUtils {
 		}
 		String lowerCaseGeohash = geohash.toLowerCase();
 		char lastChar = lowerCaseGeohash.charAt(lowerCaseGeohash.length()-1);
-		String type = (lowerCaseGeohash.length()%2) == 0 ? Adjacent.ODD: Adjacent.EVEN;
+		int modulo = lowerCaseGeohash.length()%2;
+		String type = modulo == 0 ? Adjacent.ODD: Adjacent.EVEN;
 		String base = lowerCaseGeohash.substring(0, lowerCaseGeohash.length()-1);
-		if (Adjacent.Borders.borders.get(direction).get(type).indexOf(lastChar) != -1) {
+		Map<String, String> borderDirection = Adjacent.Borders.borders.get(direction);
+		String borderDirectionType = borderDirection.get(type);
+		int indexOfLastChar = borderDirectionType.indexOf(lastChar);
+		if (indexOfLastChar != -1 && !base.isEmpty()) {
             base = getAdjacent(base, direction);
         }
-        int i = Adjacent.Neighbors.neighbors.get(direction).get(type).indexOf(lastChar);
+		Map<String, String> neighborsDirection = Adjacent.Neighbors.neighbors.get(direction);
+		String neighborsDirectionType = neighborsDirection.get(type);
+		int i = neighborsDirectionType.indexOf(lastChar);
         char r = BASE_32[i];
         return base+r;
 	}
@@ -308,6 +316,17 @@ public class GeoHashUtils {
         System.out.println(geohashPoint2);
         int c = geohashPoint1.compareTo(geohashPoint2);
         System.out.println(c);
+	}
+	
+	/**
+	 * Gets the geohash cells around the given geohash cell as a GeoHashRegion object.
+	 * 
+	 * @param geohash
+	 *            the geohash
+	 * @return a GeoHashRegion object calculated from the given geohash value.
+	 */
+	public static GeoHashRegion getFirstRingRegion(final String geohash){
+		return new GeoHashRegion(geohash);
 	}
 
 

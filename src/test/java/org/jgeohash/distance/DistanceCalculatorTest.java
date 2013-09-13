@@ -1,5 +1,8 @@
 package org.jgeohash.distance;
 
+import java.util.Map;
+
+import org.jgeohash.Adjacent;
 import org.jgeohash.GeoHashPoint;
 import org.jgeohash.GeoHashUtils;
 import org.jgeohash.Point;
@@ -126,7 +129,9 @@ public class DistanceCalculatorTest {
 	@Test
 	public void testDistanceBetweenPoints() {
 		String alterTeichwegGeohash = "u1x0v54rmjwej";
-		
+		String subGeohash = alterTeichwegGeohash.substring(0, 1);
+		Map<String, String> firstRingCells = GeoHashUtils
+				.getAllAdjacentAreasMap(subGeohash);
 		double[] coordinates = GeoHashUtils
 				.decodeAndRound(alterTeichwegGeohash);
 		Position alterTeichweg = new Point(coordinates[0], coordinates[1]);
@@ -135,11 +140,25 @@ public class DistanceCalculatorTest {
 		double distance2 = DistanceCalculator.distanceBetweenPoints(
 				ludwigsburg, alterTeichweg, MeasuringUnit.KILOMETER);
 		AssertJUnit.assertEquals(distance2, 525.875517661088);
+		System.out.println("Distance2:" + distance2);
 
 		double distance3 = DistanceCalculator.distanceBetweenPoints(
 				ludwigsburgGeohash, alterTeichwegGeohash,
 				MeasuringUnit.KILOMETER);
 		AssertJUnit.assertEquals(distance3, 525.875517737948);
+		System.out.println("Distance3:" + distance3);
+
+		double distance4 = DistanceCalculator.distanceBetweenPoints(
+				firstRingCells.get(Adjacent.CENTER),
+				firstRingCells.get(Adjacent.RIGHT), MeasuringUnit.KILOMETER);
+		// AssertJUnit.assertEquals(distance4, 25.668503170382518);
+		System.out.println("Distance4 width:" + distance4);
+
+		double distance5 = DistanceCalculator.distanceBetweenPoints(
+				firstRingCells.get(Adjacent.CENTER),
+				firstRingCells.get(Adjacent.BOTTOM), MeasuringUnit.KILOMETER);
+		// AssertJUnit.assertEquals(distance5, 19.545042824959157);
+		System.out.println("Distance5 height:" + distance5);
 
 	}
 
