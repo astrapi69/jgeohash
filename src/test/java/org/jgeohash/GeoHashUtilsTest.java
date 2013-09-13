@@ -1,5 +1,6 @@
 package org.jgeohash;
 
+import org.jgeohash.model.GeoHashRegion;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 
@@ -44,6 +45,32 @@ public class GeoHashUtilsTest {
 		expected = "dr";
 		actual = GeoHashUtils.getAdjacent("dq", Adjacent.RIGHT);
 		AssertJUnit.assertEquals(expected, actual);	
+		
+		GeoHashRegion geoHashRegion = new GeoHashRegion("u");
+		expected = "h";
+		actual = geoHashRegion.getNorth();
+		AssertJUnit.assertEquals(expected, actual);
+		expected = "j";
+		actual = geoHashRegion.getNorthEast();
+		AssertJUnit.assertEquals(expected, actual);
+		expected = "v";
+		actual = geoHashRegion.getEast();
+		AssertJUnit.assertEquals(expected, actual);
+		expected = "t";
+		actual = geoHashRegion.getSouthEast();
+		AssertJUnit.assertEquals(expected, actual);
+		expected = "s";
+		actual = geoHashRegion.getSouth();
+		AssertJUnit.assertEquals(expected, actual);
+		expected = "e";
+		actual = geoHashRegion.getSouthWest();
+		AssertJUnit.assertEquals(expected, actual);
+		expected = "g";
+		actual = geoHashRegion.getWest();
+		AssertJUnit.assertEquals(expected, actual);
+		expected = "5";
+		actual = geoHashRegion.getNorthWest();
+		AssertJUnit.assertEquals(expected, actual);
 		
 	}
 
