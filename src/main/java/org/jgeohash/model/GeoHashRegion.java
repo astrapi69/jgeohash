@@ -51,15 +51,15 @@ public class GeoHashRegion implements Serializable {
 	public GeoHashRegion(final String center) {
 		super();
 		this.center = center;
-		this.east = GeoHashUtils.getAdjacent(center, Adjacent.TOP);
-		this.west = GeoHashUtils.getAdjacent(center, Adjacent.BOTTOM);
-		this.north = GeoHashUtils.getAdjacent(center, Adjacent.RIGHT);
-		this.south = GeoHashUtils.getAdjacent(center, Adjacent.LEFT);
-		this.southEast = GeoHashUtils.getAdjacent(this.south, Adjacent.TOP);
-		this.northEast = GeoHashUtils.getAdjacent(this.north, Adjacent.TOP);
+		this.east = GeoHashUtils.getAdjacent(center, Adjacent.RIGHT);
+		this.west = GeoHashUtils.getAdjacent(center, Adjacent.LEFT);
+		this.north = GeoHashUtils.getAdjacent(center, Adjacent.TOP);
+		this.south = GeoHashUtils.getAdjacent(center, Adjacent.BOTTOM);
+		this.southEast = GeoHashUtils.getAdjacent(this.south, Adjacent.RIGHT);
+		this.northEast = GeoHashUtils.getAdjacent(this.north, Adjacent.RIGHT);
 		this.northWest = GeoHashUtils
-				.getAdjacent(this.north, Adjacent.BOTTOM);
-		this.southWest = GeoHashUtils.getAdjacent(this.south, Adjacent.BOTTOM);
+				.getAdjacent(this.north, Adjacent.LEFT);
+		this.southWest = GeoHashUtils.getAdjacent(this.south, Adjacent.LEFT);
 	}
 
 	/**
