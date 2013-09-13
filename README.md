@@ -50,6 +50,11 @@ See the wiki page.
 Last changes
 ----------------------
 
+Version 1.4.3
+-------------
+Created a new class for keeping data of the neighbors cells from the given geohash to cardinal directions.
+
+
 Version 1.4.2
 -------------
 Added new interface Position for the class Point.
