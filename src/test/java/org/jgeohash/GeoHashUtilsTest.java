@@ -71,6 +71,9 @@ public class GeoHashUtilsTest {
 		expected = "5";
 		actual = geoHashRegion.getNorthWest();
 		AssertJUnit.assertEquals(expected, actual);
+		expected = "5";
+		actual = geoHashRegion.getNorthWest();
+		AssertJUnit.assertEquals(expected, actual);
 		
 	}
 
