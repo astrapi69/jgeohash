@@ -51,10 +51,10 @@ public abstract class Adjacent {
             Map<String, String> bottom = new LinkedHashMap<String, String>();
             bottom.put(Adjacent.EVEN, Borders.BOTTOM_LEFT);
             bottom.put(Adjacent.ODD, Borders.LEFT_BOTTOM);
-            borders.put(Adjacent.RIGHT, right);
-            borders.put(Adjacent.LEFT, left);
-            borders.put(Adjacent.TOP, top);
-            borders.put(Adjacent.BOTTOM, bottom);
+            borders.put(Adjacent.TOP, right);
+            borders.put(Adjacent.BOTTOM, left);
+            borders.put(Adjacent.RIGHT, top);
+            borders.put(Adjacent.LEFT, bottom);
         }
     }
 
@@ -91,10 +91,10 @@ public abstract class Adjacent {
             Map<String, String> bottom = new LinkedHashMap<String, String>();
             bottom.put(Adjacent.EVEN, Neighbors.BOTTOM_LEFT);
             bottom.put(Adjacent.ODD, Neighbors.LEFT_BOTTOM);
-            neighbors.put(Adjacent.RIGHT, right);
-            neighbors.put(Adjacent.LEFT, left);
-            neighbors.put(Adjacent.TOP, top);
-            neighbors.put(Adjacent.BOTTOM, bottom);
+            neighbors.put(Adjacent.TOP, right);
+            neighbors.put(Adjacent.BOTTOM, left);
+            neighbors.put(Adjacent.RIGHT, top);
+            neighbors.put(Adjacent.LEFT, bottom);
         }
     }
 
