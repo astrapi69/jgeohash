@@ -12,7 +12,7 @@ The library is kept simple and have no dependencies to other libraries.
 Maven dependency
 -------
 
-To add the dependency to your maven project you have to add to the section repositories following repository:
+To add the dependency to your maven project you have to add to the section repositories(in pom.xml or settings.xml) following repository:
 
 	<repositories>
 		<repository>
