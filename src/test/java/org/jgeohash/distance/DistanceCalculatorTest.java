@@ -126,7 +126,7 @@ public class DistanceCalculatorTest {
 	/**
 	 * Test distance between points.
 	 */
-	@Test
+	@Test(enabled = true)
 	public void testDistanceBetweenPoints() {
 		String alterTeichwegGeohash = "u1x0v54rmjwej";
 		String subGeohash = alterTeichwegGeohash.substring(0, 1);
@@ -147,6 +147,12 @@ public class DistanceCalculatorTest {
 				MeasuringUnit.KILOMETER);
 		AssertJUnit.assertEquals(distance3, 525.875517737948);
 		System.out.println("Distance3:" + distance3);
+		
+		distance3 = DistanceCalculator.distanceBetweenPoints(
+				ludwigsburgGeohash, alterTeichwegGeohash,
+				MeasuringUnit.METER);
+		AssertJUnit.assertEquals(distance3, 525875.517737948);
+		System.out.println("Distance3 in meters:" + distance3);
 
 		double distance4 = DistanceCalculator.distanceBetweenPoints(
 				firstRingCells.get(Adjacent.CENTER),
