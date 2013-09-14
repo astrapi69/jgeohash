@@ -8,7 +8,12 @@ public enum MeasuringUnit {
 	 * The kilometer.
 	 * 1.609344 is the number of kilometres in a mile
 	 *  */
-	KILOMETER(MeasuringUnit.KILOMETER_FACTOR),
+	KILOMETER(MeasuringUnit.KILOMETER_FACTOR),	
+	/** 
+	 * The meter.
+	 * 1609.344 is the number of metres in a mile
+	 *  */
+	METER(MeasuringUnit.METER_FACTOR),
 		
 	/** 
 	 * The mile.
@@ -18,6 +23,7 @@ public enum MeasuringUnit {
 	MILE(MeasuringUnit.MILE_FACTOR);
 
 	public static final double KILOMETER_FACTOR = 1.609344;
+	public static final double METER_FACTOR = KILOMETER_FACTOR * 1000;
 	public static final double MILE_FACTOR = 0.8684;
 	
 	/** The factor. */
