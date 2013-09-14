@@ -52,7 +52,8 @@ Last changes
 
 Version 1.4.3
 -------------
-Created a new class for keeping data of the neighbors cells from the given geohash to cardinal directions.
+Extend functionality to calculate distance from two Points, Positions, coordinate values(latitude, longitude) or two geohash values in meters.
+Created a new class for keeping data of the neighbors cells from the given geohash to cardinal directions for the first and second ring region.
 
 
 Version 1.4.2
