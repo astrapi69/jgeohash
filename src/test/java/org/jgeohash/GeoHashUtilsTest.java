@@ -1,6 +1,6 @@
 package org.jgeohash;
 
-import org.jgeohash.model.GeoHashRegion;
+import org.jgeohash.model.FirstRingRegion;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 
@@ -71,7 +71,7 @@ public class GeoHashUtilsTest {
 		actual = GeoHashUtils.getAdjacent("dq", Adjacent.RIGHT);
 		AssertJUnit.assertEquals(expected, actual);	
 		
-		GeoHashRegion geoHashRegion = new GeoHashRegion("u");
+		FirstRingRegion geoHashRegion = new FirstRingRegion("u");
 		expected = "h";
 		actual = geoHashRegion.getNorth();
 		AssertJUnit.assertEquals(expected, actual);
@@ -97,7 +97,7 @@ public class GeoHashUtilsTest {
 		actual = geoHashRegion.getNorthWest();
 		AssertJUnit.assertEquals(expected, actual);
 		
-		geoHashRegion = new GeoHashRegion("t");
+		geoHashRegion = new FirstRingRegion("t");
 		expected = "v";
 		actual = geoHashRegion.getNorth();
 		AssertJUnit.assertEquals(expected, actual);

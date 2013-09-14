@@ -6,9 +6,9 @@ import org.jgeohash.Adjacent;
 import org.jgeohash.GeoHashUtils;
 
 /**
- * The Class GeoHashRegion provides the neighbors from the given geohash value.
+ * The Class FirstRingRegion provides the neighbors from the given geohash value in f.
  */
-public class GeoHashRegion implements Serializable {
+public class FirstRingRegion implements Serializable {
 
 	/**
 	 * The constant serialVersionUID.
@@ -43,18 +43,18 @@ public class GeoHashRegion implements Serializable {
 	private final String southWest;
 
 	/**
-	 * Instantiates a new geo hash region.
+	 * Instantiates a new FirstRingRegion object from the given geohash value.
 	 * 
-	 * @param center
+	 * @param geohash
 	 *            the center
 	 */
-	public GeoHashRegion(final String center) {
+	public FirstRingRegion(final String geohash) {
 		super();
-		this.center = center;
-		this.east = GeoHashUtils.getAdjacent(center, Adjacent.RIGHT);
-		this.west = GeoHashUtils.getAdjacent(center, Adjacent.LEFT);
-		this.north = GeoHashUtils.getAdjacent(center, Adjacent.TOP);
-		this.south = GeoHashUtils.getAdjacent(center, Adjacent.BOTTOM);
+		this.center = geohash;
+		this.east = GeoHashUtils.getAdjacent(geohash, Adjacent.RIGHT);
+		this.west = GeoHashUtils.getAdjacent(geohash, Adjacent.LEFT);
+		this.north = GeoHashUtils.getAdjacent(geohash, Adjacent.TOP);
+		this.south = GeoHashUtils.getAdjacent(geohash, Adjacent.BOTTOM);
 		this.southEast = GeoHashUtils.getAdjacent(this.south, Adjacent.RIGHT);
 		this.northEast = GeoHashUtils.getAdjacent(this.north, Adjacent.RIGHT);
 		this.northWest = GeoHashUtils
@@ -149,23 +149,23 @@ public class GeoHashRegion implements Serializable {
 	public String toString() {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("[GeoHashRegion:");
-		buffer.append(" center: ");
+		buffer.append(" center:");
 		buffer.append(center);
-		buffer.append(" east: ");
+		buffer.append(" east:");
 		buffer.append(east);
-		buffer.append(" west: ");
+		buffer.append(" west:");
 		buffer.append(west);
-		buffer.append(" north: ");
+		buffer.append(" north:");
 		buffer.append(north);
-		buffer.append(" south: ");
+		buffer.append(" south:");
 		buffer.append(south);
-		buffer.append(" southEast: ");
+		buffer.append(" southEast:");
 		buffer.append(southEast);
-		buffer.append(" northEast: ");
+		buffer.append(" northEast:");
 		buffer.append(northEast);
-		buffer.append(" northWest: ");
+		buffer.append(" northWest:");
 		buffer.append(northWest);
-		buffer.append(" southWest: ");
+		buffer.append(" southWest:");
 		buffer.append(southWest);
 		buffer.append("]");
 		return buffer.toString();
@@ -184,7 +184,7 @@ public class GeoHashRegion implements Serializable {
 		if (o.getClass() != getClass()) {
 			return false;
 		}
-		GeoHashRegion castedObj = (GeoHashRegion) o;
+		FirstRingRegion castedObj = (FirstRingRegion) o;
 		return ((this.center == null ? castedObj.center == null : this.center
 			.equals(castedObj.center))
 			&& (this.east == null ? castedObj.east == null : this.east
@@ -240,7 +240,7 @@ public class GeoHashRegion implements Serializable {
 	 * {@inheritDoc}
 	 */
 	public Object clone() {
-		return new GeoHashRegion(this.center);
+		return new FirstRingRegion(this.center);
 	}
 
 }

@@ -16,7 +16,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.jgeohash.model.GeoHashRegion;
+import org.jgeohash.model.FirstAndSecondRingRegion;
+import org.jgeohash.model.FirstRingRegion;
 
 /**
  * GeoHashUtils is based on http://en.wikipedia.org/wiki/Geohash
@@ -325,8 +326,12 @@ public class GeoHashUtils {
 	 *            the geohash
 	 * @return a GeoHashRegion object calculated from the given geohash value.
 	 */
-	public static GeoHashRegion getFirstRingRegion(final String geohash){
-		return new GeoHashRegion(geohash);
+	public static FirstRingRegion getFirstRingRegion(final String geohash){
+		return new FirstRingRegion(geohash);
+	}
+	
+	public static FirstAndSecondRingRegion getFirstAndSecondRingRegion(final String geohash){
+		return new FirstAndSecondRingRegion(geohash);
 	}
 
 
