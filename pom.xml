@@ -8,7 +8,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<github.global.server>github</github.global.server>
-		<testng.version>6.8.5</testng.version>
+		<testng.version>6.8.7</testng.version>
 	</properties>
 
 	<build>
@@ -82,6 +82,7 @@
 					<additionalProjectnatures>
 						<projectnature>org.eclipse.m2e.core.maven2Nature</projectnature>
 					</additionalProjectnatures>
+					<downloadSources>true</downloadSources>
 				</configuration>
 			</plugin>
 
@@ -261,5 +262,7 @@
 			<version>${testng.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
 	</dependencies>
+	
 </project>
