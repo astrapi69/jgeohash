@@ -113,13 +113,6 @@
 				<version>${maven-eclipse-plugin.version}</version>
 				<configuration>
 					<downloadSources>true</downloadSources>
-					<additionalBuildcommands>
-						<buildcommand>org.eclipse.m2e.core.maven2Builder</buildcommand>
-					</additionalBuildcommands>
-					<additionalProjectnatures>
-						<projectnature>org.eclipse.m2e.core.maven2Nature</projectnature>
-					</additionalProjectnatures>
-					<downloadSources>true</downloadSources>
 				</configuration>
 			</plugin>
 
