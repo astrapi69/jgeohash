@@ -42,6 +42,11 @@ The source code is under the Apache License V2.0 as published by the Apache Foun
 
 If you have suggestions or improvements of bugfixes please contribute back via github.
 
+Want to Help?
+-------
+
+The source code for jGeohash are on GitHub. Please feel free to fork and send pull requests!
+
 Examples
 -------
 
