@@ -18,22 +18,36 @@
 		<maven-compiler-plugin.target.version>1.7</maven-compiler-plugin.target.version>
 		<maven-compiler-plugin.encoding>UTF-8</maven-compiler-plugin.encoding>
 		<maven-compiler-plugin.optimize>true</maven-compiler-plugin.optimize>
-		<maven-compiler-plugin.debug>true</maven-compiler-plugin.debug>	
+		<maven-compiler-plugin.debug>true</maven-compiler-plugin.debug>
 		<maven-source-plugin.version>2.2.1</maven-source-plugin.version>
 		<maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
 		<maven-surefire-plugin.version>2.15</maven-surefire-plugin.version>
 		<license-maven-plugin.version>2.5</license-maven-plugin.version>
 		<maven-gpg-plugin.version>1.4</maven-gpg-plugin.version>
-		<!-- GITHUB VARIABLE FOR MAVEN PLUGIN com.github.github. Github maven repository. -->	
+		<site-maven-plugin.version>0.7</site-maven-plugin.version>
+		<org.eclipse.egit.github.core.version>2.0.3</org.eclipse.egit.github.core.version>
+		<!-- GITHUB VARIABLE FOR MAVEN PLUGIN com.github.github. Github maven repository. -->
 		<github.global.server>github</github.global.server>
 	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>org.testng</groupId>
+				<artifactId>testng</artifactId>
+				<version>${testng.version}</version>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
 
 	<dependencies>
 
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>${testng.version}</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -80,46 +94,172 @@
 
 		</testResources>
 
+		<pluginManagement>
+
+			<plugins>
+
+				<plugin>
+					<inherited>true</inherited>
+					<!-- NOTE: We don't need a groupId specification because the group is 
+						org.apache.maven.plugins ...which is assumed by default. -->
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin.version}</version>
+					<configuration>
+						<source>${maven-compiler-plugin.source.version}</source>
+						<target>${maven-compiler-plugin.target.version}</target>
+						<encoding>${maven-compiler-plugin.encoding}</encoding>
+						<optimize>${maven-compiler-plugin.optimize}</optimize>
+						<debug>${maven-compiler-plugin.debug}</debug>
+						<showWarnings>true</showWarnings>
+					</configuration>
+				</plugin>
+				<!-- Configuring Maven Source Plugin: To attach source artifacts to your 
+					build we execute the source:jar goal from the source plugin during the package 
+					phase. -->
+				<plugin>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>${maven-source-plugin.version}</version>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<!-- Configuring Maven Javadoc Plugin: To attach javadoc artifacts to 
+					your build we execute the javadoc:jar goal from the javadoc plugin. -->
+				<plugin>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>attach-javadocs</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<configuration>
+						<descriptorRefs>
+							<descriptorRef>jar-with-dependencies</descriptorRef>
+						</descriptorRefs>
+					</configuration>
+					<executions>
+						<execution>
+							<id>make-assembly</id>
+							<!-- this is used for inheritance merges -->
+							<phase>package</phase>
+							<!-- append to the packaging phase. -->
+							<goals>
+								<goal>attached</goal>
+								<!-- goals == mojos -->
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${maven-surefire-plugin.version}</version>
+					<configuration>
+						<suiteXmlFiles>
+							<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+						</suiteXmlFiles>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<version>${maven-eclipse-plugin.version}</version>
+					<configuration>
+						<additionalBuildcommands>
+							<buildcommand>org.eclipse.m2e.core.maven2Builder</buildcommand>
+						</additionalBuildcommands>
+						<additionalProjectnatures>
+							<projectnature>org.eclipse.m2e.core.maven2Nature</projectnature>
+							<projectnature>org.springsource.ide.eclipse.gradle.core.nature</projectnature>
+						</additionalProjectnatures>
+						<downloadSources>true</downloadSources>
+					</configuration>
+				</plugin>
+				<!-- Signing with gpg -->
+				<plugin>
+					<artifactId>maven-gpg-plugin</artifactId>
+					<version>${maven-gpg-plugin.version}</version>
+					<executions>
+						<execution>
+							<id>sign-artifacts</id>
+							<phase>verify</phase>
+							<goals>
+								<goal>sign</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>com.github.github</groupId>
+					<artifactId>site-maven-plugin</artifactId>
+					<version>${site-maven-plugin.version}</version>
+					<configuration>
+						<message>Maven artifacts for ${project.version}</message>
+						<!-- git commit message -->
+						<noJekyll>true</noJekyll>
+						<!-- disable webpage processing -->
+						<merge>true</merge>
+						<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+						<!-- matches distribution management repository url above -->
+						<branch>refs/heads/mvn-repo</branch>
+						<!-- remote branch name -->
+						<includes>
+							<include>**/*</include>
+						</includes>
+						<repositoryName>jgeohash</repositoryName>
+						<!-- github repo name -->
+						<repositoryOwner>astrapi69</repositoryOwner>
+						<!-- github username -->
+					</configuration>
+					<executions>
+						<!-- run site-maven-plugin's 'site' target as part of the build's normal 
+							'deploy' phase -->
+						<execution>
+							<goals>
+								<goal>site</goal>
+							</goals>
+							<phase>deploy</phase>
+						</execution>
+					</executions>
+					<dependencies>
+						<dependency>
+							<groupId>org.eclipse.mylyn.github</groupId>
+							<artifactId>org.eclipse.egit.github.core</artifactId>
+							<version>${org.eclipse.egit.github.core.version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+
+			</plugins>
+
+		</pluginManagement>
+
 		<plugins>
 
 			<plugin>
 				<inherited>true</inherited>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven-compiler-plugin.version}</version>
-				<configuration>
-					<source>${maven-compiler-plugin.source.version}</source>
-					<target>${maven-compiler-plugin.target.version}</target>
-					<encoding>${maven-compiler-plugin.encoding}</encoding>
-					<optimize>${maven-compiler-plugin.optimize}</optimize>
-					<debug>${maven-compiler-plugin.debug}</debug>
-				</configuration>
 			</plugin>
 
-			<!-- Configuring Maven Source Plugin: To attach source artifacts to your 
-				build we execute the source:jar goal from the source plugin during the package 
-				phase. -->
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>${maven-source-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>${maven-eclipse-plugin.version}</version>
-				<configuration>
-					<downloadSources>true</downloadSources>
-				</configuration>
 			</plugin>
 
 		</plugins>
@@ -148,61 +288,13 @@
 			</activation>
 			<build>
 				<plugins>
-					<!-- Configuring Maven Source Plugin: To attach source artifacts to 
-						your build we execute the source:jar goal from the source plugin during the 
-						package phase. -->
 					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-source-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>attach-sources</id>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-							</execution>
-						</executions>
 					</plugin>
 
 					<plugin>
 						<groupId>com.github.github</groupId>
 						<artifactId>site-maven-plugin</artifactId>
-						<version>0.7</version>
-						<configuration>
-							<message>Maven artifacts for ${project.version}</message>
-							<!-- git commit message -->
-							<noJekyll>true</noJekyll>
-							<!-- disable webpage processing -->
-							<merge>true</merge>
-							<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
-							<!-- matches distribution management repository url above -->
-							<branch>refs/heads/mvn-repo</branch>
-							<!-- remote branch name -->
-							<includes>
-								<include>**/*</include>
-							</includes>
-							<repositoryName>jgeohash</repositoryName>
-							<!-- github repo name -->
-							<repositoryOwner>astrapi69</repositoryOwner>
-							<!-- github username -->
-						</configuration>
-						<executions>
-							<!-- run site-maven-plugin's 'site' target as part of the build's 
-								normal 'deploy' phase -->
-							<execution>
-								<goals>
-									<goal>site</goal>
-								</goals>
-								<phase>deploy</phase>
-							</execution>
-						</executions>
-						<dependencies>
-							<dependency>
-								<groupId>org.eclipse.mylyn.github</groupId>
-								<artifactId>org.eclipse.egit.github.core</artifactId>
-								<version>2.0.3</version>
-							</dependency>
-						</dependencies>
 					</plugin>
 
 				</plugins>
@@ -219,52 +311,22 @@
 			</activation>
 			<build>
 				<plugins>
-					<!-- Configuring Maven Javadoc Plugin: To attach javadoc artifacts to 
-						your build we execute the javadoc:jar goal from the javadoc plugin. -->
 					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>attach-javadocs</id>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-							</execution>
-						</executions>
 					</plugin>
 
 					<plugin>
-						<!-- NOTE: We don't need a groupId specification because the group 
-							is org.apache.maven.plugins ...which is assumed by default. -->
 						<artifactId>maven-assembly-plugin</artifactId>
-						<configuration>
-							<descriptorRefs>
-								<descriptorRef>jar-with-dependencies</descriptorRef>
-							</descriptorRefs>
-						</configuration>
-						<executions>
-							<execution>
-								<id>make-assembly</id>
-								<!-- this is used for inheritance merges -->
-								<phase>package</phase>
-								<!-- append to the packaging phase. -->
-								<goals>
-									<goal>attached</goal>
-									<!-- goals == mojos -->
-								</goals>
-							</execution>
-						</executions>
 					</plugin>
 
 				</plugins>
 			</build>
 		</profile>
-		
+
 		<profile>
-		<!-- This profile is for generate or update the license header from source files.
-			 for generate or update the license header you have to run this profile with this
-			 goal license:format. -->
+			<!-- This profile is for generate or update the license header from source 
+				files. for generate or update the license header you have to run this profile 
+				with this goal license:format. -->
 			<id>update-license-header</id>
 			<activation>
 				<property>
@@ -274,7 +336,7 @@
 			</activation>
 			<build>
 				<plugins>
-				
+
 					<plugin>
 						<groupId>com.mycila</groupId>
 						<artifactId>license-maven-plugin</artifactId>
@@ -301,7 +363,7 @@
 							</execution>
 						</executions>
 					</plugin>
-				
+
 				</plugins>
 			</build>
 
@@ -317,30 +379,12 @@
 			</activation>
 			<build>
 				<plugins>
-					<!-- Configuring Maven Javadoc Plugin: To attach javadoc artifacts to 
-						your build we execute the javadoc:jar goal from the javadoc plugin. -->
 					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>attach-javadocs</id>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-							</execution>
-						</executions>
 					</plugin>
 
 					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-surefire-plugin</artifactId>
-						<version>${maven-surefire-plugin.version}</version>
-						<configuration>
-							<suiteXmlFiles>
-								<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
-							</suiteXmlFiles>
-						</configuration>
 					</plugin>
 
 				</plugins>
@@ -359,18 +403,7 @@
 				<plugins>
 					<!-- Signing with gpg -->
 					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
-						<version>${maven-gpg-plugin.version}</version>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
 					</plugin>
 				</plugins>
 			</build>
