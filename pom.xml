@@ -109,8 +109,8 @@
 						<target>${maven-compiler-plugin.target.version}</target>
 						<encoding>${maven-compiler-plugin.encoding}</encoding>
 						<optimize>${maven-compiler-plugin.optimize}</optimize>
-						<debug>${maven-compiler-plugin.debug}</debug>
 						<showWarnings>true</showWarnings>
+						<debug>${maven-compiler-plugin.debug}</debug>
 					</configuration>
 				</plugin>
 				<!-- Configuring Maven Source Plugin: To attach source artifacts to your 
@@ -316,10 +316,12 @@
 			<build>
 				<plugins>
 					<plugin>
+						<inherited>true</inherited>
 						<artifactId>maven-javadoc-plugin</artifactId>
 					</plugin>
 
 					<plugin>
+						<inherited>true</inherited>
 						<artifactId>maven-assembly-plugin</artifactId>
 					</plugin>
 
