@@ -255,10 +255,12 @@
 			</plugin>
 
 			<plugin>
+				<inherited>true</inherited>
 				<artifactId>maven-source-plugin</artifactId>
 			</plugin>
 
 			<plugin>
+				<inherited>true</inherited>
 				<artifactId>maven-eclipse-plugin</artifactId>
 			</plugin>
 
@@ -289,10 +291,12 @@
 			<build>
 				<plugins>
 					<plugin>
+						<inherited>true</inherited>
 						<artifactId>maven-source-plugin</artifactId>
 					</plugin>
 
 					<plugin>
+						<inherited>true</inherited>
 						<groupId>com.github.github</groupId>
 						<artifactId>site-maven-plugin</artifactId>
 					</plugin>
@@ -380,10 +384,12 @@
 			<build>
 				<plugins>
 					<plugin>
+						<inherited>true</inherited>
 						<artifactId>maven-javadoc-plugin</artifactId>
 					</plugin>
 
 					<plugin>
+						<inherited>true</inherited>
 						<artifactId>maven-surefire-plugin</artifactId>
 					</plugin>
 
@@ -403,6 +409,7 @@
 				<plugins>
 					<!-- Signing with gpg -->
 					<plugin>
+						<inherited>true</inherited>
 						<artifactId>maven-gpg-plugin</artifactId>
 					</plugin>
 				</plugins>
