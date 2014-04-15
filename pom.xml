@@ -16,8 +16,10 @@
 		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
 		<maven-compiler-plugin.source.version>1.7</maven-compiler-plugin.source.version>
 		<maven-compiler-plugin.target.version>1.7</maven-compiler-plugin.target.version>
+		<maven-compiler-plugin.compilerVersion>1.7</maven-compiler-plugin.compilerVersion>
 		<maven-compiler-plugin.encoding>UTF-8</maven-compiler-plugin.encoding>
 		<maven-compiler-plugin.optimize>true</maven-compiler-plugin.optimize>
+		<maven-compiler-plugin.showWarnings>true</maven-compiler-plugin.showWarnings>
 		<maven-compiler-plugin.debug>true</maven-compiler-plugin.debug>
 		<maven-source-plugin.version>2.2.1</maven-source-plugin.version>
 		<maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
@@ -107,9 +109,10 @@
 					<configuration>
 						<source>${maven-compiler-plugin.source.version}</source>
 						<target>${maven-compiler-plugin.target.version}</target>
+						<compilerVersion>${maven-compiler-plugin.compilerVersion}</compilerVersion>
 						<encoding>${maven-compiler-plugin.encoding}</encoding>
 						<optimize>${maven-compiler-plugin.optimize}</optimize>
-						<showWarnings>true</showWarnings>
+						<showWarnings>${maven-compiler-plugin.showWarnings}</showWarnings>
 						<debug>${maven-compiler-plugin.debug}</debug>
 					</configuration>
 				</plugin>
@@ -219,7 +222,7 @@
 						<includes>
 							<include>**/*</include>
 						</includes>
-						<repositoryName>jgeohash</repositoryName>
+						<repositoryName>${project.artifactId}</repositoryName>
 						<!-- github repo name -->
 						<repositoryOwner>astrapi69</repositoryOwner>
 						<!-- github username -->
