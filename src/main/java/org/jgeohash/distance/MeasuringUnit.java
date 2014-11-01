@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 package org.jgeohash.distance;
+
 /**
  * The Enum MeasuringUnit.
  */
