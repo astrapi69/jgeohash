@@ -11,9 +11,9 @@
 		<!-- PROJECT encoding -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- UNIT TEST versions -->
-		<testng.version>6.8.7</testng.version>
+		<testng.version>6.8.8</testng.version>
 		<!-- MAVEN PLUGIN versions -->
-		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+		<maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
 		<maven-compiler-plugin.source.version>1.7</maven-compiler-plugin.source.version>
 		<maven-compiler-plugin.target.version>1.7</maven-compiler-plugin.target.version>
 		<maven-compiler-plugin.compilerVersion>1.7</maven-compiler-plugin.compilerVersion>
