@@ -21,11 +21,11 @@
 		<maven-compiler-plugin.optimize>true</maven-compiler-plugin.optimize>
 		<maven-compiler-plugin.showWarnings>true</maven-compiler-plugin.showWarnings>
 		<maven-compiler-plugin.debug>true</maven-compiler-plugin.debug>
-		<maven-source-plugin.version>2.2.1</maven-source-plugin.version>
+		<maven-source-plugin.version>2.4</maven-source-plugin.version>
 		<maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
-		<maven-surefire-plugin.version>2.15</maven-surefire-plugin.version>
-		<license-maven-plugin.version>2.5</license-maven-plugin.version>
-		<maven-gpg-plugin.version>1.4</maven-gpg-plugin.version>
+		<maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
+		<license-maven-plugin.version>2.7</license-maven-plugin.version>
+		<maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
 		<site-maven-plugin.version>0.7</site-maven-plugin.version>
 		<org.eclipse.egit.github.core.version>2.0.3</org.eclipse.egit.github.core.version>
 		<!-- GITHUB VARIABLE FOR MAVEN PLUGIN com.github.github. Github maven repository. -->
