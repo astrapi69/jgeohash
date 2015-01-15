@@ -26,6 +26,8 @@
 		<maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
 		<license-maven-plugin.version>2.7</license-maven-plugin.version>
 		<maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
+		<maven-javadoc-plugin.version>2.10.1</maven-javadoc-plugin.version>
+		<maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
 		<site-maven-plugin.version>0.7</site-maven-plugin.version>
 		<org.eclipse.egit.github.core.version>2.0.3</org.eclipse.egit.github.core.version>
 		<!-- GITHUB VARIABLE FOR MAVEN PLUGIN com.github.github. Github maven repository. -->
@@ -135,6 +137,7 @@
 					your build we execute the javadoc:jar goal from the javadoc plugin. -->
 				<plugin>
 					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>${maven-javadoc-plugin.version}</version>
 					<executions>
 						<execution>
 							<id>attach-javadocs</id>
@@ -147,6 +150,7 @@
 
 				<plugin>
 					<artifactId>maven-assembly-plugin</artifactId>
+					<version>${maven-assembly-plugin.version}</version>
 					<configuration>
 						<descriptorRefs>
 							<descriptorRef>jar-with-dependencies</descriptorRef>
@@ -272,13 +276,11 @@
 	</build>
 
 	<distributionManagement>
-
 		<repository>
-			<id>internal.repo</id>
-			<name>Temporary Staging Repository</name>
-			<url>file://${project.build.directory}/mvn-repo</url>
+			<id>sonatype-nexus-staging</id>
+			<name>Nexus Release Repository</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
-
 	</distributionManagement>
 
 	<profiles>
@@ -429,6 +431,66 @@
 					</plugin>
 				</plugins>
 			</build>
+		</profile>
+
+		<profile>
+			<id>oss.sonatype.org-staged-release</id>
+			<!-- This is the profile to use for releasing into the staged release 
+				repo. We need to sign the artifacts. -->
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+
+			<build>
+				<plugins>
+					<plugin>
+						<inherited>true</inherited>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<configuration>
+							<detectOfflineLinks>false</detectOfflineLinks>
+							<minmemory>128m</minmemory>
+							<maxmemory>256m</maxmemory>
+							<notimestamp>true</notimestamp>
+							<quiet>true</quiet>
+							<links>
+								<link>http://download.oracle.com/javase/1.5.0/docs/api</link>
+								<link>http://download.oracle.com/javaee/5/api</link>
+							</links>
+						</configuration>
+						<executions>
+							<execution>
+								<id>attach-javadoc</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<inherited>true</inherited>
+						<artifactId>maven-gpg-plugin</artifactId>
+					</plugin>
+					<plugin>
+						<inherited>true</inherited>
+						<artifactId>maven-release-plugin</artifactId>
+						<configuration>
+							<mavenExecutorId>forked-path</mavenExecutorId>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+
+			<distributionManagement>
+				<repository>
+					<id>sonatype-nexus-staging</id>
+					<name>Nexus Release Repository</name>
+					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+				</repository>
+			</distributionManagement>
+
 		</profile>
 
 	</profiles>
