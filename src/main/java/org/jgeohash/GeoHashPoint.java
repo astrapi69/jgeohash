@@ -115,24 +115,17 @@ public class GeoHashPoint extends Point {
 	public BigDecimal getLng() {
 		return BigDecimal.valueOf(getLongitude());
 	}
-
-
-	/**
-	 * (non-Javadoc).
-	 *
-	 * @return the object
-	 * @see com.sem.base.utils.geocoding.Point#clone()
-	 */
+	
+    /**
+     * {@inheritDoc}
+     */
 	public Object clone() {
 		return new GeoHashPoint(getLatitude(), getLongitude());
 	}
-
-	/**
-	 * Returns <code>true</code> if this <code>GeoHashPoint</code> is the same as the o argument.
-	 *
-	 * @param o the o
-	 * @return <code>true</code> if this <code>GeoHashPoint</code> is the same as the o argument.
-	 */
+	
+    /**
+     * {@inheritDoc}
+     */
 	public boolean equals(final Object o) {
 		if (this == o) {
 			return true;
@@ -149,12 +142,10 @@ public class GeoHashPoint extends Point {
 		GeoHashPoint castedObj = (GeoHashPoint) o;
 		return ((this.getLatitude()== castedObj.getLatitude()) && (this.getLongitude() == castedObj.getLongitude()));
 	}
-
-	/**
-	 * Override hashCode.
-	 *
-	 * @return the Objects hashcode.
-	 */
+	
+    /**
+     * {@inheritDoc}
+     */
 	public int hashCode() {
 		int hashCode = super.hashCode();
 		hashCode = 31
@@ -166,12 +157,9 @@ public class GeoHashPoint extends Point {
 		return hashCode;
 	}
 
-	/**
-	 * (non-Javadoc).
-	 *
-	 * @return the string
-	 * @see com.sem.base.utils.geocoding.Point#toString()
-	 */
+    /**
+     * {@inheritDoc}
+     */
 	public String toString() {
 		StringBuffer buffer = new StringBuffer();
 		buffer.append("[GeoHashPoint:");
