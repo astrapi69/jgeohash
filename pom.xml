@@ -41,12 +41,11 @@
 		</developer>
 
 	</developers>
-
+	
 	<scm>
-		<url>https://github.com/astrapi69/jgeohash</url>
-		<connection>scm:git:https://github.com/astrapi69/jgeohash.git</connection>
-		<developerConnection>scm:git:https://github.com:astrapi69/jgeohash.git</developerConnection>
-		<tag>HEAD</tag>
+		<connection>scm:git:git:@github.com:astrapi69/jgeohash.git</connection>
+		<developerConnection>scm:git:git@github.com:astrapi69/jgeohash.git</developerConnection>
+		<url>git:@github.com:astrapi69/jgeohash.git</url>
 	</scm>
 
 
