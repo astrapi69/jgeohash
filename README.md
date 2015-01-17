@@ -54,6 +54,10 @@ See the wiki page.
 
 Last changes
 ----------------------
+Version 1.4.5
+-------------
+Gets the geohash from the given ip address
+added dependency for geoip-api
 
 Version 1.4.3
 -------------
