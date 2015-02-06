@@ -246,6 +246,7 @@ public class FirstAndSecondRingRegion extends FirstRingRegion {
 	/**
 	 * {@inheritDoc}
 	 */
+        @Override
 	public Object clone() {
 		return new FirstAndSecondRingRegion(getCenter());
 	}
@@ -253,6 +254,7 @@ public class FirstAndSecondRingRegion extends FirstRingRegion {
 	/**
 	 * {@inheritDoc}
 	 */
+        @Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
@@ -429,8 +431,9 @@ public class FirstAndSecondRingRegion extends FirstRingRegion {
 	/**
 	 * {@inheritDoc}
 	 */
+        @Override
 	public String toString() {
-		StringBuffer buffer = new StringBuffer();
+		StringBuilder buffer = new StringBuilder();
 		buffer.append("[SecondRingRegion:");
 		buffer.append("center:");
 		buffer.append(getCenter());

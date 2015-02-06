@@ -161,8 +161,9 @@ public class FirstRingRegion implements Serializable {
 	/**
 	 * {@inheritDoc}
 	 */
+        @Override
 	public String toString() {
-		StringBuffer buffer = new StringBuffer();
+		StringBuilder buffer = new StringBuilder();
 		buffer.append("[GeoHashRegion:");
 		buffer.append(" center:");
 		buffer.append(center);
@@ -189,6 +190,7 @@ public class FirstRingRegion implements Serializable {
 	/**
 	 * {@inheritDoc}
 	 */
+        @Override
 	public boolean equals(Object o) {
 		if (this == o) {
 			return true;
@@ -226,6 +228,7 @@ public class FirstRingRegion implements Serializable {
 	/**
 	 * {@inheritDoc}
 	 */
+        @Override
 	public int hashCode() {
 		int hashCode = 1;
 		hashCode = 31
@@ -254,6 +257,7 @@ public class FirstRingRegion implements Serializable {
 	/**
 	 * {@inheritDoc}
 	 */
+        @Override
 	public Object clone() {
 		return new FirstRingRegion(this.center);
 	}

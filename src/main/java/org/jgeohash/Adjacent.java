@@ -41,19 +41,19 @@ public abstract class Adjacent {
         private static final String RIGHT_TOP = "bcfguvyz";
 
         /** The Constant borders. */
-        public static final Map<String, Map<String, String>> borders = new LinkedHashMap<String, Map<String, String>>();
+        public static final Map<String, Map<String, String>> borders = new LinkedHashMap<>();
 
         static {
-            Map<String, String> right = new LinkedHashMap<String, String>();
+            Map<String, String> right = new LinkedHashMap<>();
             right.put(Adjacent.EVEN, Borders.RIGHT_TOP);
             right.put(Adjacent.ODD, Borders.TOP_RIGHT);
-            Map<String, String> left = new LinkedHashMap<String, String>();
+            Map<String, String> left = new LinkedHashMap<>();
             left.put(Adjacent.EVEN, Borders.LEFT_BOTTOM);
             left.put(Adjacent.ODD, Borders.BOTTOM_LEFT);
-            Map<String, String> top = new LinkedHashMap<String, String>();
+            Map<String, String> top = new LinkedHashMap<>();
             top.put(Adjacent.EVEN, Borders.TOP_RIGHT);
             top.put(Adjacent.ODD, Borders.RIGHT_TOP);
-            Map<String, String> bottom = new LinkedHashMap<String, String>();
+            Map<String, String> bottom = new LinkedHashMap<>();
             bottom.put(Adjacent.EVEN, Borders.BOTTOM_LEFT);
             bottom.put(Adjacent.ODD, Borders.LEFT_BOTTOM);
             borders.put(Adjacent.TOP, right);
@@ -81,19 +81,19 @@ public abstract class Adjacent {
         private static final String RIGHT_TOP = "bc01fg45238967deuvhjyznpkmstqrwx";
 
         /** The Constant neighbors. */
-        public static final Map<String, Map<String, String>> neighbors = new LinkedHashMap<String, Map<String, String>>();
+        public static final Map<String, Map<String, String>> neighbors = new LinkedHashMap<>();
 
         static {
-            Map<String, String> right = new LinkedHashMap<String, String>();
+            Map<String, String> right = new LinkedHashMap<>();
             right.put(Adjacent.EVEN, Neighbors.RIGHT_TOP);
             right.put(Adjacent.ODD, Neighbors.TOP_RIGHT);
-            Map<String, String> left = new LinkedHashMap<String, String>();
+            Map<String, String> left = new LinkedHashMap<>();
             left.put(Adjacent.EVEN, Neighbors.LEFT_BOTTOM);
             left.put(Adjacent.ODD, Neighbors.BOTTOM_LEFT);
-            Map<String, String> top = new LinkedHashMap<String, String>();
+            Map<String, String> top = new LinkedHashMap<>();
             top.put(Adjacent.EVEN, Neighbors.TOP_RIGHT);
             top.put(Adjacent.ODD, Neighbors.RIGHT_TOP);
-            Map<String, String> bottom = new LinkedHashMap<String, String>();
+            Map<String, String> bottom = new LinkedHashMap<>();
             bottom.put(Adjacent.EVEN, Neighbors.BOTTOM_LEFT);
             bottom.put(Adjacent.ODD, Neighbors.LEFT_BOTTOM);
             neighbors.put(Adjacent.TOP, right);

@@ -50,6 +50,7 @@ public class Point implements Comparable<Point>, Cloneable, Position {
 	/**
 	 * {@inheritDoc}
 	 */
+        @Override
 	public Object clone() {
 		Position inst = new Point(this.latitude, this.longitude);
 		return inst;
@@ -58,6 +59,7 @@ public class Point implements Comparable<Point>, Cloneable, Position {
 	/**
 	 * {@inheritDoc}
 	 */
+        @Override
 	public int compareTo(final Point other) {
 		if ( this == other ) {
 			return 0;
@@ -83,6 +85,7 @@ public class Point implements Comparable<Point>, Cloneable, Position {
 	/**
 	 * {@inheritDoc}
 	 */
+        @Override
 	public boolean equals(final Object o) {
 		if (this == o) {
 			return true;
@@ -100,6 +103,7 @@ public class Point implements Comparable<Point>, Cloneable, Position {
 	/**
 	 * {@inheritDoc}
 	 */
+        @Override
 	public double getLatitude() {
 		return latitude;
 	}
@@ -107,6 +111,7 @@ public class Point implements Comparable<Point>, Cloneable, Position {
 	/**
 	 * {@inheritDoc}
 	 */
+        @Override
 	public double getLongitude() {
 		return longitude;
 	}
@@ -114,6 +119,7 @@ public class Point implements Comparable<Point>, Cloneable, Position {
 	/**
 	 * {@inheritDoc}
 	 */
+        @Override
 	public int hashCode() {
 		int hashCode = 1;
 		hashCode = 31
@@ -133,6 +139,7 @@ public class Point implements Comparable<Point>, Cloneable, Position {
 	/**
 	 * {@inheritDoc}
 	 */
+        @Override
 	public void setLatitude(final double latitude) {
 		if (Math.abs(latitude) > 90 ) {
 			throw new IllegalArgumentException("The given coordinates for latitude " + latitude + " are out of range.");
@@ -143,6 +150,7 @@ public class Point implements Comparable<Point>, Cloneable, Position {
 	/**
 	 * {@inheritDoc}
 	 */
+        @Override
 	public void setLongitude(final double longitude) {
 		if (Math.abs(longitude) > 180) {
 			throw new IllegalArgumentException("The given coordinates for longitude " + longitude + " are out of range.");
@@ -153,6 +161,7 @@ public class Point implements Comparable<Point>, Cloneable, Position {
 	/**
 	 * {@inheritDoc}
 	 */
+        @Override
 	public String toString() {
 		return "Latitude : " + latitude + "   Longitude  : " + longitude;
 	}

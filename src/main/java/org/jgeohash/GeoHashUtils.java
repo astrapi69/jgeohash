@@ -40,7 +40,7 @@ public class GeoHashUtils {
 		'y','z'} ;
 
 	/** The Constant DECODE_MAP. */
-	private final static Map<Character, Integer> DECODE_MAP = new HashMap<Character, Integer>();
+	private final static Map<Character, Integer> DECODE_MAP = new HashMap<>();
 	static {
 		int counter = 0;
 		for(char c : BASE_32){
@@ -49,10 +49,10 @@ public class GeoHashUtils {
 	}
 
 	/** The precision. */
-	private static int precision = 12;
+	private static final int precision = 12;
 
 	/** The bits. */
-	private static int[] bits = {16, 8, 4, 2, 1};
+	private static final int[] bits = {16, 8, 4, 2, 1};
 
 	/**
 	 * Gets the adjacent from the given direction. For instance if direction is 'top' then
@@ -205,7 +205,7 @@ public class GeoHashUtils {
 	 * @return The generated geohash from the given latitude and longitude.
 	 */
 	public static String encode(final double latitude, final double longitude){
-		StringBuffer geohash = new StringBuffer();
+		StringBuilder geohash = new StringBuilder();
 		boolean even = true;
 		int bit = 0;
 		int ch = 0;
@@ -363,7 +363,7 @@ public class GeoHashUtils {
         String bottomright = GeoHashUtils.getAdjacent(right, Adjacent.BOTTOM);
         String bottomleft = GeoHashUtils.getAdjacent(left, Adjacent.BOTTOM);
 
-        Map<String, String> adjacentAreas = new LinkedHashMap<String, String>();
+        Map<String, String> adjacentAreas = new LinkedHashMap<>();
         adjacentAreas.put(Adjacent.CENTER, geohash);
         adjacentAreas.put(Adjacent.TOP, top);
         adjacentAreas.put(Adjacent.BOTTOM, bottom);
@@ -439,7 +439,7 @@ public class GeoHashUtils {
 			throw new IllegalArgumentException("Argument geohash should not be null.");
 		}
 
-        List<String> adjacentAreas = new ArrayList<String>();
+        List<String> adjacentAreas = new ArrayList<>();
         String top = GeoHashUtils.getAdjacent(geohash, Adjacent.TOP);
         String bottom = GeoHashUtils.getAdjacent(geohash, Adjacent.BOTTOM);
         String right = GeoHashUtils.getAdjacent(geohash, Adjacent.RIGHT);

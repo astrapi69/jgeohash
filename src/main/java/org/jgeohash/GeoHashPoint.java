@@ -119,6 +119,7 @@ public class GeoHashPoint extends Point {
     /**
      * {@inheritDoc}
      */
+        @Override
 	public Object clone() {
 		return new GeoHashPoint(getLatitude(), getLongitude());
 	}
@@ -126,6 +127,7 @@ public class GeoHashPoint extends Point {
     /**
      * {@inheritDoc}
      */
+        @Override
 	public boolean equals(final Object o) {
 		if (this == o) {
 			return true;
@@ -146,6 +148,7 @@ public class GeoHashPoint extends Point {
     /**
      * {@inheritDoc}
      */
+        @Override
 	public int hashCode() {
 		int hashCode = super.hashCode();
 		hashCode = 31
@@ -160,8 +163,9 @@ public class GeoHashPoint extends Point {
     /**
      * {@inheritDoc}
      */
+        @Override
 	public String toString() {
-		StringBuffer buffer = new StringBuffer();
+		StringBuilder buffer = new StringBuilder();
 		buffer.append("[GeoHashPoint:");
 		buffer.append(super.toString());
 		buffer.append("   Geohash : ");
