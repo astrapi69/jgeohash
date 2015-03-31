@@ -1,45 +1,28 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Jgeohash by astrapi69</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/astrapi69/jgeohash">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/astrapi69/jgeohash/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/astrapi69/jgeohash/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
+    <section class="page-header">
+      <h1 class="project-name">Jgeohash</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/astrapi69/jgeohash" class="btn">View on GitHub</a>
+      <a href="https://github.com/astrapi69/jgeohash/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/astrapi69/jgeohash/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <div class="wrapper">
+    <section class="main-content">
+      <p><a rev="flattr;button:compact;" href="http://github.com/astrapi69/jgeohash"></a></p>
 
-      <section>
-        <div id="title">
-          <h1>Jgeohash</h1>
-          <p></p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/astrapi69">astrapi69</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
-
-        <h1>
-<a name="jgeohash" class="anchor" href="#jgeohash"><span class="octicon octicon-link"></span></a>jgeohash</h1>
+<h1>
+<a id="jgeohash" class="anchor" href="#jgeohash" aria-hidden="true"><span class="octicon octicon-link"></span></a>jgeohash</h1>
 
 <p>An easy-to-implement library that can assist Java developers in using the GeoHash algorithm in order to create geocodes based on custom latitude and longitude values.</p>
 
@@ -50,7 +33,7 @@
 <p>The library is kept simple and have no dependencies to other libraries.</p>
 
 <h2>
-<a name="maven-dependency" class="anchor" href="#maven-dependency"><span class="octicon octicon-link"></span></a>Maven dependency</h2>
+<a id="maven-dependency" class="anchor" href="#maven-dependency" aria-hidden="true"><span class="octicon octicon-link"></span></a>Maven dependency</h2>
 
 <p>To add the dependency to your maven project you have to add to the section repositories(in pom.xml or settings.xml) following repository:</p>
 
@@ -78,43 +61,49 @@
 </code></pre>
 
 <h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
 
 <p>The source code is under the Apache License V2.0 as published by the Apache Foundation.</p>
 
 <p>If you have suggestions or improvements of bugfixes please contribute back via github.</p>
 
 <h2>
-<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples</h2>
 
 <p>See the wiki page.</p>
 
 <h2>
-<a name="last-changes" class="anchor" href="#last-changes"><span class="octicon octicon-link"></span></a>Last changes</h2>
+<a id="last-changes" class="anchor" href="#last-changes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Last changes</h2>
 
 <h2>
-<a name="version-143" class="anchor" href="#version-143"><span class="octicon octicon-link"></span></a>Version 1.4.3</h2>
+<a id="version-143" class="anchor" href="#version-143" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 1.4.3</h2>
 
 <p>Extend functionality to calculate distance from two Points, Positions, coordinate values(latitude, longitude) or two geohash values in meters.
 Created a new class for keeping data of the neighbors cells from the given geohash to cardinal directions for the first and second ring region.</p>
 
 <h2>
-<a name="version-142" class="anchor" href="#version-142"><span class="octicon octicon-link"></span></a>Version 1.4.2</h2>
+<a id="version-142" class="anchor" href="#version-142" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 1.4.2</h2>
 
 <p>Added new interface Position for the class Point.</p>
 
 <p>Created new class that calculates distance from two Points or two geohash values in km or miles.</p>
 
 <h2>
-<a name="version-141" class="anchor" href="#version-141"><span class="octicon octicon-link"></span></a>Version 1.4.1</h2>
+<a id="version-141" class="anchor" href="#version-141" aria-hidden="true"><span class="octicon octicon-link"></span></a>Version 1.4.1</h2>
 
 <p>Added method to get getAdjacent from multiply directions.</p>
 
 <p>Added functionality for get first and second ring neighbors from a geohash cell.</p>
-      </section>
 
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/astrapi69/jgeohash">Jgeohash</a> is maintained by <a href="https://github.com/astrapi69">astrapi69</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
   </body>
 </html>
+
