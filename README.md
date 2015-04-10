@@ -79,3 +79,7 @@ Version 1.4.1
 Added method to get getAdjacent from multiply directions.
 
 Added functionality for get first and second ring neighbors from a geohash cell.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/astrapi69/jgeohash/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
