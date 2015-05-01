@@ -13,17 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jgeohash.distance;
+package de.alpharogroup.jgeohash.distance;
 
 import java.util.Map;
 
-import org.jgeohash.Adjacent;
-import org.jgeohash.GeoHashPoint;
-import org.jgeohash.GeoHashUtils;
-import org.jgeohash.Point;
-import org.jgeohash.api.Position;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
+
+import de.alpharogroup.jgeohash.Adjacent;
+import de.alpharogroup.jgeohash.GeoHashPoint;
+import de.alpharogroup.jgeohash.GeoHashUtils;
+import de.alpharogroup.jgeohash.Point;
+import de.alpharogroup.jgeohash.api.Position;
+import de.alpharogroup.jgeohash.distance.DistanceCalculator;
+import de.alpharogroup.jgeohash.distance.MeasuringUnit;
 
 /**
  * The Class DistanceCalculatorTest.

@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jgeohash;
+package de.alpharogroup.jgeohash;
 
-import org.jgeohash.model.FirstRingRegion;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
+
+import de.alpharogroup.jgeohash.Adjacent;
+import de.alpharogroup.jgeohash.GeoHashUtils;
+import de.alpharogroup.jgeohash.model.FirstRingRegion;
 
 public class GeoHashUtilsTest {
 

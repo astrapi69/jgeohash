@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jgeohash;
+package de.alpharogroup.jgeohash;
 
-import org.jgeohash.api.Position;
+import de.alpharogroup.jgeohash.api.Position;
 
 /**
  * The Class Point represents a point on earth with the latitude and longitude.

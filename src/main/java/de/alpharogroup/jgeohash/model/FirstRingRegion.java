@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jgeohash.model;
+package de.alpharogroup.jgeohash.model;
 
 import java.io.Serializable;
 
-import org.jgeohash.Adjacent;
-import org.jgeohash.GeoHashUtils;
+import de.alpharogroup.jgeohash.Adjacent;
+import de.alpharogroup.jgeohash.GeoHashUtils;
 
 /**
  * The Class FirstRingRegion provides the neighbors from the given geohash value in f.

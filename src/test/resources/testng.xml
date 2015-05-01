@@ -3,8 +3,8 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
-      <class name="org.jgeohash.GeoHashUtilsTest"/>
-      <class name="org.jgeohash.distance.DistanceCalculatorTest"/>
+      <class name="de.alpharogroup.jgeohash.GeoHashUtilsTest"/>
+      <class name="de.alpharogroup.jgeohash.distance.DistanceCalculatorTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

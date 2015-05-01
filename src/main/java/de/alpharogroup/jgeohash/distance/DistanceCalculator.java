@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jgeohash.distance;
+package de.alpharogroup.jgeohash.distance;
 
-import org.jgeohash.GeoHashPoint;
-import org.jgeohash.api.Position;
-
+import de.alpharogroup.jgeohash.GeoHashPoint;
+import de.alpharogroup.jgeohash.api.Position;
 import static java.lang.Math.*;
 
 /**

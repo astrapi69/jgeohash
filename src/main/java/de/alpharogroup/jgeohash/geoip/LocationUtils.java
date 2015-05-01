@@ -1,9 +1,9 @@
-package org.jgeohash.geoip;
-
-import org.jgeohash.GeoHashPoint;
+package de.alpharogroup.jgeohash.geoip;
 
 import com.maxmind.geoip.Location;
 import com.maxmind.geoip.LookupService;
+
+import de.alpharogroup.jgeohash.GeoHashPoint;
 
 /**
  * The Class LocationUtils is for location specific data.
