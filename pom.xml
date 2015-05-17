@@ -55,7 +55,7 @@
 		<!-- GEOIP-API version -->
 		<geoip-api.version>1.2.14</geoip-api.version>
 		<!-- UNIT TEST versions -->
-		<testng.version>6.8.8</testng.version>
+		<testng.version>6.9.4</testng.version>
 		<!-- MAVEN PLUGIN versions -->
 		<maven-compiler-plugin.version>3.2</maven-compiler-plugin.version>
 		<maven-compiler-plugin.source.version>1.7</maven-compiler-plugin.source.version>
