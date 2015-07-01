@@ -49,6 +49,12 @@ See the wiki page.
 
 Last changes
 ----------------------
+Version 1.4.6
+-------------
+- Added project to sonatype repository.
+- Added project to continous integration: https://travis-ci.org/astrapi69/jgeohash
+- Added project to flattr.com: https://flattr.com/thing/4067696/astrapi69jgeohash-on-GitHub
+
 Version 1.4.5
 -------------
 Gets the geohash from the given ip address
