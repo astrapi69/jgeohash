@@ -15,24 +15,16 @@ The library is kept simple and have no dependencies to other libraries.
 Maven dependency
 -------
 
-To add the dependency to your maven project you have to add to the section repositories(in pom.xml or settings.xml) following repository:
+Maven dependency is now on sonatype. 
+Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;quick~jgeohash) for latest snapshots and releases.
 
-	<repositories>
-		<repository>
-			<id>jgeohash-mvn-repo</id>
-			<url>https://raw.github.com/astrapi69/jgeohash/mvn-repo/</url>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-			</snapshots>
-		</repository>
-	</repositories>
-	
+Add the following maven dependency to your project `pom.xml` if you want to import jgeohash:
+
 Than you can add the dependency to your dependencies:
 
 	<dependencies>
 		<dependency>
-			<groupId>jGeohash</groupId>
+			<groupId>de.alpharogroup</groupId>
 			<artifactId>jgeohash</artifactId>
 			<version>${jgeohash.version}</version>
 		</dependency>	
