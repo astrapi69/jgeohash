@@ -71,7 +71,7 @@
 		<license-maven-plugin.version>2.7</license-maven-plugin.version>
 		<maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
 		<!-- NEXUS STAGING MAVEN PLUGIN version -->
-		<nexus-staging-maven-plugin.version>1.6.3</nexus-staging-maven-plugin.version>
+		<nexus-staging-maven-plugin.version>1.6.5</nexus-staging-maven-plugin.version>
 		<maven-javadoc-plugin.version>2.10.1</maven-javadoc-plugin.version>
 		<maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
 		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
