@@ -20,7 +20,8 @@ import java.io.Serializable;
 /**
  * The Interface Position defines a position from a latitude and a longitude.
  */
-public interface Position extends Serializable {
+public interface Position extends Serializable
+{
 
 	/**
 	 * Gets the latitude.
@@ -39,15 +40,17 @@ public interface Position extends Serializable {
 	/**
 	 * Sets the latitude.
 	 *
-	 * @param latitude the new latitude
+	 * @param latitude
+	 *            the new latitude
 	 */
-	void setLatitude(double latitude);
+	void setLatitude(final double latitude);
 
 	/**
 	 * Sets the longitude.
 	 *
-	 * @param longitude the new longitude
+	 * @param longitude
+	 *            the new longitude
 	 */
-	void setLongitude(double longitude);
+	void setLongitude(final double longitude);
 
 }

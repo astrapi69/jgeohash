@@ -22,7 +22,8 @@ import de.alpharogroup.jgeohash.api.Position;
 /**
  * The Class GeoHashPoint.
  */
-public class GeoHashPoint extends Point {
+public class GeoHashPoint extends Point
+{
 
 	/**
 	 * The serialVersionUID.
@@ -34,59 +35,111 @@ public class GeoHashPoint extends Point {
 	/**
 	 * Instantiates a new geo hash point.
 	 *
-	 * @param latitude the latitude
-	 * @param longitude the longitude
+	 * @param latitude
+	 *            the latitude
+	 * @param longitude
+	 *            the longitude
 	 */
-	public GeoHashPoint(final double latitude, final double longitude) {
+	public GeoHashPoint(final double latitude, final double longitude)
+	{
 		super(latitude, longitude);
 	}
 
 	/**
 	 * Instantiates a new geo hash point.
 	 *
-	 * @param latitude the latitude
-	 * @param longitude the longitude
+	 * @param latitude
+	 *            the latitude
+	 * @param longitude
+	 *            the longitude
 	 */
-	public GeoHashPoint(final Double latitude, final Double longitude) {
+	public GeoHashPoint(final Double latitude, final Double longitude)
+	{
 		super(latitude, longitude);
 	}
 
 	/**
 	 * Instantiates a new geo hash point.
 	 *
-	 * @param position the position
+	 * @param latitude
+	 *            the latitude
+	 * @param longitude
+	 *            the longitude
 	 */
-	public GeoHashPoint(final Position position) {
+	public GeoHashPoint(final float latitude, final float longitude)
+	{
+		this(Float.toString(latitude), Float.toString(longitude));
+	}
+
+	/**
+	 * Instantiates a new geo hash point.
+	 *
+	 * @param position
+	 *            the position
+	 */
+	public GeoHashPoint(final Position position)
+	{
 		this(position.getLatitude(), position.getLongitude());
 	}
 
 	/**
 	 * Instantiates a new geo hash point.
 	 *
-	 * @param latitude the latitude
-	 * @param longitude the longitude
+	 * @param geohash
+	 *            the Geohash code.
 	 */
-	public GeoHashPoint(final float latitude, final float longitude) {
-		this(Float.toString(latitude), Float.toString(longitude));
-	}
-	
-	/**
-	 * Instantiates a new geo hash point.
-	 *
-	 * @param lat the latitude as String object.
-	 * @param lng the longitude as String object.
-	 */
-	public GeoHashPoint(final String lat, final String lng) {
-		super(Double.parseDouble(lat), Double.parseDouble(lng));
+	public GeoHashPoint(final String geohash)
+	{
+		super(GeoHashUtils.decode(geohash)[0], GeoHashUtils.decode(geohash)[1]);
 	}
 
 	/**
 	 * Instantiates a new geo hash point.
 	 *
-	 * @param geohash the Geohash code.
+	 * @param lat
+	 *            the latitude as String object.
+	 * @param lng
+	 *            the longitude as String object.
 	 */
-	public GeoHashPoint(String geohash) {
-		super(GeoHashUtils.decode(geohash)[0], GeoHashUtils.decode(geohash)[1]);
+	public GeoHashPoint(final String lat, final String lng)
+	{
+		super(Double.parseDouble(lat), Double.parseDouble(lng));
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Object clone()
+	{
+		return new GeoHashPoint(getLatitude(), getLongitude());
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (!super.equals(o))
+		{
+			return false;
+		}
+		if (o == null)
+		{
+			return false;
+		}
+		if (o.getClass() != getClass())
+		{
+			return false;
+		}
+		final GeoHashPoint castedObj = (GeoHashPoint)o;
+		return ((this.getLatitude() == castedObj.getLatitude()) && (this.getLongitude() == castedObj
+			.getLongitude()));
 	}
 
 	/**
@@ -94,7 +147,8 @@ public class GeoHashPoint extends Point {
 	 *
 	 * @return the geohash
 	 */
-	public String getGeohash() {
+	public String getGeohash()
+	{
 		return GeoHashUtils.encode(getLatitude(), getLongitude());
 	}
 
@@ -103,7 +157,8 @@ public class GeoHashPoint extends Point {
 	 *
 	 * @return the lat
 	 */
-	public BigDecimal getLat() {
+	public BigDecimal getLat()
+	{
 		return BigDecimal.valueOf(getLatitude());
 	}
 
@@ -112,60 +167,30 @@ public class GeoHashPoint extends Point {
 	 *
 	 * @return the lng
 	 */
-	public BigDecimal getLng() {
+	public BigDecimal getLng()
+	{
 		return BigDecimal.valueOf(getLongitude());
 	}
-	
-    /**
-     * {@inheritDoc}
-     */
-        @Override
-	public Object clone() {
-		return new GeoHashPoint(getLatitude(), getLongitude());
-	}
-	
-    /**
-     * {@inheritDoc}
-     */
-        @Override
-	public boolean equals(final Object o) {
-		if (this == o) {
-			return true;
-		}
-		if (!super.equals(o)) {
-			return false;
-		}
-		if (o == null) {
-			return false;
-		}
-		if (o.getClass() != getClass()) {
-			return false;
-		}
-		GeoHashPoint castedObj = (GeoHashPoint) o;
-		return ((this.getLatitude()== castedObj.getLatitude()) && (this.getLongitude() == castedObj.getLongitude()));
-	}
-	
-    /**
-     * {@inheritDoc}
-     */
-        @Override
-	public int hashCode() {
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public int hashCode()
+	{
 		int hashCode = super.hashCode();
-		hashCode = 31
-			* hashCode
-			+ (int) (+serialVersionUID ^ (serialVersionUID >>> 32));
-		hashCode = 31
-			* hashCode
-			+ (GEOHASH_KEY == null ? 0 : GEOHASH_KEY.hashCode());
+		hashCode = 31 * hashCode + (int)(+serialVersionUID ^ (serialVersionUID >>> 32));
+		hashCode = 31 * hashCode + (GEOHASH_KEY == null ? 0 : GEOHASH_KEY.hashCode());
 		return hashCode;
 	}
 
-    /**
-     * {@inheritDoc}
-     */
-        @Override
-	public String toString() {
-		StringBuilder buffer = new StringBuilder();
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString()
+	{
+		final StringBuilder buffer = new StringBuilder();
 		buffer.append("[GeoHashPoint:");
 		buffer.append(super.toString());
 		buffer.append("   Geohash : ");

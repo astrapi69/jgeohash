@@ -20,7 +20,8 @@ import de.alpharogroup.jgeohash.api.Position;
 /**
  * The Class Point represents a point on earth with the latitude and longitude.
  */
-public class Point implements Comparable<Point>, Cloneable, Position {
+public class Point implements Comparable<Point>, Cloneable, Position
+{
 
 	/**
 	 * The serialVersionUID.
@@ -36,12 +37,17 @@ public class Point implements Comparable<Point>, Cloneable, Position {
 	/**
 	 * Instantiates a new point.
 	 *
-	 * @param latitude the latitude
-	 * @param longitude the longitude
+	 * @param latitude
+	 *            the latitude
+	 * @param longitude
+	 *            the longitude
 	 */
-	public Point(final double latitude, final double longitude) {
-		if (Math.abs(latitude) > 90 || Math.abs(longitude) > 180) {
-			throw new IllegalArgumentException("The given coordinates " + this.toString() + " are out of range.");
+	public Point(final double latitude, final double longitude)
+	{
+		if (Math.abs(latitude) > 90 || Math.abs(longitude) > 180)
+		{
+			throw new IllegalArgumentException("The given coordinates " + this.toString()
+				+ " are out of range.");
 		}
 		this.latitude = latitude;
 		this.longitude = longitude;
@@ -50,99 +56,111 @@ public class Point implements Comparable<Point>, Cloneable, Position {
 	/**
 	 * {@inheritDoc}
 	 */
-        @Override
-	public Object clone() {
-		Position inst = new Point(this.latitude, this.longitude);
+	@Override
+	public Object clone()
+	{
+		final Position inst = new Point(this.latitude, this.longitude);
 		return inst;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-        @Override
-	public int compareTo(final Point other) {
-		if ( this == other ) {
+	@Override
+	public int compareTo(final Point other)
+	{
+		if (this == other)
+		{
 			return 0;
 		}
-		if(this.latitude < other.latitude) {
+		if (this.latitude < other.latitude)
+		{
 			return -1;
 		}
-		if(this.latitude > other.latitude) {
+		if (this.latitude > other.latitude)
+		{
 			return 1;
 		}
-		if(this.longitude < other.longitude) {
+		if (this.longitude < other.longitude)
+		{
 			return -1;
 		}
-		if(this.longitude > other.longitude) {
+		if (this.longitude > other.longitude)
+		{
 			return 1;
 		}
-		//all comparisons have yielded equality
-	    //verify that compareTo is consistent with equals (optional)
-	    assert this.equals(other) : "compareTo inconsistent with equals.";
+		// all comparisons have yielded equality
+		// verify that compareTo is consistent with equals (optional)
+		assert this.equals(other) : "compareTo inconsistent with equals.";
 		return 0;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-        @Override
-	public boolean equals(final Object o) {
-		if (this == o) {
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (this == o)
+		{
 			return true;
 		}
-		if (o == null) {
+		if (o == null)
+		{
 			return false;
 		}
-		if (o.getClass() != getClass()) {
+		if (o.getClass() != getClass())
+		{
 			return false;
 		}
-		Point castedObj = (Point) o;
+		final Point castedObj = (Point)o;
 		return ((this.latitude == castedObj.latitude) && (this.longitude == castedObj.longitude));
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-        @Override
-	public double getLatitude() {
+	@Override
+	public double getLatitude()
+	{
 		return latitude;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-        @Override
-	public double getLongitude() {
+	@Override
+	public double getLongitude()
+	{
 		return longitude;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-        @Override
-	public int hashCode() {
+	@Override
+	public int hashCode()
+	{
 		int hashCode = 1;
+		hashCode = 31 * hashCode + (int)(+serialVersionUID ^ (serialVersionUID >>> 32));
+		hashCode = 31 * hashCode
+			+ (int)(Double.doubleToLongBits(latitude) ^ (Double.doubleToLongBits(latitude) >>> 32));
 		hashCode = 31
 			* hashCode
-			+ (int) (+serialVersionUID ^ (serialVersionUID >>> 32));
-		hashCode = 31
-			* hashCode
-			+ (int) (Double.doubleToLongBits(latitude) ^ (Double
-				.doubleToLongBits(latitude) >>> 32));
-		hashCode = 31
-			* hashCode
-			+ (int) (Double.doubleToLongBits(longitude) ^ (Double
-				.doubleToLongBits(longitude) >>> 32));
+			+ (int)(Double.doubleToLongBits(longitude) ^ (Double.doubleToLongBits(longitude) >>> 32));
 		return hashCode;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-        @Override
-	public void setLatitude(final double latitude) {
-		if (Math.abs(latitude) > 90 ) {
-			throw new IllegalArgumentException("The given coordinates for latitude " + latitude + " are out of range.");
+	@Override
+	public void setLatitude(final double latitude)
+	{
+		if (Math.abs(latitude) > 90)
+		{
+			throw new IllegalArgumentException("The given coordinates for latitude " + latitude
+				+ " are out of range.");
 		}
 		this.latitude = latitude;
 	}
@@ -150,10 +168,13 @@ public class Point implements Comparable<Point>, Cloneable, Position {
 	/**
 	 * {@inheritDoc}
 	 */
-        @Override
-	public void setLongitude(final double longitude) {
-		if (Math.abs(longitude) > 180) {
-			throw new IllegalArgumentException("The given coordinates for longitude " + longitude + " are out of range.");
+	@Override
+	public void setLongitude(final double longitude)
+	{
+		if (Math.abs(longitude) > 180)
+		{
+			throw new IllegalArgumentException("The given coordinates for longitude " + longitude
+				+ " are out of range.");
 		}
 		this.longitude = longitude;
 	}
@@ -161,8 +182,9 @@ public class Point implements Comparable<Point>, Cloneable, Position {
 	/**
 	 * {@inheritDoc}
 	 */
-        @Override
-	public String toString() {
+	@Override
+	public String toString()
+	{
 		return "Latitude : " + latitude + "   Longitude  : " + longitude;
 	}
 

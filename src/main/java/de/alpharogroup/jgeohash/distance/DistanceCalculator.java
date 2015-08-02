@@ -15,15 +15,67 @@
  */
 package de.alpharogroup.jgeohash.distance;
 
+import static java.lang.Math.acos;
+import static java.lang.Math.cos;
+import static java.lang.Math.sin;
+import static java.lang.Math.toDegrees;
+import static java.lang.Math.toRadians;
 import de.alpharogroup.jgeohash.GeoHashPoint;
 import de.alpharogroup.jgeohash.api.Position;
-import static java.lang.Math.*;
 
 /**
- * The Class DistanceCalculator provides methods for calculate the distance between two geohash, position or coordinate values.
+ * The Class DistanceCalculator provides methods for calculate the distance between two geohash,
+ * position or coordinate values.
  */
-public class DistanceCalculator {
-		
+public class DistanceCalculator
+{
+
+	/**
+	 * Returns the distance from the given coordinates values.
+	 *
+	 * @param startLatitude
+	 *            the latitude from start point.
+	 * @param startLongitude
+	 *            the longitude from start point.
+	 * @param endLatitude
+	 *            the latitude from end point.
+	 * @param endLongitude
+	 *            the longitude from end point.
+	 * @param unit
+	 *            the measurement unit
+	 * @return the distance between the given coordinates values.
+	 */
+	public static double distance(final double startLatitude, final double startLongitude,
+		final double endLatitude, final double endLongitude, final MeasuringUnit unit)
+	{
+		final double theta = toRadians(startLongitude - endLongitude);
+		final double latitudePoint1 = toRadians(startLatitude);
+		final double latitudePoint2 = toRadians(endLatitude);
+		double distance = sin(latitudePoint1) * sin(latitudePoint2) + cos(latitudePoint1)
+			* cos(latitudePoint2) * cos(theta);
+		// 60 is the number of minutes in a degree
+		// 1.1515 is the number of statute miles in a nautical mile
+		// One nautical mile is the length of one minute of latitude at the equator.
+		distance = toDegrees(acos(distance)) * 60 * 1.1515;
+		switch (unit)
+		{
+			case MILE :
+				distance = distance * unit.getFactor();
+				break;
+			case KILOMETER :
+				distance = distance * unit.getFactor();
+				break;
+			case METER :
+				distance = distance * unit.getFactor();
+				break;
+			default :
+				distance = distance * MeasuringUnit.KILOMETER.getFactor();
+				break;
+		}
+		return distance;
+	}
+
+
 	/**
 	 * Returns the distance between two points.
 	 * 
@@ -35,58 +87,15 @@ public class DistanceCalculator {
 	 *            the measurement unit
 	 * @return the distance between points
 	 */
-	public static double distanceBetweenPoints(final Position start,
-			final Position end, MeasuringUnit unit) {
-		double distance = distance( 
-				start.getLatitude(), 
-				start.getLongitude(), 
-				end.getLatitude(), 
-				end.getLongitude(),  
-				unit);
+	public static double distanceBetweenPoints(final Position start, final Position end,
+		final MeasuringUnit unit)
+	{
+		final double distance = distance(start.getLatitude(), start.getLongitude(),
+			end.getLatitude(), end.getLongitude(), unit);
 		return distance;
 	}
 
 
-
-	/**
-	 * Returns the distance from the given coordinates values.
-	 *
-	 * @param startLatitude the latitude from start point.
-	 * @param startLongitude the longitude from start point.
-	 * @param endLatitude the latitude from end point.
-	 * @param endLongitude the longitude from end point.
-	 * @param unit 
-	 *            the measurement unit
-	 * @return the distance between the given coordinates values.
-	 */
-	public static double distance(double startLatitude, double startLongitude, double endLatitude, double endLongitude, MeasuringUnit unit) {
-		double theta = toRadians(startLongitude - endLongitude);		
-		double latitudePoint1=toRadians(startLatitude);
-		double latitudePoint2=toRadians(endLatitude);		
-		double distance = sin(latitudePoint1) * sin(latitudePoint2) + cos(latitudePoint1) * cos(latitudePoint2)*cos(theta);
-		// 60 is the number of minutes in a degree
-		// 1.1515 is the number of statute miles in a nautical mile
-		// One nautical mile is the length of one minute of latitude at the equator.
-		distance = toDegrees(acos(distance)) * 60 * 1.1515;		
-		switch (unit) {
-		case MILE:
-			distance = distance * unit.getFactor();
-			break;
-		case KILOMETER:
-			distance = distance * unit.getFactor();
-			break;
-		case METER:
-			distance = distance * unit.getFactor();
-			break;
-		default:
-			distance = distance * MeasuringUnit.KILOMETER.getFactor();
-			break;
-		}
-		return distance;
-	}
-	
-
-	
 	/**
 	 * Returns the distance between two given geohash values.
 	 * 
@@ -99,8 +108,10 @@ public class DistanceCalculator {
 	 * @return the distance between the given geohash values.
 	 */
 	public static double distanceBetweenPoints(final String startGeohashValue,
-			final String endGeohashValue, MeasuringUnit unit) {
-		return distanceBetweenPoints(new GeoHashPoint(startGeohashValue), new GeoHashPoint(endGeohashValue), unit);
+		final String endGeohashValue, final MeasuringUnit unit)
+	{
+		return distanceBetweenPoints(new GeoHashPoint(startGeohashValue), new GeoHashPoint(
+			endGeohashValue), unit);
 	}
 
 }

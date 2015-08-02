@@ -23,7 +23,8 @@ import de.alpharogroup.jgeohash.GeoHashUtils;
 /**
  * The Class FirstRingRegion provides the neighbors from the given geohash value in f.
  */
-public class FirstRingRegion implements Serializable {
+public class FirstRingRegion implements Serializable
+{
 
 	/**
 	 * The constant serialVersionUID.
@@ -63,7 +64,8 @@ public class FirstRingRegion implements Serializable {
 	 * @param geohash
 	 *            the center
 	 */
-	public FirstRingRegion(final String geohash) {
+	public FirstRingRegion(final String geohash)
+	{
 		super();
 		this.center = geohash;
 		this.east = GeoHashUtils.getAdjacent(geohash, Adjacent.RIGHT);
@@ -72,9 +74,52 @@ public class FirstRingRegion implements Serializable {
 		this.south = GeoHashUtils.getAdjacent(geohash, Adjacent.BOTTOM);
 		this.southEast = GeoHashUtils.getAdjacent(this.south, Adjacent.RIGHT);
 		this.northEast = GeoHashUtils.getAdjacent(this.north, Adjacent.RIGHT);
-		this.northWest = GeoHashUtils
-				.getAdjacent(this.north, Adjacent.LEFT);
+		this.northWest = GeoHashUtils.getAdjacent(this.north, Adjacent.LEFT);
 		this.southWest = GeoHashUtils.getAdjacent(this.south, Adjacent.LEFT);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public Object clone()
+	{
+		return new FirstRingRegion(this.center);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public boolean equals(final Object o)
+	{
+		if (this == o)
+		{
+			return true;
+		}
+		if (o == null)
+		{
+			return false;
+		}
+		if (o.getClass() != getClass())
+		{
+			return false;
+		}
+		final FirstRingRegion castedObj = (FirstRingRegion)o;
+		return ((this.center == null ? castedObj.center == null : this.center
+			.equals(castedObj.center))
+			&& (this.east == null ? castedObj.east == null : this.east.equals(castedObj.east))
+			&& (this.west == null ? castedObj.west == null : this.west.equals(castedObj.west))
+			&& (this.north == null ? castedObj.north == null : this.north.equals(castedObj.north))
+			&& (this.south == null ? castedObj.south == null : this.south.equals(castedObj.south))
+			&& (this.southEast == null ? castedObj.southEast == null : this.southEast
+				.equals(castedObj.southEast))
+			&& (this.northEast == null ? castedObj.northEast == null : this.northEast
+				.equals(castedObj.northEast))
+			&& (this.northWest == null ? castedObj.northWest == null : this.northWest
+				.equals(castedObj.northWest)) && (this.southWest == null
+				? castedObj.southWest == null
+				: this.southWest.equals(castedObj.southWest)));
 	}
 
 	/**
@@ -82,7 +127,8 @@ public class FirstRingRegion implements Serializable {
 	 *
 	 * @return the center
 	 */
-	public String getCenter() {
+	public String getCenter()
+	{
 		return center;
 	}
 
@@ -91,17 +137,9 @@ public class FirstRingRegion implements Serializable {
 	 *
 	 * @return the east
 	 */
-	public String getEast() {
+	public String getEast()
+	{
 		return east;
-	}
-
-	/**
-	 * Gets the west.
-	 *
-	 * @return the west
-	 */
-	public String getWest() {
-		return west;
 	}
 
 	/**
@@ -109,26 +147,9 @@ public class FirstRingRegion implements Serializable {
 	 *
 	 * @return the north
 	 */
-	public String getNorth() {
+	public String getNorth()
+	{
 		return north;
-	}
-
-	/**
-	 * Gets the south.
-	 *
-	 * @return the south
-	 */
-	public String getSouth() {
-		return south;
-	}
-
-	/**
-	 * Gets the south east.
-	 *
-	 * @return the south east
-	 */
-	public String getSouthEast() {
-		return southEast;
 	}
 
 	/**
@@ -136,7 +157,8 @@ public class FirstRingRegion implements Serializable {
 	 *
 	 * @return the north east
 	 */
-	public String getNorthEast() {
+	public String getNorthEast()
+	{
 		return northEast;
 	}
 
@@ -145,8 +167,29 @@ public class FirstRingRegion implements Serializable {
 	 *
 	 * @return the north west
 	 */
-	public String getNorthWest() {
+	public String getNorthWest()
+	{
 		return northWest;
+	}
+
+	/**
+	 * Gets the south.
+	 *
+	 * @return the south
+	 */
+	public String getSouth()
+	{
+		return south;
+	}
+
+	/**
+	 * Gets the south east.
+	 *
+	 * @return the south east
+	 */
+	public String getSouthEast()
+	{
+		return southEast;
 	}
 
 	/**
@@ -154,16 +197,48 @@ public class FirstRingRegion implements Serializable {
 	 *
 	 * @return the south west
 	 */
-	public String getSouthWest() {
+	public String getSouthWest()
+	{
 		return southWest;
+	}
+
+	/**
+	 * Gets the west.
+	 *
+	 * @return the west
+	 */
+	public String getWest()
+	{
+		return west;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-        @Override
-	public String toString() {
-		StringBuilder buffer = new StringBuilder();
+	@Override
+	public int hashCode()
+	{
+		int hashCode = 1;
+		hashCode = 31 * hashCode + (int)(+serialVersionUID ^ (serialVersionUID >>> 32));
+		hashCode = 31 * hashCode + (center == null ? 0 : center.hashCode());
+		hashCode = 31 * hashCode + (east == null ? 0 : east.hashCode());
+		hashCode = 31 * hashCode + (west == null ? 0 : west.hashCode());
+		hashCode = 31 * hashCode + (north == null ? 0 : north.hashCode());
+		hashCode = 31 * hashCode + (south == null ? 0 : south.hashCode());
+		hashCode = 31 * hashCode + (southEast == null ? 0 : southEast.hashCode());
+		hashCode = 31 * hashCode + (northEast == null ? 0 : northEast.hashCode());
+		hashCode = 31 * hashCode + (northWest == null ? 0 : northWest.hashCode());
+		hashCode = 31 * hashCode + (southWest == null ? 0 : southWest.hashCode());
+		return hashCode;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public String toString()
+	{
+		final StringBuilder buffer = new StringBuilder();
 		buffer.append("[GeoHashRegion:");
 		buffer.append(" center:");
 		buffer.append(center);
@@ -185,81 +260,6 @@ public class FirstRingRegion implements Serializable {
 		buffer.append(southWest);
 		buffer.append("]");
 		return buffer.toString();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-        @Override
-	public boolean equals(Object o) {
-		if (this == o) {
-			return true;
-		}
-		if (o == null) {
-			return false;
-		}
-		if (o.getClass() != getClass()) {
-			return false;
-		}
-		FirstRingRegion castedObj = (FirstRingRegion) o;
-		return ((this.center == null ? castedObj.center == null : this.center
-			.equals(castedObj.center))
-			&& (this.east == null ? castedObj.east == null : this.east
-				.equals(castedObj.east))
-			&& (this.west == null ? castedObj.west == null : this.west
-				.equals(castedObj.west))
-			&& (this.north == null ? castedObj.north == null : this.north
-				.equals(castedObj.north))
-			&& (this.south == null ? castedObj.south == null : this.south
-				.equals(castedObj.south))
-			&& (this.southEast == null
-				? castedObj.southEast == null
-				: this.southEast.equals(castedObj.southEast))
-			&& (this.northEast == null
-				? castedObj.northEast == null
-				: this.northEast.equals(castedObj.northEast))
-			&& (this.northWest == null
-				? castedObj.northWest == null
-				: this.northWest.equals(castedObj.northWest)) && (this.southWest == null
-				? castedObj.southWest == null
-				: this.southWest.equals(castedObj.southWest)));
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-        @Override
-	public int hashCode() {
-		int hashCode = 1;
-		hashCode = 31
-			* hashCode
-			+ (int) (+serialVersionUID ^ (serialVersionUID >>> 32));
-		hashCode = 31 * hashCode + (center == null ? 0 : center.hashCode());
-		hashCode = 31 * hashCode + (east == null ? 0 : east.hashCode());
-		hashCode = 31 * hashCode + (west == null ? 0 : west.hashCode());
-		hashCode = 31 * hashCode + (north == null ? 0 : north.hashCode());
-		hashCode = 31 * hashCode + (south == null ? 0 : south.hashCode());
-		hashCode = 31
-			* hashCode
-			+ (southEast == null ? 0 : southEast.hashCode());
-		hashCode = 31
-			* hashCode
-			+ (northEast == null ? 0 : northEast.hashCode());
-		hashCode = 31
-			* hashCode
-			+ (northWest == null ? 0 : northWest.hashCode());
-		hashCode = 31
-			* hashCode
-			+ (southWest == null ? 0 : southWest.hashCode());
-		return hashCode;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-        @Override
-	public Object clone() {
-		return new FirstRingRegion(this.center);
 	}
 
 }
