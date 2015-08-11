@@ -46,8 +46,10 @@ Examples
 -------
 
   * [SpatialDataQueries][SpatialDataQueries]
+  * [Simple-example][Simple-example]
   
    [SpatialDataQueries]: https://github.com/astrapi69/jgeohash/wiki/Adding-spatial-data-queries-to-Phoenix-on-HBase "Adding spatial data queries to Phoenix on HBase"
+   [Simple-example]: https://github.com/astrapi69/jgeohash/wiki/Simple-example "Simple-example"
    
 
 Last changes
