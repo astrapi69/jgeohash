@@ -45,7 +45,10 @@ The source code for jGeohash are on GitHub. Please feel free to fork and send pu
 Examples
 -------
 
-See the wiki page.
+  * [SpatialDataQueries][SpatialDataQueries]
+  
+   [SpatialDataQueries]: https://github.com/astrapi69/jgeohash/wiki/Adding-spatial-data-queries-to-Phoenix-on-HBase "Adding spatial data queries to Phoenix on HBase"
+   
 
 Last changes
 ----------------------
