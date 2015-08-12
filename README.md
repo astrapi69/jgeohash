@@ -6,7 +6,7 @@ jgeohash
 
 Key features:
 
-1. Very small size (<25Kb)
+1. Very small size (<30Kb)
 2. Can get the adjacent geohash area from the given direction
 3. Get the geohash from an ip address
 4. Can calculate distance between two geohash values in various measuring units like miles, km, meters
