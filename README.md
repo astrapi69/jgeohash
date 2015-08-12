@@ -4,6 +4,14 @@ jgeohash
 
 [![Build Status](https://travis-ci.org/astrapi69/jgeohash.svg?branch=master)](https://travis-ci.org/astrapi69/jgeohash)
 
+Key features:
+
+1. Very small size (<25Kb)
+2. Can get the adjacent geohash area from the given direction
+3. Get the geohash from an ip address
+4. Can calculate distance between two geohash values in various measuring units like miles, km, meters
+5. Can get the geohash cells around from the first, second or thrird ring from a given geohash cell
+
 An easy-to-implement library that can assist Java developers in using the GeoHash algorithm in order to create geocodes based on custom latitude and longitude values.
 
 With the help of jGeohash, Java developers will be able to quickly and easily generate a geohash code using user-defined latitude and longitude values. By using the GeoHash algorithm, the space can be divided into multiple grid shapes.
