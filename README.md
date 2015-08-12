@@ -8,7 +8,7 @@ Key features:
 
 1. Very small size (<30Kb)
 2. Can get the adjacent geohash area from the given direction
-3. Get the geohash from an ip address
+3. Can get the geohash from an ip address
 4. Can calculate distance between two geohash values in various measuring units like miles, km, meters
 5. Can get the geohash cells around from the first, second or thrird ring from a given geohash cell
 
