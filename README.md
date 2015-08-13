@@ -64,7 +64,7 @@ Do not hesitate to contact the jgeohash developers with your questions, concerns
    
    
 
- Last changes
+Last changes
 ----------------------
 Version 1.4.6
 -------------
