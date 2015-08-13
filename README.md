@@ -4,7 +4,7 @@ jgeohash
 
 [![Build Status](https://travis-ci.org/astrapi69/jgeohash.svg?branch=master)](https://travis-ci.org/astrapi69/jgeohash)
 
-Key features:
+## Key features:
 
 1. Very small size (<30Kb)
 2. Can get the adjacent geohash area from the given direction
@@ -19,14 +19,14 @@ With the help of jGeohash, Java developers will be able to quickly and easily ge
 This library is a basic implementation from the GeoHash algorithm written in the java and can be applied to generate from the latitude and longitude a geohash code and reverse. 
 
 The library is kept simple and have no dependencies to other libraries.
-License
+## License
 -------
 
 The source code is under the Apache License V2.0 as published by the Apache Foundation.
 
 If you have suggestions or improvements of bugfixes please contribute back via github.
 
-Maven dependency
+## Maven dependency
 -------
 
 Maven dependency is now on sonatype. 
@@ -45,12 +45,18 @@ Than you can add the dependency to your dependencies:
 	</dependencies>
 	
 
-Want to Help?
+## Want to Help?
 -------
 
 The source code for jGeohash are on GitHub. Please feel free to fork and send pull requests!
 
-Examples
+## Contacting the Developer
+-------
+
+Do not hesitate to contact the jgeohash developers with your questions, concerns, comments, bug reports, or feature requests. 
+- Feature requests, questions and bug reports can be reported at the [issues page](https://github.com/astrapi69/jgeohash/issues).
+
+## Examples
 -------
 
   * [SpatialDataQueries][SpatialDataQueries]
@@ -63,7 +69,7 @@ Examples
    
    
 
-Last changes
+## Last changes
 ----------------------
 Version 1.4.6
 -------------
