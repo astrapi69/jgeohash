@@ -20,14 +20,12 @@ This library is a basic implementation from the GeoHash algorithm written in the
 
 The library is kept simple and have no dependencies to other libraries.
 ## License
--------
 
 The source code is under the Apache License V2.0 as published by the Apache Foundation.
 
 If you have suggestions or improvements of bugfixes please contribute back via github.
 
 ## Maven dependency
--------
 
 Maven dependency is now on sonatype. 
 Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;quick~jgeohash) for latest snapshots and releases.
@@ -46,18 +44,15 @@ Than you can add the dependency to your dependencies:
 	
 
 ## Want to Help?
--------
 
 The source code for jGeohash are on GitHub. Please feel free to fork and send pull requests!
 
 ## Contacting the Developer
--------
 
 Do not hesitate to contact the jgeohash developers with your questions, concerns, comments, bug reports, or feature requests. 
 - Feature requests, questions and bug reports can be reported at the [issues page](https://github.com/astrapi69/jgeohash/issues).
 
 ## Examples
--------
 
   * [SpatialDataQueries][SpatialDataQueries]
   * [Simple-example][Simple-example]
@@ -69,7 +64,7 @@ Do not hesitate to contact the jgeohash developers with your questions, concerns
    
    
 
-## Last changes
+ Last changes
 ----------------------
 Version 1.4.6
 -------------
