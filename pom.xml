@@ -1,10 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
 	<groupId>de.alpharogroup</groupId>
 	<artifactId>jgeohash</artifactId>
-	<inceptionYear>2010</inceptionYear>
 	<version>1.4.6</version>
+	<inceptionYear>2010</inceptionYear>
 
 	<name>${project.artifactId}</name>
 
@@ -42,12 +43,39 @@
 
 	</developers>
 
+	<organization>
+		<name>Alpha Ro Group UG (haftungsbeschrängt)</name>
+		<url>http://www.alpharogroup.de/</url>
+	</organization>
+
 	<scm>
 		<connection>scm:git:git:@github.com:astrapi69/jgeohash.git</connection>
 		<developerConnection>scm:git:git@github.com:astrapi69/jgeohash.git</developerConnection>
 		<url>git:@github.com:astrapi69/jgeohash.git</url>
 	</scm>
 
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<name>Sonatype Nexus Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<name>Nexus Release Repository</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
+	<ciManagement>
+		<system>travis-ci</system>
+		<url>https://travis-ci.org/astrapi69/jgeohash</url>
+	</ciManagement>
+
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/astrapi69/jgeohash/issues</url>
+	</issueManagement>
 
 	<properties>
 		<!-- PROJECT encoding -->
@@ -360,19 +388,6 @@
 		</plugins>
 
 	</build>
-
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<name>Nexus snapshot Repository</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<name>Nexus Release Repository</name>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>
 
 	<profiles>
 
