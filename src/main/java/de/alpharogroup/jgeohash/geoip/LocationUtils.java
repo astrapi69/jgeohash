@@ -1,9 +1,17 @@
 package de.alpharogroup.jgeohash.geoip;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import com.maxmind.geoip.Location;
 import com.maxmind.geoip.LookupService;
 
 import de.alpharogroup.jgeohash.GeoHashPoint;
+import de.alpharogroup.jgeohash.api.Position;
+import de.alpharogroup.jgeohash.distance.DistanceCalculator;
+import de.alpharogroup.jgeohash.distance.DistancePoint;
+import de.alpharogroup.jgeohash.distance.MeasuringUnit;
 
 /**
  * The Class LocationUtils is for location specific data.
@@ -11,6 +19,30 @@ import de.alpharogroup.jgeohash.GeoHashPoint;
 public class LocationUtils
 {
 
+	/**
+	 * Sort the given list by distance from the given start position and returns a list of
+	 * {@link DistancePoint} objects.
+	 *
+	 * @param startPoint
+	 *            the start point
+	 * @param geohashes
+	 *            the geohashes
+	 * @param unit
+	 *            the unit
+	 * @return the distance points
+	 */
+	public static List<DistancePoint> getDistancePoints(final Position startPoint,
+		final List<Position> geohashes, final MeasuringUnit unit)
+	{
+		final List<DistancePoint> distancePoints = new ArrayList<>();
+		for (final Position geoHashPoint : geohashes)
+		{
+			final DistancePoint distancePoint = new DistancePoint(geoHashPoint,
+				DistanceCalculator.distanceBetweenPoints(startPoint, geoHashPoint, unit));
+			distancePoints.add(distancePoint);
+		}
+		return distancePoints;
+	}
 
 	/**
 	 * Gets the geohash from the given ip address or return an empty String if nothing is found.
@@ -52,5 +84,44 @@ public class LocationUtils
 			return new GeoHashPoint(lc.latitude, lc.longitude);
 		}
 		return null;
+	}
+
+	/**
+	 * Sort the given list by distance from the given start position.
+	 *
+	 * @param startPoint
+	 *            the start point
+	 * @param geohashes
+	 *            the geohashes
+	 * @param unit
+	 *            the unit
+	 * @return the list
+	 */
+	public static List<Position> sortByDistance(final Position startPoint,
+		final List<Position> geohashes, final MeasuringUnit unit)
+	{
+		final List<DistancePoint> distancePoints = getDistancePoints(startPoint, geohashes, unit);
+		Collections.sort(distancePoints);
+		final List<Position> geosorted = new ArrayList<>();
+		for (int i = 0; i < distancePoints.size(); i++)
+		{
+			geosorted.add(distancePoints.get(i).getPoint());
+		}
+		return geosorted;
+	}
+
+	/**
+	 * Sort the given list by distance from the given start position in meters.
+	 *
+	 * @param startPoint
+	 *            the start point
+	 * @param geohashes
+	 *            the geohashes
+	 * @return the list
+	 */
+	public static List<Position> sortByDistanceInMeters(final Position startPoint,
+		final List<Position> geohashes)
+	{
+		return sortByDistance(startPoint, geohashes, MeasuringUnit.METER);
 	}
 }
