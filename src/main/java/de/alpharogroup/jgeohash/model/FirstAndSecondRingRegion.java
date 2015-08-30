@@ -124,6 +124,9 @@ public class FirstAndSecondRingRegion extends FirstRingRegion
 		return new FirstAndSecondRingRegion(getCenter());
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public boolean equals(final Object obj)
 	{
@@ -487,26 +490,26 @@ public class FirstAndSecondRingRegion extends FirstRingRegion
 	{
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((eastEast == null) ? 0 : eastEast.hashCode());
-		result = prime * result + ((eastNorthEast == null) ? 0 : eastNorthEast.hashCode());
-		result = prime * result + ((eastSouthEast == null) ? 0 : eastSouthEast.hashCode());
-		result = prime * result
+		result = (prime * result) + ((eastEast == null) ? 0 : eastEast.hashCode());
+		result = (prime * result) + ((eastNorthEast == null) ? 0 : eastNorthEast.hashCode());
+		result = (prime * result) + ((eastSouthEast == null) ? 0 : eastSouthEast.hashCode());
+		result = (prime * result)
 			+ ((northEastNorthEast == null) ? 0 : northEastNorthEast.hashCode());
-		result = prime * result + ((northNorth == null) ? 0 : northNorth.hashCode());
-		result = prime * result + ((northNorthEast == null) ? 0 : northNorthEast.hashCode());
-		result = prime * result + ((northNorthWest == null) ? 0 : northNorthWest.hashCode());
-		result = prime * result
+		result = (prime * result) + ((northNorth == null) ? 0 : northNorth.hashCode());
+		result = (prime * result) + ((northNorthEast == null) ? 0 : northNorthEast.hashCode());
+		result = (prime * result) + ((northNorthWest == null) ? 0 : northNorthWest.hashCode());
+		result = (prime * result)
 			+ ((northWestNorthWest == null) ? 0 : northWestNorthWest.hashCode());
-		result = prime * result
+		result = (prime * result)
 			+ ((southEastSouthEast == null) ? 0 : southEastSouthEast.hashCode());
-		result = prime * result + ((southSouth == null) ? 0 : southSouth.hashCode());
-		result = prime * result + ((southSouthEast == null) ? 0 : southSouthEast.hashCode());
-		result = prime * result + ((southSouthWest == null) ? 0 : southSouthWest.hashCode());
-		result = prime * result
+		result = (prime * result) + ((southSouth == null) ? 0 : southSouth.hashCode());
+		result = (prime * result) + ((southSouthEast == null) ? 0 : southSouthEast.hashCode());
+		result = (prime * result) + ((southSouthWest == null) ? 0 : southSouthWest.hashCode());
+		result = (prime * result)
 			+ ((southWestSouthWest == null) ? 0 : southWestSouthWest.hashCode());
-		result = prime * result + ((westNorthWest == null) ? 0 : westNorthWest.hashCode());
-		result = prime * result + ((westSouthWest == null) ? 0 : westSouthWest.hashCode());
-		result = prime * result + ((westWest == null) ? 0 : westWest.hashCode());
+		result = (prime * result) + ((westNorthWest == null) ? 0 : westNorthWest.hashCode());
+		result = (prime * result) + ((westSouthWest == null) ? 0 : westSouthWest.hashCode());
+		result = (prime * result) + ((westWest == null) ? 0 : westWest.hashCode());
 		return result;
 	}
 

@@ -45,6 +45,9 @@ public abstract class Adjacent
 		/** The Constant borders. */
 		public static final Map<String, Map<String, String>> borders = new LinkedHashMap<>();
 
+		/**
+		 * Initializes the borders map.
+		 **/
 		static
 		{
 			final Map<String, String> right = new LinkedHashMap<>();
@@ -87,6 +90,9 @@ public abstract class Adjacent
 		/** The Constant neighbors. */
 		public static final Map<String, Map<String, String>> neighbors = new LinkedHashMap<>();
 
+		/**
+		 * Initializes the neighbors map.
+		 **/
 		static
 		{
 			final Map<String, String> right = new LinkedHashMap<>();

@@ -153,9 +153,9 @@ public class GeoHashPoint extends Point
 	}
 
 	/**
-	 * Gets the lat.
+	 * Gets the latitude as BigDecimal object.
 	 *
-	 * @return the lat
+	 * @return the latitude as BigDecimal object.
 	 */
 	public BigDecimal getLat()
 	{
@@ -163,9 +163,9 @@ public class GeoHashPoint extends Point
 	}
 
 	/**
-	 * Gets the lng.
+	 * Gets the longitude as BigDecimal object.
 	 *
-	 * @return the lng
+	 * @return the longitude as BigDecimal object.
 	 */
 	public BigDecimal getLng()
 	{
@@ -179,8 +179,8 @@ public class GeoHashPoint extends Point
 	public int hashCode()
 	{
 		int hashCode = super.hashCode();
-		hashCode = 31 * hashCode + (int)(+serialVersionUID ^ (serialVersionUID >>> 32));
-		hashCode = 31 * hashCode + (GEOHASH_KEY == null ? 0 : GEOHASH_KEY.hashCode());
+		hashCode = (31 * hashCode) + (int)(+serialVersionUID ^ (serialVersionUID >>> 32));
+		hashCode = (31 * hashCode) + (GEOHASH_KEY == null ? 0 : GEOHASH_KEY.hashCode());
 		return hashCode;
 	}
 

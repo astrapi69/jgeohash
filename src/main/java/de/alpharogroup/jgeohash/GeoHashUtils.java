@@ -64,7 +64,7 @@ public class GeoHashUtils
 	 */
 	public static double[] decode(final String geohash)
 	{
-		if (geohash == null || geohash.isEmpty())
+		if ((geohash == null) || geohash.isEmpty())
 		{
 			throw new IllegalArgumentException("Argument geohash should not be null.");
 		}
@@ -224,11 +224,11 @@ public class GeoHashUtils
 	 */
 	public static String getAdjacent(final String geohash, final String direction)
 	{
-		if (geohash == null || geohash.isEmpty())
+		if ((geohash == null) || geohash.isEmpty())
 		{
 			throw new IllegalArgumentException("Argument geohash should not be null or empty.");
 		}
-		if (direction == null || direction.isEmpty())
+		if ((direction == null) || direction.isEmpty())
 		{
 			throw new IllegalArgumentException("Argument direction should not be null or empty.");
 		}
@@ -240,7 +240,7 @@ public class GeoHashUtils
 		final Map<String, String> borderDirection = Adjacent.Borders.borders.get(direction);
 		final String borderDirectionType = borderDirection.get(type);
 		final int indexOfLastChar = borderDirectionType.indexOf(lastChar);
-		if (indexOfLastChar != -1 && !base.isEmpty())
+		if ((indexOfLastChar != -1) && !base.isEmpty())
 		{
 			base = getAdjacent(base, direction);
 		}
@@ -280,7 +280,7 @@ public class GeoHashUtils
 	 */
 	public static List<String> getAllAdjacentAreasList(final String geohash)
 	{
-		if (geohash == null || geohash.isEmpty())
+		if ((geohash == null) || geohash.isEmpty())
 		{
 			throw new IllegalArgumentException("Argument geohash should not be null.");
 		}
@@ -316,7 +316,7 @@ public class GeoHashUtils
 	 */
 	public static Map<String, String> getAllAdjacentAreasMap(final String geohash)
 	{
-		if (geohash == null || geohash.isEmpty())
+		if ((geohash == null) || geohash.isEmpty())
 		{
 			throw new IllegalArgumentException("Argument geohash should not be null.");
 		}
@@ -344,17 +344,26 @@ public class GeoHashUtils
 		return adjacentAreas;
 	}
 
+	/**
+	 * Gets the geohash cells of the first and second ring region around the given geohash cell as a
+	 * {@link FirstAndSecondRingRegion} object.
+	 *
+	 * @param geohash
+	 *            the geohash cell.
+	 * @return the {@link FirstAndSecondRingRegion} that encapsulates the cells of the first and
+	 *         second ring region around the given geohash cell.
+	 */
 	public static FirstAndSecondRingRegion getFirstAndSecondRingRegion(final String geohash)
 	{
 		return new FirstAndSecondRingRegion(geohash);
 	}
 
 	/**
-	 * Gets the geohash cells around the given geohash cell as a GeoHashRegion object.
+	 * Gets the geohash cells around the given geohash cell as a {@link FirstRingRegion} object.
 	 * 
 	 * @param geohash
-	 *            the geohash
-	 * @return a GeoHashRegion object calculated from the given geohash value.
+	 *            the geohash cell.
+	 * @return the {@link FirstRingRegion} object calculated from the given geohash value.
 	 */
 	public static FirstRingRegion getFirstRingRegion(final String geohash)
 	{
@@ -384,7 +393,6 @@ public class GeoHashUtils
 	{
 		return decodeAndRound(geohash)[1];
 	}
-
 
 	/**
 	 * Gets the precision.
