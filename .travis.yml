@@ -8,5 +8,5 @@ jdk:
 notifications:
     email:
         recipients:
-            - asterios.raptis@web.code
+            - asterios.raptis@web.de
         on_failure: always
