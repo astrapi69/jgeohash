@@ -44,9 +44,15 @@ Than you can add the dependency to your dependencies:
 	</dependencies>
 	
 
-## Want to Help?
+## Want to Help and improve it? ###
 
 The source code for jGeohash are on GitHub. Please feel free to fork and send pull requests!
+
+Create your own fork of [astrapi69/jgeohash/fork](https://github.com/astrapi69/jgeohash/fork)
+
+To share your changes, [submit a pull request](https://github.com/astrapi69/jgeohash/pull/new/master).
+
+Don't forget to add new units tests on your changes.
 
 ## Contacting the Developer
 
