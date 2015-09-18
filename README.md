@@ -54,8 +54,6 @@ To share your changes, [submit a pull request](https://github.com/astrapi69/jgeo
 
 Don't forget to add new units tests on your changes.
 
-If you have suggestions or improvements of bugfixes please contribute back via github.
-
 ## Contacting the Developer
 
 Do not hesitate to contact the jgeohash developers with your questions, concerns, comments, bug reports, or feature requests. 
