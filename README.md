@@ -1,5 +1,6 @@
 jgeohash 
 ========
+
 <a href="http://flattr.com/thing/4067696/astrapi69jgeohash-on-GitHub" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
 
 [![Build Status](https://travis-ci.org/astrapi69/jgeohash.svg?branch=master)](https://travis-ci.org/astrapi69/jgeohash)
@@ -20,9 +21,10 @@ With the help of jGeohash, Java developers will be able to quickly and easily ge
 This library is a basic implementation from the GeoHash algorithm written in the java and can be applied to generate from the latitude and longitude a geohash code and reverse. 
 
 The library is kept simple and have no dependencies to other libraries.
+
 ## License
 
-The source code is under the Apache License V2.0 as published by the Apache Foundation.
+The source code is under the liberal Apache License V2.0 as published by the Apache Foundation.
 
 If you have suggestions or improvements of bugfixes please contribute back via github.
 
