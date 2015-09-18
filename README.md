@@ -24,7 +24,7 @@ The library is kept simple and have no dependencies to other libraries.
 
 ## License
 
-The source code is under the liberal Apache License V2.0 as published by the Apache Foundation.
+The source code comes under the liberal Apache License V2.0, making jgeohash great for all types of applications.
 
 ## Maven dependency
 
