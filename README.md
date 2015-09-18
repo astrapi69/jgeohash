@@ -26,8 +26,6 @@ The library is kept simple and have no dependencies to other libraries.
 
 The source code is under the liberal Apache License V2.0 as published by the Apache Foundation.
 
-If you have suggestions or improvements of bugfixes please contribute back via github.
-
 ## Maven dependency
 
 Maven dependency is now on sonatype. 
@@ -55,6 +53,8 @@ Create your own fork of [astrapi69/jgeohash/fork](https://github.com/astrapi69/j
 To share your changes, [submit a pull request](https://github.com/astrapi69/jgeohash/pull/new/master).
 
 Don't forget to add new units tests on your changes.
+
+If you have suggestions or improvements of bugfixes please contribute back via github.
 
 ## Contacting the Developer
 
