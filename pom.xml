@@ -1,8 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
-	<groupId>de.alpharogroup</groupId>
+
+	<parent>
+		<groupId>de.alpharogroup</groupId>
+		<artifactId>jaulp.core</artifactId>
+		<version>4.2.0</version>
+	</parent>
+
 	<artifactId>jgeohash</artifactId>
 	<version>1.4.7</version>
 	<inceptionYear>2010</inceptionYear>
@@ -22,50 +27,11 @@
 
 	<url>http://astrapi69.github.io/jgeohash/</url>
 
-	<licenses>
-		<license>
-			<name>The Apache License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-		</license>
-	</licenses>
-
-	<developers>
-
-		<developer>
-			<id>astrapi69</id>
-			<name>Asterios Raptis</name>
-			<timezone>Berlin</timezone>
-			<roles>
-				<role>Project manager</role>
-				<role>Developer</role>
-			</roles>
-		</developer>
-
-	</developers>
-
-	<organization>
-		<name>Alpha Ro Group UG (haftungsbeschrängt)</name>
-		<url>http://www.alpharogroup.de/</url>
-	</organization>
-
 	<scm>
 		<connection>scm:git:git:@github.com:astrapi69/jgeohash.git</connection>
 		<developerConnection>scm:git:git@github.com:astrapi69/jgeohash.git</developerConnection>
 		<url>git:@github.com:astrapi69/jgeohash.git</url>
 	</scm>
-
-	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<name>Sonatype Nexus Snapshots</name>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<name>Nexus Release Repository</name>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>
 
 	<ciManagement>
 		<system>travis-ci</system>
@@ -78,41 +44,12 @@
 	</issueManagement>
 
 	<properties>
-		<!-- PROJECT encoding -->
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- GEOIP-API version -->
 		<geoip-api.version>1.2.14</geoip-api.version>
-		<!-- UNIT TEST versions -->
-		<testng.version>6.9.4</testng.version>
-		<!-- MAVEN PLUGIN versions -->
-		<maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
-		<maven-compiler-plugin.source.version>1.7</maven-compiler-plugin.source.version>
-		<maven-compiler-plugin.target.version>1.7</maven-compiler-plugin.target.version>
-		<maven-compiler-plugin.compilerVersion>1.7</maven-compiler-plugin.compilerVersion>
-		<maven-compiler-plugin.encoding>UTF-8</maven-compiler-plugin.encoding>
-		<maven-compiler-plugin.optimize>true</maven-compiler-plugin.optimize>
-		<maven-compiler-plugin.showWarnings>true</maven-compiler-plugin.showWarnings>
-		<maven-compiler-plugin.debug>true</maven-compiler-plugin.debug>
-		<maven-source-plugin.version>2.4</maven-source-plugin.version>
-		<maven-eclipse-plugin.version>2.9</maven-eclipse-plugin.version>
-		<maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
-		<license-maven-plugin.version>2.7</license-maven-plugin.version>
-		<maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
-		<!-- NEXUS STAGING MAVEN PLUGIN version -->
-		<nexus-staging-maven-plugin.version>1.6.5</nexus-staging-maven-plugin.version>
-		<maven-javadoc-plugin.version>2.10.3</maven-javadoc-plugin.version>
-		<maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
-		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
-
-			<dependency>
-				<groupId>org.testng</groupId>
-				<artifactId>testng</artifactId>
-				<version>${testng.version}</version>
-			</dependency>
 
 			<dependency>
 				<groupId>com.maxmind.geoip</groupId>
@@ -141,189 +78,17 @@
 
 	<build>
 
-		<resources>
-
-			<resource>
-				<filtering>false</filtering>
-				<directory>src/main/resources</directory>
-			</resource>
-
-			<resource>
-				<filtering>false</filtering>
-				<directory>src/main/java</directory>
-				<includes>
-					<include>**</include>
-				</includes>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
-			</resource>
-
-		</resources>
-
-		<testResources>
-
-			<testResource>
-				<filtering>false</filtering>
-				<directory>src/test/java</directory>
-				<includes>
-					<include>**</include>
-				</includes>
-				<excludes>
-					<exclude>**/*.java</exclude>
-				</excludes>
-			</testResource>
-			<testResource>
-				<filtering>false</filtering>
-				<directory>src/test/resources</directory>
-			</testResource>
-
-		</testResources>
-
 		<pluginManagement>
 
 			<plugins>
-
+				
 				<plugin>
 					<inherited>true</inherited>
-					<!-- NOTE: We don't need a groupId specification because the group is 
-						org.apache.maven.plugins ...which is assumed by default. -->
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>${maven-compiler-plugin.version}</version>
-					<configuration>
-						<source>${maven-compiler-plugin.source.version}</source>
-						<target>${maven-compiler-plugin.target.version}</target>
-						<compilerVersion>${maven-compiler-plugin.compilerVersion}</compilerVersion>
-						<encoding>${maven-compiler-plugin.encoding}</encoding>
-						<optimize>${maven-compiler-plugin.optimize}</optimize>
-						<showWarnings>${maven-compiler-plugin.showWarnings}</showWarnings>
-						<debug>${maven-compiler-plugin.debug}</debug>
-					</configuration>
-				</plugin>
-				<!-- Configuring Maven Source Plugin: To attach source artifacts to your 
-					build we execute the source:jar goal from the source plugin during the package 
-					phase. -->
-				<plugin>
-					<artifactId>maven-source-plugin</artifactId>
-					<version>${maven-source-plugin.version}</version>
-					<executions>
-						<execution>
-							<id>attach-sources</id>
-							<goals>
-								<goal>jar</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-				<!-- Configuring Maven Javadoc Plugin: To attach javadoc artifacts to 
-					your build we execute the javadoc:jar goal from the javadoc plugin. -->
-				<plugin>
-					<inherited>true</inherited>
-					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>${maven-javadoc-plugin.version}</version>
-					<configuration>
-						<detectOfflineLinks>false</detectOfflineLinks>
-						<minmemory>128m</minmemory>
-						<maxmemory>256m</maxmemory>
-						<notimestamp>true</notimestamp>
-						<quiet>true</quiet>
-						<links>
-							<link>http://download.oracle.com/javase/1.5.0/docs/api</link>
-							<link>http://download.oracle.com/javaee/5/api</link>
-						</links>
-					</configuration>
-					<executions>
-						<execution>
-							<id>attach-javadoc</id>
-							<goals>
-								<goal>jar</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-
-				<plugin>
-					<artifactId>maven-assembly-plugin</artifactId>
-					<version>${maven-assembly-plugin.version}</version>
-					<configuration>
-						<descriptorRefs>
-							<descriptorRef>jar-with-dependencies</descriptorRef>
-						</descriptorRefs>
-					</configuration>
-					<executions>
-						<execution>
-							<id>make-assembly</id>
-							<!-- this is used for inheritance merges -->
-							<phase>package</phase>
-							<!-- append to the packaging phase. -->
-							<goals>
-								<goal>attached</goal>
-								<!-- goals == mojos -->
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-
-				<plugin>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>${maven-surefire-plugin.version}</version>
 					<configuration>
 						<suiteXmlFiles>
 							<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
 						</suiteXmlFiles>
-					</configuration>
-				</plugin>
-
-				<plugin>
-					<artifactId>maven-eclipse-plugin</artifactId>
-					<version>${maven-eclipse-plugin.version}</version>
-					<configuration>
-						<additionalBuildcommands>
-							<buildcommand>org.eclipse.m2e.core.maven2Builder</buildcommand>
-						</additionalBuildcommands>
-						<additionalProjectnatures>
-							<projectnature>org.eclipse.m2e.core.maven2Nature</projectnature>
-							<projectnature>org.springsource.ide.eclipse.gradle.core.nature</projectnature>
-						</additionalProjectnatures>
-						<downloadSources>true</downloadSources>
-					</configuration>
-				</plugin>
-				<!-- Signing with gpg -->
-				<plugin>
-					<artifactId>maven-gpg-plugin</artifactId>
-					<version>${maven-gpg-plugin.version}</version>
-					<executions>
-						<execution>
-							<id>sign-artifacts</id>
-							<phase>verify</phase>
-							<goals>
-								<goal>sign</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-
-				<plugin>
-					<artifactId>maven-deploy-plugin</artifactId>
-					<version>${maven-deploy-plugin.version}</version>
-				</plugin>
-				<!-- The Nexus Staging Maven Plugin is the recommended way to deploy 
-					your components to OSSRH and release them to the Central Repository. _______________ 
-					If your version is a release version (does not end in -SNAPSHOT) and with 
-					this setup in place, you can run a deployment to OSSRH and an automated release 
-					to the Central Repository with the usual: mvn clean deploy _________________________ 
-					With the property autoReleaseAfterClose set to false you can manually inspect 
-					the staging repository in Nexus and trigger a release of the staging repository 
-					later with: mvn nexus-staging:release. -->
-				<plugin>
-					<groupId>org.sonatype.plugins</groupId>
-					<artifactId>nexus-staging-maven-plugin</artifactId>
-					<version>${nexus-staging-maven-plugin.version}</version>
-					<extensions>true</extensions>
-					<configuration>
-						<serverId>ossrh</serverId>
-						<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-						<autoReleaseAfterClose>true</autoReleaseAfterClose>
 					</configuration>
 				</plugin>
 
@@ -388,157 +153,5 @@
 		</plugins>
 
 	</build>
-
-	<profiles>
-
-		<profile>
-			<id>release-javadoc-jar-with-dependencies</id>
-			<activation>
-				<property>
-					<name>performRelease</name>
-					<value>true</value>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<inherited>true</inherited>
-						<artifactId>maven-javadoc-plugin</artifactId>
-					</plugin>
-
-					<plugin>
-						<inherited>true</inherited>
-						<artifactId>maven-assembly-plugin</artifactId>
-					</plugin>
-
-				</plugins>
-			</build>
-		</profile>
-
-		<profile>
-			<!-- This profile is for generate or update the license header from source 
-				files. for generate or update the license header you have to run this profile 
-				with this goal license:format. -->
-			<id>update-license-header</id>
-			<activation>
-				<property>
-					<name>performRelease</name>
-					<value>true</value>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-
-					<plugin>
-						<inherited>true</inherited>
-						<groupId>com.mycila</groupId>
-						<artifactId>license-maven-plugin</artifactId>
-					</plugin>
-
-				</plugins>
-			</build>
-
-		</profile>
-
-		<profile>
-			<id>generate-reports</id>
-			<activation>
-				<property>
-					<name>performRelease</name>
-					<value>true</value>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<plugin>
-						<inherited>true</inherited>
-						<artifactId>maven-javadoc-plugin</artifactId>
-					</plugin>
-
-					<plugin>
-						<inherited>true</inherited>
-						<artifactId>maven-surefire-plugin</artifactId>
-					</plugin>
-
-				</plugins>
-			</build>
-		</profile>
-
-		<profile>
-			<id>release-sign-artifacts</id>
-			<activation>
-				<property>
-					<name>performRelease</name>
-					<value>true</value>
-				</property>
-			</activation>
-			<build>
-				<plugins>
-					<!-- Signing with gpg -->
-					<plugin>
-						<inherited>true</inherited>
-						<artifactId>maven-gpg-plugin</artifactId>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-
-		<profile>
-			<id>oss.sonatype.org-staged-release</id>
-			<!-- This is the profile to use for releasing into the staged release 
-				repo. We need to sign the artifacts. -->
-			<activation>
-				<property>
-					<name>performRelease</name>
-					<value>true</value>
-				</property>
-			</activation>
-
-			<build>
-				<plugins>
-					<plugin>
-						<inherited>true</inherited>
-						<artifactId>maven-javadoc-plugin</artifactId>
-					</plugin>
-
-					<plugin>
-						<inherited>true</inherited>
-						<artifactId>maven-source-plugin</artifactId>
-					</plugin>
-
-					<plugin>
-						<groupId>org.sonatype.plugins</groupId>
-						<artifactId>nexus-staging-maven-plugin</artifactId>
-					</plugin>
-					<plugin>
-						<inherited>true</inherited>
-						<artifactId>maven-gpg-plugin</artifactId>
-					</plugin>
-					<plugin>
-						<inherited>true</inherited>
-						<artifactId>maven-release-plugin</artifactId>
-						<configuration>
-							<mavenExecutorId>forked-path</mavenExecutorId>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-
-			<distributionManagement>
-				<snapshotRepository>
-					<id>ossrh</id>
-					<name>Nexus snapshot Repository</name>
-					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-				</snapshotRepository>
-				<repository>
-					<id>ossrh</id>
-					<name>Nexus Release Repository</name>
-					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-				</repository>
-			</distributionManagement>
-
-		</profile>
-
-	</profiles>
 
 </project>
