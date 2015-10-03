@@ -4,8 +4,9 @@
 
 	<parent>
 		<groupId>de.alpharogroup</groupId>
-		<artifactId>jaulp.core</artifactId>
-		<version>4.2.0</version>
+		<artifactId>mvn-java-parent</artifactId>
+		<version>2.0.0</version>
+		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>jgeohash</artifactId>
