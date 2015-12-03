@@ -16,7 +16,7 @@
 package de.alpharogroup.jgeohash.model;
 
 import de.alpharogroup.jgeohash.Adjacent;
-import de.alpharogroup.jgeohash.GeoHashUtils;
+import de.alpharogroup.jgeohash.GeoHashExtensions;
 
 /**
  * The Class FirstAndSecondRingRegion provides the neighbors from the given geohash value in first
@@ -85,34 +85,34 @@ public class FirstAndSecondRingRegion extends FirstRingRegion
 	public FirstAndSecondRingRegion(final String geohash)
 	{
 		super(geohash);
-		northNorth = GeoHashUtils.getAdjacent(geohash, Adjacent.TOP, Adjacent.TOP);
-		northNorthWest = GeoHashUtils.getAdjacent(geohash, Adjacent.TOP, Adjacent.LEFT,
+		northNorth = GeoHashExtensions.getAdjacent(geohash, Adjacent.TOP, Adjacent.TOP);
+		northNorthWest = GeoHashExtensions.getAdjacent(geohash, Adjacent.TOP, Adjacent.LEFT,
 			Adjacent.TOP);
-		northWestNorthWest = GeoHashUtils.getAdjacent(geohash, Adjacent.TOP, Adjacent.LEFT,
+		northWestNorthWest = GeoHashExtensions.getAdjacent(geohash, Adjacent.TOP, Adjacent.LEFT,
 			Adjacent.TOP, Adjacent.LEFT);
-		westNorthWest = GeoHashUtils.getAdjacent(geohash, Adjacent.TOP, Adjacent.LEFT,
+		westNorthWest = GeoHashExtensions.getAdjacent(geohash, Adjacent.TOP, Adjacent.LEFT,
 			Adjacent.LEFT);
-		northNorthEast = GeoHashUtils.getAdjacent(geohash, Adjacent.TOP, Adjacent.RIGHT,
+		northNorthEast = GeoHashExtensions.getAdjacent(geohash, Adjacent.TOP, Adjacent.RIGHT,
 			Adjacent.TOP);
-		northEastNorthEast = GeoHashUtils.getAdjacent(geohash, Adjacent.TOP, Adjacent.RIGHT,
+		northEastNorthEast = GeoHashExtensions.getAdjacent(geohash, Adjacent.TOP, Adjacent.RIGHT,
 			Adjacent.TOP, Adjacent.RIGHT);
-		eastNorthEast = GeoHashUtils.getAdjacent(geohash, Adjacent.TOP, Adjacent.RIGHT,
+		eastNorthEast = GeoHashExtensions.getAdjacent(geohash, Adjacent.TOP, Adjacent.RIGHT,
 			Adjacent.RIGHT);
-		eastEast = GeoHashUtils.getAdjacent(geohash, Adjacent.RIGHT, Adjacent.RIGHT);
-		eastSouthEast = GeoHashUtils.getAdjacent(geohash, Adjacent.BOTTOM, Adjacent.RIGHT,
+		eastEast = GeoHashExtensions.getAdjacent(geohash, Adjacent.RIGHT, Adjacent.RIGHT);
+		eastSouthEast = GeoHashExtensions.getAdjacent(geohash, Adjacent.BOTTOM, Adjacent.RIGHT,
 			Adjacent.RIGHT);
-		southSouthEast = GeoHashUtils.getAdjacent(geohash, Adjacent.BOTTOM, Adjacent.RIGHT,
+		southSouthEast = GeoHashExtensions.getAdjacent(geohash, Adjacent.BOTTOM, Adjacent.RIGHT,
 			Adjacent.BOTTOM);
-		southEastSouthEast = GeoHashUtils.getAdjacent(geohash, Adjacent.BOTTOM, Adjacent.RIGHT,
+		southEastSouthEast = GeoHashExtensions.getAdjacent(geohash, Adjacent.BOTTOM, Adjacent.RIGHT,
 			Adjacent.BOTTOM, Adjacent.RIGHT);
-		southSouth = GeoHashUtils.getAdjacent(geohash, Adjacent.BOTTOM, Adjacent.BOTTOM);
-		southSouthWest = GeoHashUtils.getAdjacent(geohash, Adjacent.BOTTOM, Adjacent.LEFT,
+		southSouth = GeoHashExtensions.getAdjacent(geohash, Adjacent.BOTTOM, Adjacent.BOTTOM);
+		southSouthWest = GeoHashExtensions.getAdjacent(geohash, Adjacent.BOTTOM, Adjacent.LEFT,
 			Adjacent.BOTTOM);
-		southWestSouthWest = GeoHashUtils.getAdjacent(geohash, Adjacent.BOTTOM, Adjacent.LEFT,
+		southWestSouthWest = GeoHashExtensions.getAdjacent(geohash, Adjacent.BOTTOM, Adjacent.LEFT,
 			Adjacent.BOTTOM, Adjacent.LEFT);
-		westSouthWest = GeoHashUtils.getAdjacent(geohash, Adjacent.BOTTOM, Adjacent.LEFT,
+		westSouthWest = GeoHashExtensions.getAdjacent(geohash, Adjacent.BOTTOM, Adjacent.LEFT,
 			Adjacent.LEFT);
-		westWest = GeoHashUtils.getAdjacent(geohash, Adjacent.LEFT, Adjacent.LEFT);
+		westWest = GeoHashExtensions.getAdjacent(geohash, Adjacent.LEFT, Adjacent.LEFT);
 	}
 
 	/**

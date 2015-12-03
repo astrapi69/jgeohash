@@ -18,7 +18,7 @@ package de.alpharogroup.jgeohash.model;
 import java.io.Serializable;
 
 import de.alpharogroup.jgeohash.Adjacent;
-import de.alpharogroup.jgeohash.GeoHashUtils;
+import de.alpharogroup.jgeohash.GeoHashExtensions;
 
 /**
  * The Class FirstRingRegion provides the neighbors from the given geohash value in f.
@@ -68,14 +68,14 @@ public class FirstRingRegion implements Serializable
 	{
 		super();
 		this.center = geohash;
-		this.east = GeoHashUtils.getAdjacent(geohash, Adjacent.RIGHT);
-		this.west = GeoHashUtils.getAdjacent(geohash, Adjacent.LEFT);
-		this.north = GeoHashUtils.getAdjacent(geohash, Adjacent.TOP);
-		this.south = GeoHashUtils.getAdjacent(geohash, Adjacent.BOTTOM);
-		this.southEast = GeoHashUtils.getAdjacent(this.south, Adjacent.RIGHT);
-		this.northEast = GeoHashUtils.getAdjacent(this.north, Adjacent.RIGHT);
-		this.northWest = GeoHashUtils.getAdjacent(this.north, Adjacent.LEFT);
-		this.southWest = GeoHashUtils.getAdjacent(this.south, Adjacent.LEFT);
+		this.east = GeoHashExtensions.getAdjacent(geohash, Adjacent.RIGHT);
+		this.west = GeoHashExtensions.getAdjacent(geohash, Adjacent.LEFT);
+		this.north = GeoHashExtensions.getAdjacent(geohash, Adjacent.TOP);
+		this.south = GeoHashExtensions.getAdjacent(geohash, Adjacent.BOTTOM);
+		this.southEast = GeoHashExtensions.getAdjacent(this.south, Adjacent.RIGHT);
+		this.northEast = GeoHashExtensions.getAdjacent(this.north, Adjacent.RIGHT);
+		this.northWest = GeoHashExtensions.getAdjacent(this.north, Adjacent.LEFT);
+		this.southWest = GeoHashExtensions.getAdjacent(this.south, Adjacent.LEFT);
 	}
 
 	/**

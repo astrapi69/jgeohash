@@ -25,10 +25,10 @@ import de.alpharogroup.jgeohash.model.FirstAndSecondRingRegion;
 import de.alpharogroup.jgeohash.model.FirstRingRegion;
 
 /**
- * GeoHashUtils is based on http://en.wikipedia.org/wiki/Geohash
- *
+ * The class {@link GeoHashExtensions}.
+ * This class is based on http://en.wikipedia.org/wiki/Geohash.
  */
-public class GeoHashUtils
+public class GeoHashExtensions
 {
 
 	/**
@@ -286,14 +286,14 @@ public class GeoHashUtils
 		}
 
 		final List<String> adjacentAreas = new ArrayList<>();
-		final String top = GeoHashUtils.getAdjacent(geohash, Adjacent.TOP);
-		final String bottom = GeoHashUtils.getAdjacent(geohash, Adjacent.BOTTOM);
-		final String right = GeoHashUtils.getAdjacent(geohash, Adjacent.RIGHT);
-		final String left = GeoHashUtils.getAdjacent(geohash, Adjacent.LEFT);
-		final String topleft = GeoHashUtils.getAdjacent(left, Adjacent.TOP);
-		final String topright = GeoHashUtils.getAdjacent(right, Adjacent.TOP);
-		final String bottomright = GeoHashUtils.getAdjacent(right, Adjacent.BOTTOM);
-		final String bottomleft = GeoHashUtils.getAdjacent(left, Adjacent.BOTTOM);
+		final String top = GeoHashExtensions.getAdjacent(geohash, Adjacent.TOP);
+		final String bottom = GeoHashExtensions.getAdjacent(geohash, Adjacent.BOTTOM);
+		final String right = GeoHashExtensions.getAdjacent(geohash, Adjacent.RIGHT);
+		final String left = GeoHashExtensions.getAdjacent(geohash, Adjacent.LEFT);
+		final String topleft = GeoHashExtensions.getAdjacent(left, Adjacent.TOP);
+		final String topright = GeoHashExtensions.getAdjacent(right, Adjacent.TOP);
+		final String bottomright = GeoHashExtensions.getAdjacent(right, Adjacent.BOTTOM);
+		final String bottomleft = GeoHashExtensions.getAdjacent(left, Adjacent.BOTTOM);
 		adjacentAreas.add(geohash);
 		adjacentAreas.add(top);
 		adjacentAreas.add(topright);
@@ -321,14 +321,14 @@ public class GeoHashUtils
 			throw new IllegalArgumentException("Argument geohash should not be null.");
 		}
 
-		final String top = GeoHashUtils.getAdjacent(geohash, Adjacent.TOP);
-		final String bottom = GeoHashUtils.getAdjacent(geohash, Adjacent.BOTTOM);
-		final String right = GeoHashUtils.getAdjacent(geohash, Adjacent.RIGHT);
-		final String left = GeoHashUtils.getAdjacent(geohash, Adjacent.LEFT);
-		final String topleft = GeoHashUtils.getAdjacent(left, Adjacent.TOP);
-		final String topright = GeoHashUtils.getAdjacent(right, Adjacent.TOP);
-		final String bottomright = GeoHashUtils.getAdjacent(right, Adjacent.BOTTOM);
-		final String bottomleft = GeoHashUtils.getAdjacent(left, Adjacent.BOTTOM);
+		final String top = GeoHashExtensions.getAdjacent(geohash, Adjacent.TOP);
+		final String bottom = GeoHashExtensions.getAdjacent(geohash, Adjacent.BOTTOM);
+		final String right = GeoHashExtensions.getAdjacent(geohash, Adjacent.RIGHT);
+		final String left = GeoHashExtensions.getAdjacent(geohash, Adjacent.LEFT);
+		final String topleft = GeoHashExtensions.getAdjacent(left, Adjacent.TOP);
+		final String topright = GeoHashExtensions.getAdjacent(right, Adjacent.TOP);
+		final String bottomright = GeoHashExtensions.getAdjacent(right, Adjacent.BOTTOM);
+		final String bottomleft = GeoHashExtensions.getAdjacent(left, Adjacent.BOTTOM);
 
 		final Map<String, String> adjacentAreas = new LinkedHashMap<>();
 		adjacentAreas.put(Adjacent.CENTER, geohash);
@@ -424,35 +424,35 @@ public class GeoHashUtils
 	{
 		final Map<String, String> adjacentAreas = getAllAdjacentAreasMap(geohash);
 
-		final String topTop = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.TOP),
+		final String topTop = GeoHashExtensions.getAdjacent(adjacentAreas.get(Adjacent.TOP),
 			Adjacent.TOP);
-		final String topLeftTop = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.TOP_LEFT),
+		final String topLeftTop = GeoHashExtensions.getAdjacent(adjacentAreas.get(Adjacent.TOP_LEFT),
 			Adjacent.TOP);
-		final String topLeftTopLeft = GeoHashUtils.getAdjacent(topLeftTop, Adjacent.LEFT);
-		final String topLeftLeft = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.TOP_LEFT),
+		final String topLeftTopLeft = GeoHashExtensions.getAdjacent(topLeftTop, Adjacent.LEFT);
+		final String topLeftLeft = GeoHashExtensions.getAdjacent(adjacentAreas.get(Adjacent.TOP_LEFT),
 			Adjacent.LEFT);
-		final String topRightTop = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.TOP_RIGHT),
+		final String topRightTop = GeoHashExtensions.getAdjacent(adjacentAreas.get(Adjacent.TOP_RIGHT),
 			Adjacent.TOP);
-		final String topRightTopRight = GeoHashUtils.getAdjacent(topRightTop, Adjacent.RIGHT);
-		final String topRightRight = GeoHashUtils.getAdjacent(
+		final String topRightTopRight = GeoHashExtensions.getAdjacent(topRightTop, Adjacent.RIGHT);
+		final String topRightRight = GeoHashExtensions.getAdjacent(
 			adjacentAreas.get(Adjacent.TOP_RIGHT), Adjacent.RIGHT);
-		final String rightRight = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.RIGHT),
+		final String rightRight = GeoHashExtensions.getAdjacent(adjacentAreas.get(Adjacent.RIGHT),
 			Adjacent.RIGHT);
-		final String bottomRightRight = GeoHashUtils.getAdjacent(
+		final String bottomRightRight = GeoHashExtensions.getAdjacent(
 			adjacentAreas.get(Adjacent.BOTTOM_RIGHT), Adjacent.RIGHT);
-		final String bottomRightBottom = GeoHashUtils.getAdjacent(
+		final String bottomRightBottom = GeoHashExtensions.getAdjacent(
 			adjacentAreas.get(Adjacent.BOTTOM_RIGHT), Adjacent.BOTTOM);
-		final String bottomRightBottomRight = GeoHashUtils.getAdjacent(bottomRightBottom,
+		final String bottomRightBottomRight = GeoHashExtensions.getAdjacent(bottomRightBottom,
 			Adjacent.RIGHT);
-		final String bottomBottom = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.BOTTOM),
+		final String bottomBottom = GeoHashExtensions.getAdjacent(adjacentAreas.get(Adjacent.BOTTOM),
 			Adjacent.BOTTOM);
-		final String bottomLeftBottom = GeoHashUtils.getAdjacent(
+		final String bottomLeftBottom = GeoHashExtensions.getAdjacent(
 			adjacentAreas.get(Adjacent.BOTTOM_LEFT), Adjacent.BOTTOM);
-		final String bottomLeftBottomLeft = GeoHashUtils.getAdjacent(bottomLeftBottom,
+		final String bottomLeftBottomLeft = GeoHashExtensions.getAdjacent(bottomLeftBottom,
 			Adjacent.LEFT);
-		final String bottomLeftLeft = GeoHashUtils.getAdjacent(
+		final String bottomLeftLeft = GeoHashExtensions.getAdjacent(
 			adjacentAreas.get(Adjacent.BOTTOM_LEFT), Adjacent.LEFT);
-		final String leftLeft = GeoHashUtils.getAdjacent(adjacentAreas.get(Adjacent.LEFT),
+		final String leftLeft = GeoHashExtensions.getAdjacent(adjacentAreas.get(Adjacent.LEFT),
 			Adjacent.LEFT);
 
 		adjacentAreas.put(Adjacent.TOP_LEFT_TOP, topLeftTop);
@@ -485,23 +485,23 @@ public class GeoHashUtils
 	public static void main(final String[] args)
 	{
 		final String alterTeichwegGeohash = "u1x0v54rmjwej";
-		final String gc1 = GeoHashUtils.encode(30.0, -90.0);
-		final String gc2 = GeoHashUtils.encode(51.4797, -0.0124);
-		final String geohash = GeoHashUtils.encode(53.5526394, 10.0067103);
+		final String gc1 = GeoHashExtensions.encode(30.0, -90.0);
+		final String gc2 = GeoHashExtensions.encode(51.4797, -0.0124);
+		final String geohash = GeoHashExtensions.encode(53.5526394, 10.0067103);
 		System.out.println("geohash:" + geohash);
 
 		System.out.println("gc1:" + gc1);
 		System.out.println("gc2:" + gc2);
 
-		double[] gd1 = GeoHashUtils.decodeAndRound(gc1);
-		double[] gd2 = GeoHashUtils.decodeAndRound(gc2);
+		double[] gd1 = GeoHashExtensions.decodeAndRound(gc1);
+		double[] gd2 = GeoHashExtensions.decodeAndRound(gc2);
 
 		System.out.println(gd1[0] + ", " + gd1[1]);
 		System.out.println(gd2[0] + ", " + gd2[1]);
 
-		gd1 = GeoHashUtils.decode(gc1);
-		gd2 = GeoHashUtils.decode(gc2);
-		final double[] decoded = GeoHashUtils.decode(geohash);
+		gd1 = GeoHashExtensions.decode(gc1);
+		gd2 = GeoHashExtensions.decode(gc2);
+		final double[] decoded = GeoHashExtensions.decode(geohash);
 		System.out.println(gd1[0] + ", " + gd1[1]);
 		System.out.println(gd2[0] + ", " + gd2[1]);
 		System.out.println(decoded[0] + ", " + decoded[1]);
@@ -509,28 +509,28 @@ public class GeoHashUtils
 
 		final String geohashTest = alterTeichwegGeohash;
 
-		final String top = GeoHashUtils.getAdjacent(geohashTest, "top");
+		final String top = GeoHashExtensions.getAdjacent(geohashTest, "top");
 		System.out.println("top:\t\t" + top);
-		final String bottom = GeoHashUtils.getAdjacent(geohashTest, "bottom");
+		final String bottom = GeoHashExtensions.getAdjacent(geohashTest, "bottom");
 		System.out.println("bottom:\t\t" + bottom);
-		final String right = GeoHashUtils.getAdjacent(geohashTest, "right");
+		final String right = GeoHashExtensions.getAdjacent(geohashTest, "right");
 		System.out.println("right:\t\t" + right);
-		final String left = GeoHashUtils.getAdjacent(geohashTest, "left");
+		final String left = GeoHashExtensions.getAdjacent(geohashTest, "left");
 		System.out.println("left:\t\t" + left);
-		final String topleft = GeoHashUtils.getAdjacent(left, "top");
+		final String topleft = GeoHashExtensions.getAdjacent(left, "top");
 		System.out.println("topleft:\t" + topleft);
-		final String topright = GeoHashUtils.getAdjacent(right, "top");
+		final String topright = GeoHashExtensions.getAdjacent(right, "top");
 		System.out.println("topright:\t" + topright);
-		final String bottomright = GeoHashUtils.getAdjacent(right, "bottom");
+		final String bottomright = GeoHashExtensions.getAdjacent(right, "bottom");
 		System.out.println("bottomright:\t" + bottomright);
-		final String bottomleft = GeoHashUtils.getAdjacent(left, "bottom");
+		final String bottomleft = GeoHashExtensions.getAdjacent(left, "bottom");
 		System.out.println("bottomleft:\t" + bottomleft);
 
 		final String subGeohash = geohash.substring(0, 7);
-		final Map<String, String> adjacentAreas = GeoHashUtils.getAllAdjacentAreasMap(subGeohash);
+		final Map<String, String> adjacentAreas = GeoHashExtensions.getAllAdjacentAreasMap(subGeohash);
 		System.out.println(adjacentAreas);
 		System.out.println("=======================================");
-		final List<String> aa = GeoHashUtils.getAllAdjacentAreasList(subGeohash);
+		final List<String> aa = GeoHashExtensions.getAllAdjacentAreasList(subGeohash);
 		System.out.println(aa);
 		System.out.println("=======================================");
 		final GeoHashPoint geohashPoint1 = new GeoHashPoint(geohash);

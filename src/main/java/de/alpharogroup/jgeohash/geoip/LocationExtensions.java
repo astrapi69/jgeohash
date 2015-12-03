@@ -14,9 +14,9 @@ import de.alpharogroup.jgeohash.distance.DistancePoint;
 import de.alpharogroup.jgeohash.distance.MeasuringUnit;
 
 /**
- * The Class LocationUtils is for location specific data.
+ * The class {@link LocationExtensions} is for location specific data.
  */
-public class LocationUtils
+public class LocationExtensions
 {
 
 	/**

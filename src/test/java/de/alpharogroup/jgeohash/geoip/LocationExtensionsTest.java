@@ -10,7 +10,7 @@ import de.alpharogroup.jgeohash.api.Position;
 import de.alpharogroup.jgeohash.distance.MeasuringUnit;
 
 
-public class LocationUtilsTest
+public class LocationExtensionsTest
 {
 
 	@Test
@@ -22,7 +22,7 @@ public class LocationUtilsTest
 		geohashes.add(new GeoHashPoint("u0td0v9xnz28"));
 		Position startPoint = new GeoHashPoint("u11fyhzqhp3c");
 
-		LocationUtils.sortByDistance(startPoint, geohashes, MeasuringUnit.METER);
+		LocationExtensions.sortByDistance(startPoint, geohashes, MeasuringUnit.METER);
 
 		geohashes = new ArrayList<>();
 		geohashes.add(new GeoHashPoint("u0z4")); // below Wuerzburg
@@ -31,7 +31,7 @@ public class LocationUtilsTest
 		geohashes.add(new GeoHashPoint("u0zc4wp0k")); // Nurremberg at work
 		startPoint = new GeoHashPoint("u0ww"); // Ludwigsburg
 
-		LocationUtils.sortByDistance(startPoint, geohashes, MeasuringUnit.METER);
+		LocationExtensions.sortByDistance(startPoint, geohashes, MeasuringUnit.METER);
 	}
 
 	@Test

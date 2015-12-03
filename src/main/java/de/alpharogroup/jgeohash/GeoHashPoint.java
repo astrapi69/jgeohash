@@ -90,7 +90,7 @@ public class GeoHashPoint extends Point
 	 */
 	public GeoHashPoint(final String geohash)
 	{
-		super(GeoHashUtils.decode(geohash)[0], GeoHashUtils.decode(geohash)[1]);
+		super(GeoHashExtensions.decode(geohash)[0], GeoHashExtensions.decode(geohash)[1]);
 	}
 
 	/**
@@ -149,7 +149,7 @@ public class GeoHashPoint extends Point
 	 */
 	public String getGeohash()
 	{
-		return GeoHashUtils.encode(getLatitude(), getLongitude());
+		return GeoHashExtensions.encode(getLatitude(), getLongitude());
 	}
 
 	/**

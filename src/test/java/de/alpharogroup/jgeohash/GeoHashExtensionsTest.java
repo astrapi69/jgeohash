@@ -20,7 +20,7 @@ import org.testng.annotations.Test;
 
 import de.alpharogroup.jgeohash.model.FirstRingRegion;
 
-public class GeoHashUtilsTest
+public class GeoHashExtensionsTest
 {
 
 	@Test(enabled = true)
@@ -29,43 +29,43 @@ public class GeoHashUtilsTest
 		String expected;
 		String actual;
 		expected = "h";
-		actual = GeoHashUtils.getAdjacent("u", Adjacent.TOP);
+		actual = GeoHashExtensions.getAdjacent("u", Adjacent.TOP);
 		AssertJUnit.assertEquals(expected, actual);
 
 		expected = "j";
-		actual = GeoHashUtils.getAdjacent("u", Adjacent.TOP, Adjacent.RIGHT);
+		actual = GeoHashExtensions.getAdjacent("u", Adjacent.TOP, Adjacent.RIGHT);
 		AssertJUnit.assertEquals(expected, actual);
 
 		expected = "v";
-		actual = GeoHashUtils.getAdjacent("u", Adjacent.RIGHT);
+		actual = GeoHashExtensions.getAdjacent("u", Adjacent.RIGHT);
 		AssertJUnit.assertEquals(expected, actual);
 
 		expected = "t";
-		actual = GeoHashUtils.getAdjacent("u", Adjacent.BOTTOM, Adjacent.RIGHT);
+		actual = GeoHashExtensions.getAdjacent("u", Adjacent.BOTTOM, Adjacent.RIGHT);
 		AssertJUnit.assertEquals(expected, actual);
 
 		expected = "s";
-		actual = GeoHashUtils.getAdjacent("u", Adjacent.BOTTOM);
+		actual = GeoHashExtensions.getAdjacent("u", Adjacent.BOTTOM);
 		AssertJUnit.assertEquals(expected, actual);
 
 		expected = "e";
-		actual = GeoHashUtils.getAdjacent("u", Adjacent.BOTTOM, Adjacent.LEFT);
+		actual = GeoHashExtensions.getAdjacent("u", Adjacent.BOTTOM, Adjacent.LEFT);
 		AssertJUnit.assertEquals(expected, actual);
 
 		expected = "g";
-		actual = GeoHashUtils.getAdjacent("u", Adjacent.LEFT);
+		actual = GeoHashExtensions.getAdjacent("u", Adjacent.LEFT);
 		AssertJUnit.assertEquals(expected, actual);
 
 		expected = "5";
-		actual = GeoHashUtils.getAdjacent("u", Adjacent.LEFT, Adjacent.TOP);
+		actual = GeoHashExtensions.getAdjacent("u", Adjacent.LEFT, Adjacent.TOP);
 		AssertJUnit.assertEquals(expected, actual);
 
 		expected = "dr";
-		actual = GeoHashUtils.getAdjacent("dq", Adjacent.TOP);
+		actual = GeoHashExtensions.getAdjacent("dq", Adjacent.TOP);
 		AssertJUnit.assertEquals(expected, actual);
 
 		expected = "dw";
-		actual = GeoHashUtils.getAdjacent("dq", Adjacent.RIGHT);
+		actual = GeoHashExtensions.getAdjacent("dq", Adjacent.RIGHT);
 		AssertJUnit.assertEquals(expected, actual);
 
 		FirstRingRegion geoHashRegion = new FirstRingRegion("u");
@@ -127,17 +127,17 @@ public class GeoHashUtilsTest
 	{
 		String expected;
 		String actual;
-		final String geohash = GeoHashUtils.encode(53.5526394, 10.0067103);
+		final String geohash = GeoHashExtensions.encode(53.5526394, 10.0067103);
 		final String subGeohash = geohash.substring(0, 7);
 		expected = "u1x0etp";
-		actual = GeoHashUtils.getAdjacent(subGeohash, Adjacent.TOP, Adjacent.RIGHT);
+		actual = GeoHashExtensions.getAdjacent(subGeohash, Adjacent.TOP, Adjacent.RIGHT);
 		AssertJUnit.assertEquals(expected, actual);
 
 		expected = "u1x0etj";
-		actual = GeoHashUtils.getAdjacent(subGeohash, Adjacent.TOP, Adjacent.LEFT);
+		actual = GeoHashExtensions.getAdjacent(subGeohash, Adjacent.TOP, Adjacent.LEFT);
 		AssertJUnit.assertEquals(expected, actual);
 		expected = "u1x0etq";
-		actual = GeoHashUtils.getAdjacent(subGeohash, Adjacent.TOP, Adjacent.TOP);
+		actual = GeoHashExtensions.getAdjacent(subGeohash, Adjacent.TOP, Adjacent.TOP);
 		AssertJUnit.assertEquals(expected, actual);
 	}
 
