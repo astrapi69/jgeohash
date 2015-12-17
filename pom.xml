@@ -5,24 +5,24 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>2.0.0</version>
+		<version>2.4.0</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>jgeohash</artifactId>
-	<version>2.1.0</version>
+	<version>2.2.0</version>
 	<inceptionYear>2010</inceptionYear>
 
 	<name>${project.artifactId}</name>
 
 	<description>
-		An easy-to-implement library that can assist Java developers in using the 
-		GeoHash algorithm in order to create geocodes based on custom latitude and longitude values.		
-		With the help of jGeohash, Java developers will be able to quickly and easily generate 
-		a geohash code using user-defined latitude and longitude values. 
-		By using the GeoHash algorithm, the space can be divided into multiple grid shapes.		
-		This library is a basic implementation from the GeoHash algorithm written in the java 
-		and can be applied to generate from the latitude and longitude a geohash code and reverse.		
+		An easy-to-implement library that can assist Java developers in using the
+		GeoHash algorithm in order to create geocodes based on custom latitude and longitude values.
+		With the help of jGeohash, Java developers will be able to quickly and easily generate
+		a geohash code using user-defined latitude and longitude values.
+		By using the GeoHash algorithm, the space can be divided into multiple grid shapes.
+		This library is a basic implementation from the GeoHash algorithm written in the java
+		and can be applied to generate from the latitude and longitude a geohash code and reverse.
 		The library is kept simple and have no dependencies to other libraries.
 	</description>
 
@@ -82,7 +82,7 @@
 		<pluginManagement>
 
 			<plugins>
-				
+
 				<plugin>
 					<inherited>true</inherited>
 					<artifactId>maven-surefire-plugin</artifactId>
