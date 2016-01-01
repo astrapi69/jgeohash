@@ -10,7 +10,8 @@
 	</parent>
 
 	<artifactId>jgeohash</artifactId>
-	<version>2.2.0</version>
+	<version>2.3.0</version>
+	<packaging>pom</packaging>
 	<inceptionYear>2010</inceptionYear>
 
 	<name>${project.artifactId}</name>
@@ -47,15 +48,33 @@
 	<properties>
 		<!-- GEOIP-API version -->
 		<geoip-api.version>1.2.14</geoip-api.version>
+		<!-- EXTENSIONS LIB versions -->
+		<extensions-lib.version>4.8.0</extensions-lib.version>
+		<jcommons-lang.version>${extensions-lib.version}</jcommons-lang.version>
+
 	</properties>
 
 	<dependencyManagement>
+
 		<dependencies>
 
 			<dependency>
 				<groupId>com.maxmind.geoip</groupId>
 				<artifactId>geoip-api</artifactId>
 				<version>${geoip-api.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>jgeohash-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<!-- EXTENSIONS LIB DEPENDENCIES -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>jcommons-lang</artifactId>
+				<version>${jcommons-lang.version}</version>
 			</dependency>
 
 		</dependencies>
@@ -67,12 +86,6 @@
 		<dependency>
 			<groupId>com.maxmind.geoip</groupId>
 			<artifactId>geoip-api</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
@@ -155,4 +168,8 @@
 
 	</build>
 
+	<modules>
+		<module>jgeohash-geoip</module>
+		<module>jgeohash-core</module>
+	</modules>
 </project>
