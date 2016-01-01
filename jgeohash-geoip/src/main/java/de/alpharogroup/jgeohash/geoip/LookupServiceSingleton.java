@@ -21,7 +21,7 @@ public final class LookupServiceSingleton
 	private static final Logger LOGGER = Logger.getLogger(LookupServiceSingleton.class.getName());
 
 	/** The single instance of the {@link LookupService}. */
-	private static LookupService instance;
+	private static volatile LookupService instance;
 
 	/** The constant for the file name prefix. */
 	private static final String PREFIX = "GeoLiteCity";
@@ -41,22 +41,24 @@ public final class LookupServiceSingleton
 	 *
 	 * @return the single instance of the {@link LookupService}.
 	 */
-	public static synchronized LookupService getInstance()
+	public static LookupService getInstance()
 	{
 		if (instance == null)
 		{
 			synchronized (LookupServiceSingleton.class)
-			{
-				File fileLocation = null;
-				final InputStream is = ClassExtensions.getResourceAsStream(PREFIX + SUFFIX);
-				try
-				{
-					fileLocation = inputStreamToFile(is);
-					instance = new LookupService(fileLocation, LookupService.GEOIP_MEMORY_CACHE);
-				}
-				catch (final IOException e)
-				{
-					LOGGER.error("IOException in the initialization of the LookupService.", e);
+			{	// double check...
+				if (instance == null) {
+					File fileLocation = null;
+					final InputStream is = ClassExtensions.getResourceAsStream(PREFIX + SUFFIX);
+					try
+					{
+						fileLocation = inputStreamToFile(is);
+						instance = new LookupService(fileLocation, LookupService.GEOIP_MEMORY_CACHE);
+					}
+					catch (final IOException e)
+					{
+						LOGGER.error("IOException in the initialization of the LookupService.", e);
+					}
 				}
 			}
 		}
