@@ -13,7 +13,10 @@ import com.maxmind.geoip.LookupService;
 import de.alpharogroup.lang.ClassExtensions;
 
 /**
- * The class {@link LookupServiceSingleton} is a singleton class for the {@link LookupService}.
+ * The class {@link LookupServiceSingleton} is a singleton class for the {@link LookupService}.<br><br>
+ * Note: <br>
+ * There have to be the file with the file name 'GeoLiteCity.dat' in the classpath for appropriate work of the
+ * {@link LookupService}.
  */
 public final class LookupServiceSingleton
 {
