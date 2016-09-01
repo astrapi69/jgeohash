@@ -1,10 +1,12 @@
 ## jgeohash
 
-<a href="http://flattr.com/thing/4067696/astrapi69jgeohash-on-GitHub" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
+An easy-to-implement library that can assist Java developers in using the GeoHash algorithm in order to create geocodes based on custom latitude and longitude values.
 
-[![Build Status](https://travis-ci.org/astrapi69/jgeohash.svg?branch=master)](https://travis-ci.org/astrapi69/jgeohash)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jgeohash-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jgeohash-core)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jgeohash-geoip/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jgeohash-geoip)
+With the help of jGeohash, Java developers will be able to quickly and easily generate a geohash code using user-defined latitude and longitude values. By using the GeoHash algorithm, the space can be divided into multiple grid shapes.
+
+This library is a basic implementation from the GeoHash algorithm written in the java and can be applied to generate from the latitude and longitude a geohash code and reverse.
+
+The library is kept simple and have no dependencies to other libraries.
 
 ## Key features:
 
@@ -14,17 +16,18 @@
 4. Can calculate distance between two geohash values in various measuring units like miles, km, meters
 5. Can get the geohash cells around from the first, second or thrird ring from a given geohash cell
 
-An easy-to-implement library that can assist Java developers in using the GeoHash algorithm in order to create geocodes based on custom latitude and longitude values.
-
-With the help of jGeohash, Java developers will be able to quickly and easily generate a geohash code using user-defined latitude and longitude values. By using the GeoHash algorithm, the space can be divided into multiple grid shapes.
-
-This library is a basic implementation from the GeoHash algorithm written in the java and can be applied to generate from the latitude and longitude a geohash code and reverse.
-
-The library is kept simple and have no dependencies to other libraries.
-
 ## License
 
 The source code comes under the liberal Apache License V2.0, making jgeohash great for all types of applications.
+
+# Build Status 
+[![Build Status](https://travis-ci.org/astrapi69/jgeohash.svg?branch=master)](https://travis-ci.org/astrapi69/jgeohash)
+
+
+## Maven Central
+
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jgeohash-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jgeohash-core)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jgeohash-geoip/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jgeohash-geoip)
 
 ## Maven dependency
 
@@ -88,7 +91,10 @@ Do not hesitate to contact the jgeohash developers with your questions, concerns
    [Simple-example]: https://github.com/astrapi69/jgeohash/wiki/Simple-example "Simple-example"
    [Hibernate-example]: https://github.com/astrapi69/jgeohash/wiki/Hibernate-example "Hibernate-example"
 
+# Donate
 
+If you like this library, please consider a donation through 
+<a href="http://flattr.com/thing/4067696/astrapi69jgeohash-on-GitHub" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
 
 Last changes
 ----------------------
