@@ -26,6 +26,16 @@
 		and can be applied to generate from the latitude and longitude a geohash code and reverse.
 		The library is kept simple and have no dependencies to other libraries.
 	</description>
+	
+	<licenses>
+
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+
+	</licenses>
 
 	<url>http://astrapi69.github.io/jgeohash/</url>
 
