@@ -138,3 +138,5 @@ Version 1.4.1
 Added method to get getAdjacent from multiply directions.
 
 Added functionality for get first and second ring neighbors from a geohash cell.
+
+
