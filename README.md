@@ -91,6 +91,10 @@ Do not hesitate to contact the jgeohash developers with your questions, concerns
    [SpatialDataQueries]: https://github.com/astrapi69/jgeohash/wiki/Adding-spatial-data-queries-to-Phoenix-on-HBase "Adding spatial data queries to Phoenix on HBase"
    [Simple-example]: https://github.com/astrapi69/jgeohash/wiki/Simple-example "Simple-example"
    [Hibernate-example]: https://github.com/astrapi69/jgeohash/wiki/Hibernate-example "Hibernate-example"
+   
+## Note
+
+No animals were harmed in the making of this library.
 
 # Donate
 
@@ -99,6 +103,10 @@ If you like this library, please consider a donation through
 
 Last changes
 ----------------------
+Version 2.4.0-SNAPSHOT
+-------------
+- update of java parent version.
+- Note section added.
 
 Version 2.3.0
 -------------
