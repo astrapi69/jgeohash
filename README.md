@@ -41,7 +41,7 @@ You can first define the version properties:
 	<properties>
 		...
 		<!-- GEOHASH LOCATION version -->
-		<jgeohash.version>2.3.0</jgeohash.version>
+		<jgeohash.version>2.4.0</jgeohash.version>
 		<jgeohash-core.version>${jgeohash.version}</jgeohash-core.version>
 		<jgeohash-geoip.version>${jgeohash.version}</jgeohash-geoip.version>
 		...
