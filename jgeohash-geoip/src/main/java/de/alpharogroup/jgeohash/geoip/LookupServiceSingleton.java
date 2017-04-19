@@ -1,3 +1,18 @@
+/**
+ * Copyright (C) 2010 Asterios Raptis
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package de.alpharogroup.jgeohash.geoip;
 
 import java.io.File;
@@ -13,10 +28,11 @@ import com.maxmind.geoip.LookupService;
 import de.alpharogroup.lang.ClassExtensions;
 
 /**
- * The class {@link LookupServiceSingleton} is a singleton class for the {@link LookupService}.<br><br>
+ * The class {@link LookupServiceSingleton} is a singleton class for the {@link LookupService}.<br>
+ * <br>
  * Note: <br>
- * There have to be the file with the file name 'GeoLiteCity.dat' in the classpath for appropriate work of the
- * {@link LookupService}.
+ * There have to be the file with the file name 'GeoLiteCity.dat' in the classpath for appropriate
+ * work of the {@link LookupService}.
  */
 public final class LookupServiceSingleton
 {
@@ -33,13 +49,6 @@ public final class LookupServiceSingleton
 	private static final String SUFFIX = ".dat";
 
 	/**
-	 * Private constructor.
-	 */
-	private LookupServiceSingleton()
-	{
-	}
-
-	/**
 	 * Gets the single instance of the {@link LookupService}.
 	 *
 	 * @return the single instance of the {@link LookupService}.
@@ -49,14 +58,16 @@ public final class LookupServiceSingleton
 		if (instance == null)
 		{
 			synchronized (LookupServiceSingleton.class)
-			{	// double check...
-				if (instance == null) {
+			{ // double check...
+				if (instance == null)
+				{
 					File fileLocation = null;
 					final InputStream is = ClassExtensions.getResourceAsStream(PREFIX + SUFFIX);
 					try
 					{
 						fileLocation = inputStreamToFile(is);
-						instance = new LookupService(fileLocation, LookupService.GEOIP_MEMORY_CACHE);
+						instance = new LookupService(fileLocation,
+							LookupService.GEOIP_MEMORY_CACHE);
 					}
 					catch (final IOException e)
 					{
@@ -86,6 +97,13 @@ public final class LookupServiceSingleton
 		final FileOutputStream out = new FileOutputStream(tempFile);
 		IOUtils.copy(inputStream, out);
 		return tempFile;
+	}
+
+	/**
+	 * Private constructor.
+	 */
+	private LookupServiceSingleton()
+	{
 	}
 
 }

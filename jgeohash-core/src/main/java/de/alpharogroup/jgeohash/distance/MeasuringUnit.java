@@ -23,11 +23,11 @@ public enum MeasuringUnit
 
 	/**
 	 * The kilometer. 1.609344 is the number of kilometres in a mile
-	 * */
+	 */
 	KILOMETER(MeasuringUnit.KILOMETER_FACTOR),
 	/**
 	 * The meter. 1609.344 is the number of metres in a mile
-	 * */
+	 */
 	METER(MeasuringUnit.METER_FACTOR),
 
 	/**
