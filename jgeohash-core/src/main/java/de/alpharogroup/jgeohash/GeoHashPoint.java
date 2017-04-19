@@ -138,8 +138,8 @@ public class GeoHashPoint extends Point
 			return false;
 		}
 		final GeoHashPoint castedObj = (GeoHashPoint)o;
-		return ((this.getLatitude() == castedObj.getLatitude()) && (this.getLongitude() == castedObj
-			.getLongitude()));
+		return ((this.getLatitude() == castedObj.getLatitude())
+			&& (this.getLongitude() == castedObj.getLongitude()));
 	}
 
 	/**

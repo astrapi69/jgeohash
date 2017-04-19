@@ -106,18 +106,23 @@ public class FirstRingRegion implements Serializable
 			return false;
 		}
 		final FirstRingRegion castedObj = (FirstRingRegion)o;
-		return ((this.center == null ? castedObj.center == null : this.center
-			.equals(castedObj.center))
+		return ((this.center == null
+			? castedObj.center == null
+			: this.center.equals(castedObj.center))
 			&& (this.east == null ? castedObj.east == null : this.east.equals(castedObj.east))
 			&& (this.west == null ? castedObj.west == null : this.west.equals(castedObj.west))
 			&& (this.north == null ? castedObj.north == null : this.north.equals(castedObj.north))
 			&& (this.south == null ? castedObj.south == null : this.south.equals(castedObj.south))
-			&& (this.southEast == null ? castedObj.southEast == null : this.southEast
-				.equals(castedObj.southEast))
-			&& (this.northEast == null ? castedObj.northEast == null : this.northEast
-				.equals(castedObj.northEast))
-			&& (this.northWest == null ? castedObj.northWest == null : this.northWest
-				.equals(castedObj.northWest)) && (this.southWest == null
+			&& (this.southEast == null
+				? castedObj.southEast == null
+				: this.southEast.equals(castedObj.southEast))
+			&& (this.northEast == null
+				? castedObj.northEast == null
+				: this.northEast.equals(castedObj.northEast))
+			&& (this.northWest == null
+				? castedObj.northWest == null
+				: this.northWest.equals(castedObj.northWest))
+			&& (this.southWest == null
 				? castedObj.southWest == null
 				: this.southWest.equals(castedObj.southWest)));
 	}

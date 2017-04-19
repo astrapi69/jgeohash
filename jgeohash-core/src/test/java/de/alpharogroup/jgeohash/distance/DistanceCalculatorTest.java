@@ -21,8 +21,8 @@ import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 
 import de.alpharogroup.jgeohash.Adjacent;
-import de.alpharogroup.jgeohash.GeoHashPoint;
 import de.alpharogroup.jgeohash.GeoHashExtensions;
+import de.alpharogroup.jgeohash.GeoHashPoint;
 import de.alpharogroup.jgeohash.Point;
 import de.alpharogroup.jgeohash.api.Position;
 
@@ -148,7 +148,8 @@ public class DistanceCalculatorTest
 	{
 		final String alterTeichwegGeohash = "u1x0v54rmjwej";
 		final String subGeohash = alterTeichwegGeohash.substring(0, 1);
-		final Map<String, String> firstRingCells = GeoHashExtensions.getAllAdjacentAreasMap(subGeohash);
+		final Map<String, String> firstRingCells = GeoHashExtensions
+			.getAllAdjacentAreasMap(subGeohash);
 		final double[] coordinates = GeoHashExtensions.decodeAndRound(alterTeichwegGeohash);
 		final Position alterTeichweg = new Point(coordinates[0], coordinates[1]);
 		final Position ludwigsburg = new GeoHashPoint(48.889380, 9.190459);

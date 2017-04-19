@@ -23,7 +23,6 @@ The source code comes under the liberal Apache License V2.0, making jgeohash gre
 # Build Status 
 [![Build Status](https://travis-ci.org/astrapi69/jgeohash.svg?branch=master)](https://travis-ci.org/astrapi69/jgeohash)
 
-
 ## Maven Central
 
 jgeohash-core [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jgeohash-core/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jgeohash-core)
@@ -35,14 +34,20 @@ jgeohash-geoip [![Maven Central](https://maven-badges.herokuapp.com/maven-centra
 Maven dependency is now on sonatype.
 Check out [sonatype repository](https://oss.sonatype.org/index.html#nexus-search;quick~jgeohash) for latest snapshots and releases.
 
-Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of jgeohash:
+You can add the following maven dependencies to your project `pom.xml` if you want to import the library. 
 
-Than you can add the dependency to your dependencies:
+You can first define the version properties:
 
+	<properties>
+		...
 		<!-- GEOHASH LOCATION version -->
 		<jgeohash.version>2.3.0</jgeohash.version>
 		<jgeohash-core.version>${jgeohash.version}</jgeohash-core.version>
 		<jgeohash-geoip.version>${jgeohash.version}</jgeohash-geoip.version>
+		...
+	</properties>
+
+Add the following maven dependency to your project `pom.xml` if you want to import the core functionality of jgeohash:
 
 		<dependencies>
 			...
@@ -54,8 +59,6 @@ Than you can add the dependency to your dependencies:
 		</dependencies>
 
 Add the following maven dependency to your project `pom.xml` if you want to import the geoip functionality of jgeohash:
-
-Than you can add the dependency to your dependencies:
 
 		<dependencies>
 			...
@@ -99,7 +102,9 @@ No animals were harmed in the making of this library.
 # Donate
 
 If you like this library, please consider a donation through 
-<a href="http://flattr.com/thing/4067696/astrapi69jgeohash-on-GitHub" target="_blank"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
+<a href="http://flattr.com/thing/4067696/astrapi69jgeohash-on-GitHub" target="_blank">
+<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
+</a>
 
 Last changes
 ----------------------
