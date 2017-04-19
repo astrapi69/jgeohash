@@ -20,6 +20,7 @@ import static java.lang.Math.cos;
 import static java.lang.Math.sin;
 import static java.lang.Math.toDegrees;
 import static java.lang.Math.toRadians;
+
 import de.alpharogroup.jgeohash.GeoHashPoint;
 import de.alpharogroup.jgeohash.api.Position;
 
@@ -51,8 +52,8 @@ public class DistanceCalculator
 		final double theta = toRadians(startLongitude - endLongitude);
 		final double latitudePoint1 = toRadians(startLatitude);
 		final double latitudePoint2 = toRadians(endLatitude);
-		double distance = sin(latitudePoint1) * sin(latitudePoint2) + cos(latitudePoint1)
-			* cos(latitudePoint2) * cos(theta);
+		double distance = sin(latitudePoint1) * sin(latitudePoint2)
+			+ cos(latitudePoint1) * cos(latitudePoint2) * cos(theta);
 		// 60 is the number of minutes in a degree
 		// 1.1515 is the number of statute miles in a nautical mile
 		// One nautical mile is the length of one minute of latitude at the equator.
@@ -110,8 +111,8 @@ public class DistanceCalculator
 	public static double distanceBetweenPoints(final String startGeohashValue,
 		final String endGeohashValue, final MeasuringUnit unit)
 	{
-		return distanceBetweenPoints(new GeoHashPoint(startGeohashValue), new GeoHashPoint(
-			endGeohashValue), unit);
+		return distanceBetweenPoints(new GeoHashPoint(startGeohashValue),
+			new GeoHashPoint(endGeohashValue), unit);
 	}
 
 }

@@ -28,10 +28,11 @@ import com.maxmind.geoip.LookupService;
 import de.alpharogroup.lang.ClassExtensions;
 
 /**
- * The class {@link LookupServiceSingleton} is a singleton class for the {@link LookupService}.<br><br>
+ * The class {@link LookupServiceSingleton} is a singleton class for the {@link LookupService}.<br>
+ * <br>
  * Note: <br>
- * There have to be the file with the file name 'GeoLiteCity.dat' in the classpath for appropriate work of the
- * {@link LookupService}.
+ * There have to be the file with the file name 'GeoLiteCity.dat' in the classpath for appropriate
+ * work of the {@link LookupService}.
  */
 public final class LookupServiceSingleton
 {
@@ -48,13 +49,6 @@ public final class LookupServiceSingleton
 	private static final String SUFFIX = ".dat";
 
 	/**
-	 * Private constructor.
-	 */
-	private LookupServiceSingleton()
-	{
-	}
-
-	/**
 	 * Gets the single instance of the {@link LookupService}.
 	 *
 	 * @return the single instance of the {@link LookupService}.
@@ -64,14 +58,16 @@ public final class LookupServiceSingleton
 		if (instance == null)
 		{
 			synchronized (LookupServiceSingleton.class)
-			{	// double check...
-				if (instance == null) {
+			{ // double check...
+				if (instance == null)
+				{
 					File fileLocation = null;
 					final InputStream is = ClassExtensions.getResourceAsStream(PREFIX + SUFFIX);
 					try
 					{
 						fileLocation = inputStreamToFile(is);
-						instance = new LookupService(fileLocation, LookupService.GEOIP_MEMORY_CACHE);
+						instance = new LookupService(fileLocation,
+							LookupService.GEOIP_MEMORY_CACHE);
 					}
 					catch (final IOException e)
 					{
@@ -101,6 +97,13 @@ public final class LookupServiceSingleton
 		final FileOutputStream out = new FileOutputStream(tempFile);
 		IOUtils.copy(inputStream, out);
 		return tempFile;
+	}
+
+	/**
+	 * Private constructor.
+	 */
+	private LookupServiceSingleton()
+	{
 	}
 
 }

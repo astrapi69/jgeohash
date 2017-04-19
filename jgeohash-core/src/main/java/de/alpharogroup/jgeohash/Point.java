@@ -46,8 +46,8 @@ public class Point implements Comparable<Point>, Cloneable, Position
 	{
 		if (Math.abs(latitude) > 90 || Math.abs(longitude) > 180)
 		{
-			throw new IllegalArgumentException("The given coordinates " + this.toString()
-				+ " are out of range.");
+			throw new IllegalArgumentException(
+				"The given coordinates " + this.toString() + " are out of range.");
 		}
 		this.latitude = latitude;
 		this.longitude = longitude;
@@ -145,9 +145,8 @@ public class Point implements Comparable<Point>, Cloneable, Position
 		hashCode = 31 * hashCode + (int)(+serialVersionUID ^ (serialVersionUID >>> 32));
 		hashCode = 31 * hashCode
 			+ (int)(Double.doubleToLongBits(latitude) ^ (Double.doubleToLongBits(latitude) >>> 32));
-		hashCode = 31
-			* hashCode
-			+ (int)(Double.doubleToLongBits(longitude) ^ (Double.doubleToLongBits(longitude) >>> 32));
+		hashCode = 31 * hashCode + (int)(Double.doubleToLongBits(longitude)
+			^ (Double.doubleToLongBits(longitude) >>> 32));
 		return hashCode;
 	}
 
@@ -159,8 +158,8 @@ public class Point implements Comparable<Point>, Cloneable, Position
 	{
 		if (Math.abs(latitude) > 90)
 		{
-			throw new IllegalArgumentException("The given coordinates for latitude " + latitude
-				+ " are out of range.");
+			throw new IllegalArgumentException(
+				"The given coordinates for latitude " + latitude + " are out of range.");
 		}
 		this.latitude = latitude;
 	}
@@ -173,8 +172,8 @@ public class Point implements Comparable<Point>, Cloneable, Position
 	{
 		if (Math.abs(longitude) > 180)
 		{
-			throw new IllegalArgumentException("The given coordinates for longitude " + longitude
-				+ " are out of range.");
+			throw new IllegalArgumentException(
+				"The given coordinates for longitude " + longitude + " are out of range.");
 		}
 		this.longitude = longitude;
 	}
