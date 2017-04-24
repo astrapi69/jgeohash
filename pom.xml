@@ -102,6 +102,12 @@
 			<artifactId>geoip-api</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>jcommons-lang</artifactId>
+		</dependency>
+		
+
 	</dependencies>
 
 	<build>

@@ -21,12 +21,7 @@
 			<groupId>de.alpharogroup</groupId>
 			<artifactId>jgeohash-core</artifactId>
 		</dependency>
-
-		<dependency>
-			<groupId>de.alpharogroup</groupId>
-			<artifactId>jcommons-lang</artifactId>
-		</dependency>
-
+		
 	</dependencies>
 
 </project>
