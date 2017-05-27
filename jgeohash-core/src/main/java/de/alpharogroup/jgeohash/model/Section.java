@@ -32,7 +32,8 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 @Builder(toBuilder = true)
-public class Section implements Mergeable<Section> {
+public class Section implements Mergeable<Section>
+{
 
 	/** The start. */
 	private final int start;
@@ -41,97 +42,110 @@ public class Section implements Mergeable<Section> {
 	private final int end;
 
 	/**
-	 * Checks if this {@link Section} is to left from the given {@link Section}
-	 * object.
+	 * Checks if the given {@link Section} is between this {@link Section} object.
 	 *
 	 * @param other
 	 *            the other {@link Section} object
-	 * @return true, if this {@link Section} is to left from the given
-	 *         {@link Section} object otherwise false.
+	 * @return true, if the given {@link Section} is between this {@link Section} object otherwise
+	 *         false.
 	 */
-	public boolean isToLeft(final Section other) {
+	public boolean isBetween(final Section other)
+	{
+		final boolean between = this.start >= other.start && this.end <= other.end;
+		return between;
+	}
+
+	/**
+	 * Checks if this {@link Section} is to left from the given {@link Section} object.
+	 *
+	 * @param other
+	 *            the other {@link Section} object
+	 * @return true, if this {@link Section} is to left from the given {@link Section} object
+	 *         otherwise false.
+	 */
+	public boolean isToLeft(final Section other)
+	{
 		return this.start == other.end;
 	}
 
 	/**
-	 * Checks if this {@link Section} is to right from the given {@link Section}
-	 * object.
+	 * Checks if this {@link Section} is to right from the given {@link Section} object.
 	 *
 	 * @param other
 	 *            the other {@link Section} object
-	 * @return true, if this {@link Section} is to right from the given
-	 *         {@link Section} object otherwise false.
+	 * @return true, if this {@link Section} is to right from the given {@link Section} object
+	 *         otherwise false.
 	 */
-	public boolean isToRight(final Section other) {
+	public boolean isToRight(final Section other)
+	{
 		return this.end == other.start;
-	}
-
-	/**
-	 * Checks if this {@link Section} overlaps with the given {@link Section}
-	 * object.
-	 *
-	 * @param other
-	 *            the other {@link Section} object
-	 * @return true, if this {@link Section} overlaps with the given
-	 *         {@link Section} object otherwise false.
-	 */
-	public boolean overlapsWith(final Section other) {
-		final boolean overlapping = ((this.start <= other.start && this.end >= other.start)
-				|| (this.start <= other.end && this.end >= other.end))
-				|| ((this.start >= other.start && this.start <= other.end)
-						|| (this.end >= other.start && this.end <= other.end));
-		return overlapping;
-	}
-
-	/**
-	 * Checks if the given {@link Section} is between this {@link Section}
-	 * object.
-	 *
-	 * @param other
-	 *            the other {@link Section} object
-	 * @return true, if the given {@link Section} is between this {@link Section}
-	 * object otherwise false.
-	 */
-	public boolean isBetween(final Section other) {
-		final boolean between = this.start >= other.start && this.end <= other.end;
-		return between;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Section merge(final Section other) {
-		Section merged = null;
-		if (this.isToLeft(other)) {
+	public Section merge(final Section other)
+	{
+		Section merged = this;
+		if (this.isToLeft(other))
+		{
 			merged = Section.builder().start(other.getStart()).end(this.end).build();
 			return merged;
 		}
-		if (this.isToRight(other)) {
+		if (this.isToRight(other))
+		{
 			merged = Section.builder().start(this.getStart()).end(other.end).build();
 			return merged;
 		}
 		final boolean overlapsWith = this.overlapsWith(other);
-		if (overlapsWith) {
-			if (this.getStart() <= other.getStart()) {
-				if (this.getEnd() >= other.getEnd()) {
+		if (overlapsWith)
+		{
+			if (this.getStart() <= other.getStart())
+			{
+				if (this.getEnd() >= other.getEnd())
+				{
 					merged = this;
 					return merged;
-				} else {
+				}
+				else
+				{
 					merged = Section.builder().start(this.getStart()).end(other.getEnd()).build();
 					return merged;
 				}
-			} else {
-				if (this.getEnd() >= other.getEnd()) {
+			}
+			else
+			{
+				if (this.getEnd() >= other.getEnd())
+				{
 					merged = Section.builder().start(other.getStart()).end(this.getEnd()).build();
 					return merged;
-				} else {
+				}
+				else
+				{
 					merged = Section.builder().start(other.getStart()).end(other.getEnd()).build();
 					return merged;
 				}
 			}
 		}
 		return merged;
+	}
+
+	/**
+	 * Checks if this {@link Section} overlaps with the given {@link Section} object.
+	 *
+	 * @param other
+	 *            the other {@link Section} object
+	 * @return true, if this {@link Section} overlaps with the given {@link Section} object
+	 *         otherwise false.
+	 */
+	public boolean overlapsWith(final Section other)
+	{
+		final boolean overlapping = ((this.start <= other.start && this.end >= other.start)
+			|| (this.start <= other.end && this.end >= other.end))
+			|| ((this.start >= other.start && this.start <= other.end)
+				|| (this.end >= other.start && this.end <= other.end));
+		return overlapping;
 	}
 
 }
