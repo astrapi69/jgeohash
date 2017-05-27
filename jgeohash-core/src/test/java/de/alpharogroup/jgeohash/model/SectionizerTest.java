@@ -46,7 +46,6 @@ public class SectionizerTest
 		actual = sectionizer.merge(foo, bar);
 		assertEquals(expected, actual);
 
-
 	}
 
 }
