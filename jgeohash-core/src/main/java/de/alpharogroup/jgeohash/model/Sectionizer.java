@@ -22,51 +22,35 @@ import java.util.List;
 import java.util.Set;
 
 import de.alpharogroup.lang.Summarizer;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * The class {@link Sectionizer} can merge {@link Section} objects.
  */
-public class Sectionizer implements Summarizer<Section> {
+@Getter
+@Setter
+@Builder
+public class Sectionizer implements Summarizer<Section>
+{
+
+	/** The Constant value for the default max iteration. */
+	public static final int DEFAULT_MAX_ITERATION = 9999;
 
 	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public List<Section> merge(final List<Section> sections) {
-		final List<Section> toAdd = new ArrayList<>();
-		final List<Section> toRemove = new ArrayList<>();
-		Collections.sort(sections, new SectionComparator());
-		List<Section> mergedSections = new ArrayList<>(sections);
-		List<Section> lastIterated = new ArrayList<>(mergedSections);
-		int initialSize = mergedSections.size();
-		boolean mergable = true;
-		while(mergable) {
-			merge(mergedSections, toAdd, toRemove);
-			mergedSections = clean(toAdd, toRemove);
-			toAdd.clear();
-			toRemove.clear();
-			final int newSize = mergedSections.size();
-			if(initialSize == newSize) {
-				// compare lists if equal
-				if(mergedSections.equals(lastIterated)) {
-					mergable = false;
-					break;
-				}
-			}
-			initialSize = newSize;
-			lastIterated = new ArrayList<>(mergedSections);
-		}
-		return mergedSections;
-	}
-
-	/**
-	 * Removes duplicate entries in the given list mergedSections and sorts them with the {@link SectionComparator}.
+	 * Removes duplicate entries in the given list mergedSections and sorts them with the
+	 * {@link SectionComparator}.
 	 *
-	 * @param mergeSections All merged sections that will be processed.
-	 * @param toRemove All sections that have to be removed from the list mergedSections
+	 * @param mergeSections
+	 *            All merged sections that will be processed.
+	 * @param toRemove
+	 *            All sections that have to be removed from the list mergedSections
 	 * @return the clean and sorted list.
 	 */
-	private static List<Section> clean(final List<Section> mergeSections, final List<Section> toRemove) {
+	private static List<Section> clean(final List<Section> mergeSections,
+		final List<Section> toRemove)
+	{
 		final Set<Section> set = new HashSet<>(mergeSections);
 		set.removeAll(toRemove);
 		final List<Section> mergedSections = new ArrayList<>(set);
@@ -74,10 +58,51 @@ public class Sectionizer implements Summarizer<Section> {
 		return mergedSections;
 	}
 
+	/** The max iteration which the iteration will break in the while loop. */
+	@Builder.Default
+	private int maxIteration = DEFAULT_MAX_ITERATION;
+
 	/**
-	 * Iterates over the given list sourceSections and merge sections that can
-	 * be merged. The result of the merged sections are saved in the given list
-	 * mergeSections. All sections that have to be removed are saved in the given list toRemove.
+	 * {@inheritDoc}
+	 */
+	@Override
+	public List<Section> merge(final List<Section> sections)
+	{
+		final List<Section> toAdd = new ArrayList<>();
+		final List<Section> toRemove = new ArrayList<>();
+		Collections.sort(sections, new SectionComparator());
+		List<Section> mergedSections = new ArrayList<>(sections);
+		List<Section> lastIterated = new ArrayList<>(mergedSections);
+		int initialSize = mergedSections.size();
+		boolean mergable = true;
+		int count = 0;
+		while (mergable && count < maxIteration)
+		{
+			merge(mergedSections, toAdd, toRemove);
+			mergedSections = clean(toAdd, toRemove);
+			toAdd.clear();
+			toRemove.clear();
+			final int newSize = mergedSections.size();
+			if (initialSize == newSize)
+			{
+				// compare lists if equal
+				if (mergedSections.equals(lastIterated))
+				{
+					mergable = false;
+					break;
+				}
+			}
+			initialSize = newSize;
+			lastIterated = new ArrayList<>(mergedSections);
+			count++;
+		}
+		return mergedSections;
+	}
+
+	/**
+	 * Iterates over the given list sourceSections and merge sections that can be merged. The result
+	 * of the merged sections are saved in the given list mergeSections. All sections that have to
+	 * be removed are saved in the given list toRemove.
 	 *
 	 * @param sourceSections
 	 *            the source sections
@@ -87,28 +112,40 @@ public class Sectionizer implements Summarizer<Section> {
 	 *            All sections that have to be removed are saved in this list
 	 */
 	private void merge(final List<Section> sourceSections, final List<Section> mergedSections,
-			final List<Section> toRemove) {
-		for(final Section clonedSection : sourceSections) {
-			for(final Section section : sourceSections) {
-				if(clonedSection.equals(section)) {
-					if(!mergedSections.contains(section)) {
+		final List<Section> toRemove)
+	{
+		for (final Section clonedSection : sourceSections)
+		{
+			for (final Section section : sourceSections)
+			{
+				if (clonedSection.equals(section))
+				{
+					if (!mergedSections.contains(section))
+					{
 						mergedSections.add(section);
 					}
 					continue;
 				}
-				final Section  mergeSection = merge(clonedSection, section);
-				if(mergeSection != null) {
-					if(!mergedSections.contains(mergeSection)) {
+				final Section mergeSection = merge(clonedSection, section);
+				if (!clonedSection.equals(mergeSection))
+				{
+					if (!mergedSections.contains(mergeSection))
+					{
 						mergedSections.add(mergeSection);
 					}
-					if(!toRemove.contains(clonedSection) && !mergeSection.equals(clonedSection)) {
+					if (!toRemove.contains(clonedSection) && !mergeSection.equals(clonedSection))
+					{
 						toRemove.add(clonedSection);
 					}
-					if(!toRemove.contains(section) && !mergeSection.equals(section)) {
+					if (!toRemove.contains(section) && !mergeSection.equals(section))
+					{
 						toRemove.add(section);
 					}
-				} else {
-					if(!mergedSections.contains(section)) {
+				}
+				else
+				{
+					if (!mergedSections.contains(section))
+					{
 						mergedSections.add(section);
 					}
 				}
@@ -120,7 +157,8 @@ public class Sectionizer implements Summarizer<Section> {
 	 * {@inheritDoc}
 	 */
 	@Override
-	public Section merge(final Section object, final Section other) {
+	public Section merge(final Section object, final Section other)
+	{
 		return object.merge(other);
 	}
 

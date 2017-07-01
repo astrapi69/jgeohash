@@ -20,21 +20,26 @@ import java.util.Comparator;
 /**
  * The class {@link SectionComparator} can compare {@link Section} objects.
  */
-public class SectionComparator implements Comparator<Section> {
+public class SectionComparator implements Comparator<Section>
+{
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public int compare(final Section object, final Section compareWithObject) {
+	public int compare(final Section object, final Section compareWithObject)
+	{
 		// Check if one of the objects are null
-		if (object != null && compareWithObject == null) {
+		if (object != null && compareWithObject == null)
+		{
 			return 1;// compareWithObject is null so object is bigger
 		}
-		if (object == null && compareWithObject != null) {
+		if (object == null && compareWithObject != null)
+		{
 			return -1; // object is null so compareWithObject is smaller
 		}
-		if (object == compareWithObject) {
+		if (object == compareWithObject)
+		{
 			return 0;// it is the same Object
 		}
 		final int objStart = object.getStart();
@@ -44,10 +49,20 @@ public class SectionComparator implements Comparator<Section> {
 
 		final int objectSum = objStart + objEnd;
 		final int otherSum = otherStart + otherEnd;
-		if (otherSum < objectSum) {
+		if (objStart < otherStart)
+		{
 			return 1; // object is bigger
 		}
-		if (otherSum == objectSum) {
+		if (objStart == otherStart)
+		{
+			if (otherSum < objectSum)
+			{
+				return 1; // object is bigger
+			}
+			if (otherSum > objectSum)
+			{
+				return -1; // object is smaller
+			}
 			return 0;
 		}
 		return -1; // object is smaller
