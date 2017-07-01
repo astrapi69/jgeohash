@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>2.25.0-SNAPSHOT</version>
+		<version>2.26.0</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -64,8 +64,7 @@
 		<!-- GEOIP-API version -->
 		<geoip-api.version>1.2.14</geoip-api.version>
 		<!-- EXTENSIONS LIB versions -->
-		<extensions-lib.version>4.19.0</extensions-lib.version>
-		<jcommons-lang.version>${extensions-lib.version}</jcommons-lang.version>
+		<jcommons-lang.version>4.20.0</jcommons-lang.version>
 	</properties>
 
 	<dependencyManagement>
