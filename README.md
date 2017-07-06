@@ -31,7 +31,9 @@ jgeohash-geoip [![Maven Central](https://maven-badges.herokuapp.com/maven-centra
 
 ## javadoc
 
-[![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jgeohash.svg)](http://www.javadoc.io/doc/de.alpharogroup/jgeohash)
+jgeohash-core [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jgeohash.svg)](http://www.javadoc.io/doc/de.alpharogroup/jgeohash-core)
+
+jgeohash-geoip [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jgeohash.svg)](http://www.javadoc.io/doc/de.alpharogroup/jgeohash-geoip)
 
 ## Maven dependency
 
