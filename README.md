@@ -29,6 +29,12 @@ jgeohash-core [![Maven Central](https://maven-badges.herokuapp.com/maven-central
 
 jgeohash-geoip [![Maven Central](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jgeohash-geoip/badge.svg)](https://maven-badges.herokuapp.com/maven-central/de.alpharogroup/jgeohash-geoip)
 
+## javadoc
+
+jgeohash-core [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jgeohash.svg)](http://www.javadoc.io/doc/de.alpharogroup/jgeohash-core)
+
+jgeohash-geoip [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jgeohash.svg)](http://www.javadoc.io/doc/de.alpharogroup/jgeohash-geoip)
+
 ## Maven dependency
 
 Maven dependency is now on sonatype.

@@ -21,6 +21,7 @@
 # maven generated files #
 #########################
 /target
+*.versionsBackup
 
 #############
 # Zip files #
