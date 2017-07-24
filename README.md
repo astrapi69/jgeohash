@@ -121,7 +121,14 @@ If you like this library, please consider a donation through
 <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
 </a>
 
-Last changes
+## Similar projects
+
+Here is a list of awesome projects that uses geohash:
+
+ * [geohash-java](https://github.com/kungfoo/geohash-java) Another implementation of Geohashes in pure Java.
+ 
+
+Change log
 ----------------------
 Version 2.4.0-SNAPSHOT
 -------------
