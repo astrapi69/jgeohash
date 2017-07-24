@@ -126,6 +126,11 @@ If you like this library, please consider a donation through
 Here is a list of awesome projects that uses geohash:
 
  * [geohash-java](https://github.com/kungfoo/geohash-java) Another implementation of Geohashes in pure Java.
+ * [geo](https://github.com/davidmoten/geo) Geohash utitlies in java 
+ 
+## Blogs
+
+ * [Designing a Spacial Index](https://dzone.com/articles/designing-spacial-index)
  
 
 Change log
