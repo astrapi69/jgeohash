@@ -75,6 +75,15 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 			</dependency>
 		</dependencies>
 
+## Semantic Versioning
+
+The versions of jgeohash are maintained with the Semantic Versioning guidelines.
+
+Release version numbers will be incremented in the following format:
+
+`<major>.<minor>.<patch>`
+
+For more information on SemVer you can visit [semver.org](http://semver.org/).
 
 ## Want to Help and improve it? ###
 
