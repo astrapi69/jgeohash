@@ -1,4 +1,4 @@
-## jgeohash
+# Overview
 
 An easy-to-implement library that can assist Java developers in using the GeoHash algorithm in order to create geocodes based on custom latitude and longitude values.
 
