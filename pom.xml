@@ -18,7 +18,7 @@
 		<!-- GEOIP-API version -->
 		<geoip-api.version>1.2.14</geoip-api.version>
 		<!-- EXTENSIONS LIB versions -->
-		<jcommons-lang.version>4.22.0</jcommons-lang.version>
+		<jcommons-lang.version>4.23.0</jcommons-lang.version>
 	</properties>
 
 	<name>${project.artifactId}</name>
