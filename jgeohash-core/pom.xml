@@ -2,12 +2,21 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>de.alpharogroup</groupId>
-    <artifactId>jgeohash</artifactId>
-	<version>2.5.0-SNAPSHOT</version>
-  </parent>
+	<parent>
+		<groupId>de.alpharogroup</groupId>
+		<artifactId>jgeohash</artifactId>
+		<version>2.5.0-SNAPSHOT</version>
+	</parent>
 
-  <artifactId>jgeohash-core</artifactId>
+	<artifactId>jgeohash-core</artifactId>
+
+	<dependencies>
+		<!-- JOBJECT-MERGE DEPENDENCIES -->
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>jobject-merge</artifactId>
+		</dependency>
+
+	</dependencies>
 
 </project>

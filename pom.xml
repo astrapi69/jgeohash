@@ -18,7 +18,15 @@
 		<!-- GEOIP-API version -->
 		<geoip-api.version>1.2.14</geoip-api.version>
 		<!-- EXTENSIONS LIB versions -->
-		<jcommons-lang.version>4.23.0</jcommons-lang.version>
+		<jcommons-lang.version>4.25.0</jcommons-lang.version>
+		<!-- JOBJECT-EXTENSIONS version -->
+		<jobject-extensions.version>1.1.0</jobject-extensions.version>
+		<jobject-clone.version>${jobject-extensions.version}</jobject-clone.version>
+		<jobject-compare.version>${jobject-extensions.version}</jobject-compare.version>
+		<jobject-copy.version>${jobject-extensions.version}</jobject-copy.version>
+		<jobject-core.version>${jobject-extensions.version}</jobject-core.version>
+		<jobject-diff.version>${jobject-extensions.version}</jobject-diff.version>
+		<jobject-merge.version>${jobject-extensions.version}</jobject-merge.version>
 	</properties>
 
 	<name>${project.artifactId}</name>
@@ -89,6 +97,12 @@
 				<artifactId>jcommons-lang</artifactId>
 				<version>${jcommons-lang.version}</version>
 			</dependency>
+			<!-- JOBJECT-MERGE DEPENDENCIES -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>jobject-merge</artifactId>
+				<version>${jobject-merge.version}</version>
+			</dependency>
 
 		</dependencies>
 
@@ -105,7 +119,7 @@
 			<groupId>de.alpharogroup</groupId>
 			<artifactId>jcommons-lang</artifactId>
 		</dependency>
-		
+
 
 	</dependencies>
 

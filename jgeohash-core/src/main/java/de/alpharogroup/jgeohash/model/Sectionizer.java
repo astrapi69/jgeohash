@@ -21,7 +21,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import de.alpharogroup.lang.Summarizer;
+import de.alpharogroup.diff.api.Summarizer;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
