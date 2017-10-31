@@ -20,12 +20,7 @@
 		<!-- EXTENSIONS LIB versions -->
 		<jcommons-lang.version>4.25.0</jcommons-lang.version>
 		<!-- JOBJECT-EXTENSIONS version -->
-		<jobject-extensions.version>1.1.0</jobject-extensions.version>
-		<jobject-clone.version>${jobject-extensions.version}</jobject-clone.version>
-		<jobject-compare.version>${jobject-extensions.version}</jobject-compare.version>
-		<jobject-copy.version>${jobject-extensions.version}</jobject-copy.version>
-		<jobject-core.version>${jobject-extensions.version}</jobject-core.version>
-		<jobject-diff.version>${jobject-extensions.version}</jobject-diff.version>
+		<jobject-extensions.version>1.2.0</jobject-extensions.version>
 		<jobject-merge.version>${jobject-extensions.version}</jobject-merge.version>
 	</properties>
 

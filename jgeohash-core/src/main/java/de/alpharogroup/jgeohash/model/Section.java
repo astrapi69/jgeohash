@@ -15,7 +15,7 @@
  */
 package de.alpharogroup.jgeohash.model;
 
-import de.alpharogroup.diff.api.Mergeable;
+import de.alpharogroup.merge.api.Mergeable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
