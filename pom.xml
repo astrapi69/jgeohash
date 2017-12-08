@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -5,24 +6,14 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>2.30.0</version>
+		<version>3.2.0</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>jgeohash</artifactId>
+	<version>2.5.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2010</inceptionYear>
-	<version>2.5.0-SNAPSHOT</version>
-
-	<properties>
-		<!-- GEOIP-API version -->
-		<geoip-api.version>1.2.14</geoip-api.version>
-		<!-- EXTENSIONS LIB versions -->
-		<jcommons-lang.version>4.26.0</jcommons-lang.version>
-		<!-- JOBJECT-EXTENSIONS version -->
-		<jobject-extensions.version>1.4.0</jobject-extensions.version>
-		<jobject-merge.version>${jobject-extensions.version}</jobject-merge.version>
-	</properties>
 
 	<name>${project.artifactId}</name>
 
@@ -37,17 +28,22 @@
 		The library is kept simple and have no dependencies to other libraries.
 	</description>
 
-	<licenses>
-
-		<license>
-			<name>The Apache Software License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-		</license>
-
-	</licenses>
-
 	<url>http://astrapi69.github.io/jgeohash/</url>
+
+	<properties>
+		<!-- GEOIP-API version -->
+		<geoip-api.version>1.2.14</geoip-api.version>
+		<!-- EXTENSIONS LIB versions -->
+		<jcommons-lang.version>4.26.0</jcommons-lang.version>
+		<!-- JOBJECT-EXTENSIONS version -->
+		<jobject-extensions.version>1.4.0</jobject-extensions.version>
+		<jobject-merge.version>${jobject-extensions.version}</jobject-merge.version>
+	</properties>
+
+	<modules>
+		<module>jgeohash-geoip</module>
+		<module>jgeohash-core</module>
+	</modules>
 
 	<scm>
 		<connection>scm:git:git:@github.com:astrapi69/jgeohash.git</connection>
@@ -55,20 +51,15 @@
 		<url>git:@github.com:astrapi69/jgeohash.git</url>
 	</scm>
 
-	<ciManagement>
-		<system>travis-ci</system>
-		<url>https://travis-ci.org/astrapi69/jgeohash</url>
-	</ciManagement>
-
 	<issueManagement>
 		<system>github</system>
 		<url>https://github.com/astrapi69/jgeohash/issues</url>
 	</issueManagement>
 
-	<modules>
-		<module>jgeohash-geoip</module>
-		<module>jgeohash-core</module>
-	</modules>
+	<ciManagement>
+		<system>travis-ci</system>
+		<url>https://travis-ci.org/astrapi69/jgeohash</url>
+	</ciManagement>
 
 	<dependencyManagement>
 
@@ -114,7 +105,6 @@
 			<groupId>de.alpharogroup</groupId>
 			<artifactId>jcommons-lang</artifactId>
 		</dependency>
-
 
 	</dependencies>
 
