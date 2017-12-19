@@ -114,23 +114,22 @@ Do not hesitate to contact the jgeohash developers with your questions, concerns
 
 No animals were harmed in the making of this library.
 
-# Donate
+# Donations
 
-If you like this library, please consider a donation through 
-<a href="http://flattr.com/thing/4067696/astrapi69jgeohash-on-GitHub" target="_blank">
+If you like this library, please consider a donation through bitcoin or over bitcoin-cash with:
+
+1Jzso5h7U82QCNmgxxSCya1yUK7UVcSXsW
+
+or over ether with:
+
+0xaB6EaE10F352268B0CA672Dd6e999C86344D49D8
+
+or over flattr:
+  
+<a href="http://flattr.com/thing/4180911/astrapi69resourcebundle-inspector-on-GitHub" target="_blank">
 <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
 </a>
 
-or over bitcoin:
-1Jzso5h7U82QCNmgxxSCya1yUK7UVcSXsW
-
-or over ether:
-0xaB6EaE10F352268B0CA672Dd6e999C86344D49D8
-
-or over bitcoin-cash:
-1Jzso5h7U82QCNmgxxSCya1yUK7UVcSXsW
-
-bitcoin:1Jzso5h7U82QCNmgxxSCya1yUK7UVcSXsW
 
 ## Similar projects
 
