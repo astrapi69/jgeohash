@@ -118,7 +118,7 @@ No animals were harmed in the making of this library.
 # Donations
 
 If you like this library, please consider a donation through paypal: 
-[![paypal](https://www.paypalobjects.com/de_DE/i/scr/pixel.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MJ7V43GU2H386)
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MJ7V43GU2H386)
 
 or over bitcoin or bitcoin-cash with:
 
