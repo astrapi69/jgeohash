@@ -117,7 +117,15 @@ No animals were harmed in the making of this library.
 
 # Donations
 
-If you like this library, please consider a donation through bitcoin or over bitcoin-cash with:
+If you like this library, please consider a donation through paypal: 
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="MJ7V43GU2H386">
+<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/de_DE/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+or over bitcoin or bitcoin-cash with:
 
 1Jzso5h7U82QCNmgxxSCya1yUK7UVcSXsW
 
