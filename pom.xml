@@ -36,7 +36,7 @@
 		<!-- EXTENSIONS LIB versions -->
 		<jcommons-lang.version>4.28.0</jcommons-lang.version>
 		<!-- JOBJECT-EXTENSIONS version -->
-		<jobject-extensions.version>1.5.0</jobject-extensions.version>
+		<jobject-extensions.version>1.6.0</jobject-extensions.version>
 		<jobject-merge.version>${jobject-extensions.version}</jobject-merge.version>
 	</properties>
 
