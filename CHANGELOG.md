@@ -5,6 +5,7 @@ Version 2.4.0-SNAPSHOT
 -------------
 - update of java parent version.
 - Note section added.
+- Moved changelog to its own file
 
 Version 2.3.0
 -------------
