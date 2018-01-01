@@ -1,6 +1,7 @@
 
-Change log
+## Change log
 ----------------------
+
 Version 2.5.0-SNAPSHOT
 -------------
 - update of java parent version
