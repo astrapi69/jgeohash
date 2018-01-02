@@ -133,7 +133,7 @@ or over flattr:
   
 <a href="http://flattr.com/thing/4067696/astrapi69jgeohash-on-GitHub" target="_blank">
 <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
-</a>Pxf8bweL
+</a>
 
 
 ## Similar projects
@@ -150,4 +150,4 @@ Here is a list of awesome projects that uses geohash:
 
 ## Change log
 
-The changelog can be found on following [link](https://github.com/astrapi69/jgeohash/blob/develop/CHANGELOG.md)
+The changelog is moved in its own file. It can be found on following [page](https://github.com/astrapi69/jgeohash/blob/develop/CHANGELOG.md)
