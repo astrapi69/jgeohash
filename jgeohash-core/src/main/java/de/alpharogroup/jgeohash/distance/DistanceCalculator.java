@@ -23,11 +23,13 @@ import static java.lang.Math.toRadians;
 
 import de.alpharogroup.jgeohash.GeoHashPoint;
 import de.alpharogroup.jgeohash.api.Position;
+import lombok.experimental.UtilityClass;
 
 /**
  * The Class DistanceCalculator provides methods for calculate the distance between two geohash,
  * position or coordinate values.
  */
+@UtilityClass
 public class DistanceCalculator
 {
 
@@ -79,7 +81,7 @@ public class DistanceCalculator
 
 	/**
 	 * Returns the distance between two points.
-	 * 
+	 *
 	 * @param start
 	 *            the start position.
 	 * @param end
@@ -99,7 +101,7 @@ public class DistanceCalculator
 
 	/**
 	 * Returns the distance between two given geohash values.
-	 * 
+	 *
 	 * @param startGeohashValue
 	 *            the geohash value from where to start the measurement.
 	 * @param endGeohashValue

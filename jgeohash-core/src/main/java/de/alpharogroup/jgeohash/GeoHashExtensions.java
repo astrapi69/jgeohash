@@ -23,10 +23,12 @@ import java.util.Map;
 
 import de.alpharogroup.jgeohash.model.FirstAndSecondRingRegion;
 import de.alpharogroup.jgeohash.model.FirstRingRegion;
+import lombok.experimental.UtilityClass;
 
 /**
  * The class {@link GeoHashExtensions}. This class is based on http://en.wikipedia.org/wiki/Geohash.
  */
+@UtilityClass
 public class GeoHashExtensions
 {
 
@@ -308,7 +310,7 @@ public class GeoHashExtensions
 	/**
 	 * Gets the geohash cells around the given geohash cell. With other words it gets eight cells
 	 * around the given geohash cell so the first ring inclusive the given geohash cell.
-	 * 
+	 *
 	 * @param geohash
 	 *            the geohash
 	 * @return all geohash cells around the given geohash cell.
@@ -359,7 +361,7 @@ public class GeoHashExtensions
 
 	/**
 	 * Gets the geohash cells around the given geohash cell as a {@link FirstRingRegion} object.
-	 * 
+	 *
 	 * @param geohash
 	 *            the geohash cell.
 	 * @return the {@link FirstRingRegion} object calculated from the given geohash value.
@@ -413,7 +415,7 @@ public class GeoHashExtensions
 	 * Gets the eight cells around the given geohash cell so the first ring inclusive the given
 	 * geohash cell and cells from the second ring. The result is 24 cells plus the given geohash
 	 * cell.
-	 * 
+	 *
 	 * @param geohash
 	 *            the geohash
 	 * @return the eight cells around the given geohash cell so the first ring inclusive the given

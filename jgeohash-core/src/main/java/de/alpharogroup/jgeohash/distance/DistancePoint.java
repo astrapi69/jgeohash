@@ -16,10 +16,16 @@
 package de.alpharogroup.jgeohash.distance;
 
 import de.alpharogroup.jgeohash.api.Position;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
 
 /**
  * The Class DistancePoint is a pojo for holding a distance between two points.
  */
+@Getter
+@EqualsAndHashCode
+@ToString
 public class DistancePoint implements Comparable<DistancePoint>
 {
 
@@ -43,10 +49,8 @@ public class DistancePoint implements Comparable<DistancePoint>
 		this.distance = distance;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Comparable#compareTo(java.lang.Object)
+	/**
+	 * {@inheritDoc}
 	 */
 	@Override
 	public int compareTo(final DistancePoint o)
@@ -54,13 +58,4 @@ public class DistancePoint implements Comparable<DistancePoint>
 		return distance.compareTo(o.distance);
 	}
 
-	/**
-	 * Gets the point.
-	 *
-	 * @return the point
-	 */
-	public Position getPoint()
-	{
-		return point;
-	}
 }
