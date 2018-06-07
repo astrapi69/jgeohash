@@ -16,10 +16,12 @@
 package de.alpharogroup.jgeohash;
 
 import de.alpharogroup.jgeohash.api.Position;
+import lombok.Builder;
 
 /**
- * The Class Point represents a point on earth with the latitude and longitude.
+ * The class {@link Point} represents a point on earth with the latitude and longitude.
  */
+@Builder
 public class Point implements Comparable<Point>, Cloneable, Position
 {
 
@@ -35,7 +37,7 @@ public class Point implements Comparable<Point>, Cloneable, Position
 	private double longitude;
 
 	/**
-	 * Instantiates a new point.
+	 * Instantiates a new {@link Point} object.
 	 *
 	 * @param latitude
 	 *            the latitude

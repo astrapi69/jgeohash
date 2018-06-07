@@ -21,7 +21,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The Class DistancePoint is a pojo for holding a distance between two points.
+ * The class DistancePoint is a pojo for holding a distance between two points.
  */
 @Getter
 @EqualsAndHashCode
@@ -29,7 +29,7 @@ import lombok.ToString;
 public class DistancePoint implements Comparable<DistancePoint>
 {
 
-	/** The point. */
+	/** The position point. */
 	private final Position point;
 
 	/** The distance. */

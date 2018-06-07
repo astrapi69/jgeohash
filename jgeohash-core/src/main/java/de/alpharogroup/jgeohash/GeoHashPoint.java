@@ -20,7 +20,7 @@ import java.math.BigDecimal;
 import de.alpharogroup.jgeohash.api.Position;
 
 /**
- * The Class GeoHashPoint.
+ * The class {@link GeoHashPoint}.
  */
 public class GeoHashPoint extends Point
 {
@@ -29,11 +29,12 @@ public class GeoHashPoint extends Point
 	 * The serialVersionUID.
 	 */
 	private static final long serialVersionUID = -3580536765079661097L;
+
 	/** The Constant GEOHASH_KEY. */
 	public static final String GEOHASH_KEY = "GEOHASH_KEY";
 
 	/**
-	 * Instantiates a new geo hash point.
+	 * Instantiates a new {@link GeoHashPoint}.
 	 *
 	 * @param latitude
 	 *            the latitude
@@ -46,7 +47,7 @@ public class GeoHashPoint extends Point
 	}
 
 	/**
-	 * Instantiates a new geo hash point.
+	 * Instantiates a new {@link GeoHashPoint}.
 	 *
 	 * @param latitude
 	 *            the latitude
@@ -59,7 +60,7 @@ public class GeoHashPoint extends Point
 	}
 
 	/**
-	 * Instantiates a new geo hash point.
+	 * Instantiates a new {@link GeoHashPoint}.
 	 *
 	 * @param latitude
 	 *            the latitude
@@ -72,7 +73,7 @@ public class GeoHashPoint extends Point
 	}
 
 	/**
-	 * Instantiates a new geo hash point.
+	 * Instantiates a new {@link GeoHashPoint}.
 	 *
 	 * @param position
 	 *            the position
@@ -83,7 +84,7 @@ public class GeoHashPoint extends Point
 	}
 
 	/**
-	 * Instantiates a new geo hash point.
+	 * Instantiates a new {@link GeoHashPoint}.
 	 *
 	 * @param geohash
 	 *            the Geohash code.
@@ -94,7 +95,7 @@ public class GeoHashPoint extends Point
 	}
 
 	/**
-	 * Instantiates a new geo hash point.
+	 * Instantiates a new {@link GeoHashPoint}.
 	 *
 	 * @param lat
 	 *            the latitude as String object.

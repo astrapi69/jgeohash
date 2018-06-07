@@ -19,7 +19,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * The class Adjacent.
+ * The class {@link Adjacent}.
  */
 public abstract class Adjacent
 {

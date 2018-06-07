@@ -18,7 +18,7 @@ package de.alpharogroup.jgeohash.distance;
 import lombok.Getter;
 
 /**
- * The Enum MeasuringUnit.
+ * The enum class {@link MeasuringUnit} provides the factors for kilometer, meter and miles.
  */
 public enum MeasuringUnit
 {

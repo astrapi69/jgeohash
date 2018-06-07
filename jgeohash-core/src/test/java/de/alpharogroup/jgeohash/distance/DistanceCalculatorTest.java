@@ -15,9 +15,10 @@
  */
 package de.alpharogroup.jgeohash.distance;
 
+import static org.testng.AssertJUnit.assertEquals;
+
 import java.util.Map;
 
-import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 
 import de.alpharogroup.jgeohash.Adjacent;
@@ -27,7 +28,7 @@ import de.alpharogroup.jgeohash.Point;
 import de.alpharogroup.jgeohash.api.Position;
 
 /**
- * The Class DistanceCalculatorTest.
+ * The unit test class for the class {@link DistanceCalculator}.
  */
 public class DistanceCalculatorTest
 {
@@ -156,29 +157,29 @@ public class DistanceCalculatorTest
 		final String ludwigsburgGeohash = ((GeoHashPoint)ludwigsburg).getGeohash();
 		final double distance2 = DistanceCalculator.distanceBetweenPoints(ludwigsburg,
 			alterTeichweg, MeasuringUnit.KILOMETER);
-		AssertJUnit.assertEquals(distance2, 525.875517661088);
+		assertEquals(distance2, 525.875517661088);
 		System.out.println("Distance2:" + distance2);
 
 		double distance3 = DistanceCalculator.distanceBetweenPoints(ludwigsburgGeohash,
 			alterTeichwegGeohash, MeasuringUnit.KILOMETER);
-		AssertJUnit.assertEquals(distance3, 525.875517737948);
+		assertEquals(distance3, 525.875517737948);
 		System.out.println("Distance3:" + distance3);
 
 		distance3 = DistanceCalculator.distanceBetweenPoints(ludwigsburgGeohash,
 			alterTeichwegGeohash, MeasuringUnit.METER);
-		AssertJUnit.assertEquals(distance3, 525875.517737948);
+		assertEquals(distance3, 525875.517737948);
 		System.out.println("Distance3 in meters:" + distance3);
 
 		final double distance4 = DistanceCalculator.distanceBetweenPoints(
 			firstRingCells.get(Adjacent.CENTER), firstRingCells.get(Adjacent.RIGHT),
 			MeasuringUnit.KILOMETER);
-		// AssertJUnit.assertEquals(distance4, 25.668503170382518);
+		// assertEquals(distance4, 25.668503170382518);
 		System.out.println("Distance4 width:" + distance4);
 
 		final double distance5 = DistanceCalculator.distanceBetweenPoints(
 			firstRingCells.get(Adjacent.CENTER), firstRingCells.get(Adjacent.BOTTOM),
 			MeasuringUnit.KILOMETER);
-		// AssertJUnit.assertEquals(distance5, 19.545042824959157);
+		// assertEquals(distance5, 19.545042824959157);
 		System.out.println("Distance5 height:" + distance5);
 
 	}

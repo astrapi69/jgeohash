@@ -22,7 +22,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The Class FirstAndSecondRingRegion provides the neighbors from the given geohash value in first
+ * The class {@link FirstAndSecondRingRegion} provides the neighbors from the given geohash value in first
  * and second ring.
  */
 @Getter

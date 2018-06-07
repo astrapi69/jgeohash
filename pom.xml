@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>3.3.0</version>
+		<version>3.11</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -34,10 +34,11 @@
 		<!-- GEOIP-API version -->
 		<geoip-api.version>1.2.14</geoip-api.version>
 		<!-- EXTENSIONS LIB versions -->
-		<jcommons-lang.version>4.28.0</jcommons-lang.version>
+		<jcommons-lang.version>4.34</jcommons-lang.version>
 		<!-- JOBJECT-EXTENSIONS version -->
-		<jobject-extensions.version>1.6.0</jobject-extensions.version>
+		<jobject-extensions.version>1.11</jobject-extensions.version>
 		<jobject-merge.version>${jobject-extensions.version}</jobject-merge.version>
+		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
 	</properties>
 
 	<modules>
@@ -89,6 +90,12 @@
 				<artifactId>jobject-merge</artifactId>
 				<version>${jobject-merge.version}</version>
 			</dependency>
+			<!-- JOBJECT-EVALUATE DEPENDENCY -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>jobject-evaluate</artifactId>
+				<version>${jobject-evaluate.version}</version>
+			</dependency>
 
 		</dependencies>
 
@@ -104,6 +111,18 @@
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
 			<artifactId>jcommons-lang</artifactId>
+		</dependency>
+		<!-- MEANBEAN DEPENDENCY -->
+		<dependency>
+			<groupId>org.meanbean</groupId>
+			<artifactId>meanbean</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- JOBJECT-EVALUATE DEPENDENCY -->
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>jobject-evaluate</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
@@ -122,6 +141,43 @@
 							<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
 						</suiteXmlFiles>
 					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>cobertura-maven-plugin</artifactId>
+					<configuration>
+						<instrumentation>
+							<excludes>
+								<!-- abstract classes -->
+								<!-- annotations -->
+								<!-- enums -->
+								<!-- beans -->
+								<!-- exceptions -->
+								<!-- interfaces -->
+								<!-- deprecated classes -->
+								<!-- constant classes with only constants -->
+								<!-- explicit abstract classes -->
+								<!-- explicit annotations -->
+								<!-- explicit bean classes -->
+								<!-- explicit deprecated classes -->
+								<!-- explicit enums -->
+								<!-- explicit exceptions -->
+								<!-- explicit interfaces -->
+								<exclude>de/alpharogroup/jgeohash/api/Position.class</exclude>
+								<!-- explicit abstract classes -->
+								<!-- explicit constant classes with only constants -->
+								<!-- explicit delegation classes -->
+							</excludes>
+						</instrumentation>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>clean</goal>
+							</goals>
+						</execution>
+					</executions>
 				</plugin>
 
 			</plugins>

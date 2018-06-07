@@ -24,7 +24,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The Class FirstRingRegion provides the neighbors from the given geohash value.
+ * The class {@link FirstRingRegion} provides the neighbors from the given geohash value.
  */
 @Getter
 @EqualsAndHashCode
