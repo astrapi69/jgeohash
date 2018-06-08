@@ -26,11 +26,11 @@ import de.alpharogroup.jgeohash.api.Position;
 import lombok.experimental.UtilityClass;
 
 /**
- * The Class DistanceCalculator provides methods for calculate the distance between two geohash,
+ * The class {@link DistanceCalculator} provides methods for calculate the distance between two geohash,
  * position or coordinate values.
  */
 @UtilityClass
-public class DistanceCalculator
+public final class DistanceCalculator
 {
 
 	/**

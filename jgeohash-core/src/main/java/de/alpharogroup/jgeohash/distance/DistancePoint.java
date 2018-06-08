@@ -22,7 +22,8 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The class {@link DistancePoint} is a pojo for holding a distance between two points.
+ * The class {@link DistancePoint} is a pojo for holding a distance from one point. you can sort
+ * than the objects from the distance.
  */
 @Getter
 @EqualsAndHashCode
