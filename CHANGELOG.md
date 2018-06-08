@@ -2,10 +2,14 @@
 ## Change log
 ----------------------
 
-Version 2.5.0-SNAPSHOT
+Version 2.5-SNAPSHOT
 -------------
-- update of java parent version
-- Moved changelog to its own file
+
+CHANGED:
+
+- update of parent version to 3.11
+- removed unneeded .0 at the end of version
+- unit tests extended for improve code coverage
 
 Version 2.4.0
 -------------

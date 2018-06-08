@@ -1,7 +1,13 @@
 # Overview
 
+<div align="center">
 
-[![Build Status](https://travis-ci.org/astrapi69/jgeohash.svg?branch=master)](https://travis-ci.org/astrapi69/jgeohash) [![Coverage Status](https://coveralls.io/repos/github/astrapi69/jgeohash/badge.svg?branch=develop)](https://coveralls.io/github/astrapi69/jgeohash?branch=develop)
+[![build status](https://travis-ci.org/astrapi69/jgeohash.svg?branch=master)](https://travis-ci.org/astrapi69/jgeohash) 
+[![coverage status](https://coveralls.io/repos/github/astrapi69/jgeohash/badge.svg?branch=develop)](https://coveralls.io/github/astrapi69/jgeohash?branch=develop)
+[![open issues](https://img.shields.io/github/issues/astrapi69/jgeohash.svg?style=flat)](https://github.com/astrapi69/jgeohash/issues)
+[![license apache2](https://img.shields.io/badge/license-apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
+
+</div>
 
 An easy-to-implement library that can assist Java developers in using the GeoHash algorithm in order to create geocodes based on custom latitude and longitude values.
 
@@ -22,7 +28,6 @@ The library is kept simple and have no dependencies to other libraries.
 ## License
 
 The source code comes under the liberal Apache License V2.0, making jgeohash great for all types of applications.
-
 
 ## Maven Central
 
@@ -47,7 +52,7 @@ You can first define the version properties:
 
 	<properties>
 		...
-		<!-- GEOHASH LOCATION version -->
+		<!-- JGEOHASH version -->
 		<jgeohash.version>2.4.0</jgeohash.version>
 		<jgeohash-core.version>${jgeohash.version}</jgeohash-core.version>
 		<jgeohash-geoip.version>${jgeohash.version}</jgeohash-geoip.version>
@@ -58,6 +63,7 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 
 		<dependencies>
 			...
+            <!-- JGEOHASH-CORE DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jgeohash-core</artifactId>
@@ -69,6 +75,7 @@ Add the following maven dependency to your project `pom.xml` if you want to impo
 
 		<dependencies>
 			...
+            <!-- JGEOHASH-GEOIP DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jgeohash-geoip</artifactId>
@@ -84,7 +91,7 @@ Release version numbers will be incremented in the following format:
 
 `<major>.<minor>.<patch>`
 
-For more information on SemVer you can visit [semver.org](http://semver.org/).
+For detailed information on versioning you can visit the [wiki page](https://github.com/lightblueseas/mvn-parent-projects/wiki/Semantic-Versioning).
 
 ## Want to Help and improve it? ###
 
@@ -135,7 +142,6 @@ or over flattr:
 <img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
 </a>
 
-
 ## Similar projects
 
 Here is a list of awesome projects that uses geohash:
@@ -147,7 +153,13 @@ Here is a list of awesome projects that uses geohash:
 
  * [Designing a Spacial Index](https://dzone.com/articles/designing-spacial-index)
  
-
 ## Change log
 
 The changelog is moved in its own file. It can be found on following [page](https://github.com/astrapi69/jgeohash/blob/develop/CHANGELOG.md)
+
+## Credits
+
+|Travis CI|
+|:-:|
+|![Travis CI](https://travis-ci.com/images/logos/TravisCI-Full-Color.png)|
+|Many thanks to [Travis CI](https://travis-ci.org) for providing a free continuous integration service for open source projects.|
