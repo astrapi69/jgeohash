@@ -159,6 +159,7 @@
 								<!-- explicit abstract classes -->
 								<!-- explicit annotations -->
 								<!-- explicit bean classes -->
+								<exclude>de/alpharogroup/jgeohash/geoip/LookupServiceSingleton.class</exclude>
 								<!-- explicit deprecated classes -->
 								<!-- explicit enums -->
 								<!-- explicit exceptions -->
