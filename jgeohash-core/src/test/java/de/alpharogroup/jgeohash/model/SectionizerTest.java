@@ -20,11 +20,14 @@ import static org.testng.AssertJUnit.assertEquals;
 import org.testng.annotations.Test;
 
 /**
- * The class {@link SectionizerTest}.
+ * The unit test class for the class {@link Sectionizer}.
  */
 public class SectionizerTest
 {
 
+	/**
+	 * Test method for {@link Sectionizer#merge(Section, Section)}
+	 */
 	@Test
 	public void testMerge()
 	{
@@ -83,7 +86,6 @@ public class SectionizerTest
 		expected = Section.builder().start(23).end(57).build();
 		actual = sectionizer.merge(foo, bar);
 		assertEquals(expected, actual);
-
 	}
 
 }

@@ -15,10 +15,31 @@
  */
 package de.alpharogroup.jgeohash.model;
 
+import static org.testng.Assert.assertEquals;
+
+import org.testng.annotations.Test;
+
+import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
+
 /**
- * The unit test class for the class {@link FirstAndSecondRingRegion}.
+ * The unit test class for the class {@link Section}
  */
-public class FirstAndSecondRingRegionTest
+public class SectionTest
 {
+
+	/**
+	 * Test method for {@link Section#equals(Object)} , {@link Section#hashCode()} and
+	 * {@link Section#toString()}
+	 */
+	@Test
+	public void testEqualsHashcodeAndToStringWithClassSilently()
+	{
+		boolean expected;
+		boolean actual;
+		actual = SilentEqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToStringQuietly(Section.class);
+		expected = true;
+		assertEquals(expected, actual);
+	}
 
 }
