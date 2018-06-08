@@ -37,4 +37,17 @@ public class MeasuringUnitTest
 		assertEquals(actual, expected);
 	}
 
+	/**
+	 * Test method for {@link MeasuringUnit#MILE}.
+	 */
+	@Test
+	public void testGetMILEFactor()
+	{
+		double expected;
+		double actual;
+		actual = MeasuringUnit.MILE.getFactor();
+		expected = MeasuringUnit.MILE_FACTOR;
+		assertEquals(actual, expected);
+	}
+
 }

@@ -21,7 +21,7 @@ import lombok.Builder;
 /**
  * The class {@link Point} represents a point on earth with the latitude and longitude.
  */
-@Builder
+@Builder(toBuilder = true)
 public class Point implements Comparable<Point>, Cloneable, Position
 {
 
