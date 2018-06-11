@@ -13,7 +13,6 @@
       <class name="de.alpharogroup.jgeohash.model.SectionTest"/>
       <class name="de.alpharogroup.jgeohash.GeoHashExtensionsTest"/>
       <class name="de.alpharogroup.jgeohash.GeoHashPointTest"/>
-      <class name="de.alpharogroup.jgeohash.geoip.LocationExtensionsTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
