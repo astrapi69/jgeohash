@@ -24,10 +24,15 @@ import de.alpharogroup.jgeohash.GeoHashPoint;
 import de.alpharogroup.jgeohash.api.Position;
 import de.alpharogroup.jgeohash.distance.MeasuringUnit;
 
-
+/**
+ * The unit test class for the class {@link LocationExtensions}.
+ */
 public class LocationExtensionsTest
 {
 
+	/**
+	 * Test method for {@link LocationExtensions#sortByDistance(Position, List, MeasuringUnit)}
+	 */
 	@Test
 	public void testSortByDistance()
 	{
@@ -49,9 +54,13 @@ public class LocationExtensionsTest
 		LocationExtensions.sortByDistance(startPoint, geohashes, MeasuringUnit.METER);
 	}
 
+	/**
+	 * Test method for {@link LocationExtensions#sortByDistanceInMeters(Position, List)}
+	 */
 	@Test
 	public void testSortByDistanceInMeters()
 	{
+		// TODO
 	}
 
 }
