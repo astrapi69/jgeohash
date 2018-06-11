@@ -17,6 +17,9 @@ package de.alpharogroup.jgeohash;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
+import static org.testng.AssertJUnit.assertNotNull;
+
+import java.math.BigDecimal;
 
 import org.testng.annotations.Test;
 
@@ -27,6 +30,24 @@ import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
  */
 public class GeoHashPointTest
 {
+
+	/**
+	 * Test method for {@link Point} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		GeoHashPoint model;
+		model = new GeoHashPoint(Double.valueOf(53.5526394d), Double.valueOf(10.0067103d));
+		assertNotNull(model);
+		model = new GeoHashPoint(Float.valueOf(53.5526394f), Float.valueOf(10.0067103f));
+		assertNotNull(model);
+		model = new GeoHashPoint(53.5526394f, 10.0067103f);
+		assertNotNull(model);
+		model = new GeoHashPoint(
+			Point.builder().latitude(53.5526394d).longitude(10.0067103d).build());
+		assertNotNull(model);
+	}
 
 	/**
 	 * Test method for {@link Point#compareTo(Point)}.
@@ -63,6 +84,37 @@ public class GeoHashPointTest
 		actual = SilentEqualsHashCodeAndToStringEvaluator
 			.evaluateEqualsHashcodeAndToStringQuietly(GeoHashPoint.class);
 		expected = true;
+		assertEquals(expected, actual);
+	}
+
+
+	/**
+	 * Test method for {@link GeoHashPoint#getLat()}.
+	 */
+	@Test
+	public void testGetLat()
+	{
+		BigDecimal actual;
+		BigDecimal expected;
+		GeoHashPoint model;
+		model = new GeoHashPoint(Double.valueOf(53.5526394d), Double.valueOf(10.0067103d));
+		actual = model.getLat();
+		expected = BigDecimal.valueOf(Double.valueOf(53.5526394d));
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link GeoHashPoint#getLng()}.
+	 */
+	@Test
+	public void testGetLng()
+	{
+		BigDecimal actual;
+		BigDecimal expected;
+		GeoHashPoint model;
+		model = new GeoHashPoint(Double.valueOf(53.5526394d), Double.valueOf(10.0067103d));
+		actual = model.getLng();
+		expected = BigDecimal.valueOf(Double.valueOf(10.0067103d));
 		assertEquals(expected, actual);
 	}
 
