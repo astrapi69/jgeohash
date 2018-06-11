@@ -17,7 +17,11 @@ package de.alpharogroup.jgeohash.model;
 
 import static org.testng.AssertJUnit.assertEquals;
 
+import java.util.List;
+
 import org.testng.annotations.Test;
+
+import de.alpharogroup.collections.list.ListFactory;
 
 /**
  * The unit test class for the class {@link Sectionizer}.
@@ -85,6 +89,77 @@ public class SectionizerTest
 		bar = Section.builder().start(46).end(57).build();
 		expected = Section.builder().start(23).end(57).build();
 		actual = sectionizer.merge(foo, bar);
+		assertEquals(expected, actual);
+	}
+
+
+	/**
+	 * Test method for {@link Sectionizer#merge(List)}.
+	 */
+	@Test
+	public void testMergeListOfSection()
+	{
+		List<Section> expected;
+		List<Section> actual;
+		List<Section> sections;
+
+		sections = ListFactory.newArrayList(Section.builder().start(23).end(45).build(),
+			Section.builder().start(13).end(21).build(),
+			Section.builder().start(46).end(57).build());
+		Sectionizer sectionizer = new Sectionizer(10000);
+		actual = sectionizer.merge(sections);
+		expected = ListFactory.newArrayList(Section.builder().start(23).end(57).build(),
+			Section.builder().start(13).end(21).build());
+		for (int i = 0; i < actual.size(); i++)
+		{
+			assertEquals(expected.get(i), actual.get(i));
+		}
+	}
+
+	/**
+	 * Test method for {@link Sectionizer#merge(Section, Section)}.
+	 */
+	@Test
+	public void testMergeSectionSection()
+	{
+		// TODO implement unit test cases...
+
+	}
+
+	/**
+	 * Test method for {@link Sectionizer#getMaxIteration()}.
+	 */
+	@Test
+	public void testGetMaxIteration()
+	{
+		int actual;
+		int expected;
+		Sectionizer sectionizer;
+		sectionizer = Sectionizer.builder().build();
+
+		actual = sectionizer.getMaxIteration();
+		expected = Sectionizer.DEFAULT_MAX_ITERATION;
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link Sectionizer#setMaxIteration(int)}.
+	 */
+	@Test
+	public void testSetMaxIteration()
+	{
+		int actual;
+		int expected;
+		Sectionizer sectionizer;
+		sectionizer = Sectionizer.builder().build();
+
+		actual = sectionizer.getMaxIteration();
+		expected = Sectionizer.DEFAULT_MAX_ITERATION;
+		assertEquals(expected, actual);
+
+		sectionizer.setMaxIteration(10);
+		actual = sectionizer.getMaxIteration();
+		expected = 10;
 		assertEquals(expected, actual);
 	}
 
