@@ -27,11 +27,13 @@ import de.alpharogroup.jgeohash.api.Position;
 import de.alpharogroup.jgeohash.distance.DistanceCalculator;
 import de.alpharogroup.jgeohash.distance.DistancePoint;
 import de.alpharogroup.jgeohash.distance.MeasuringUnit;
+import lombok.experimental.UtilityClass;
 
 /**
  * The class {@link LocationExtensions} is for location specific data.
  */
-public class LocationExtensions
+@UtilityClass
+public final class LocationExtensions
 {
 
 	/**
