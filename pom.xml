@@ -39,6 +39,10 @@
 		<jobject-extensions.version>1.11</jobject-extensions.version>
 		<jobject-merge.version>${jobject-extensions.version}</jobject-merge.version>
 		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
+		<!-- TEST-OBJECTS version -->
+		<test-objects.version>4.27</test-objects.version>
+		<!-- SILLY-COLLECTIONS version -->
+		<silly-collections.version>4.29</silly-collections.version>
 	</properties>
 
 	<modules>
@@ -95,6 +99,18 @@
 				<artifactId>jobject-evaluate</artifactId>
 				<version>${jobject-evaluate.version}</version>
 			</dependency>
+			<!-- TEST-OBJECTS DEPENDENCY -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>test-objects</artifactId>
+				<version>${test-objects.version}</version>
+			</dependency>
+			<!-- SILLY-COLLECTIONS DEPENDENCY -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>silly-collections</artifactId>
+				<version>${silly-collections.version}</version>
+			</dependency>
 
 		</dependencies>
 
@@ -121,6 +137,18 @@
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
 			<artifactId>jobject-evaluate</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- TEST-OBJECTS DEPENDENCY -->
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>test-objects</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- SILLY-COLLECTIONS DEPENDENCY -->
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>silly-collections</artifactId>
 			<scope>test</scope>
 		</dependency>
 

@@ -25,7 +25,6 @@ import org.testng.annotations.Test;
 public class MeasuringUnitTest
 {
 
-
 	/**
 	 * Test method for {@link MeasuringUnit#KILOMETER}.
 	 */

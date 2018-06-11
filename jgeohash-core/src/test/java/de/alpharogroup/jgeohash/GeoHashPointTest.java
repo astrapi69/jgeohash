@@ -16,6 +16,7 @@
 package de.alpharogroup.jgeohash;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
@@ -26,6 +27,29 @@ import de.alpharogroup.evaluate.object.SilentEqualsHashCodeAndToStringEvaluator;
  */
 public class GeoHashPointTest
 {
+
+	/**
+	 * Test method for {@link Point#compareTo(Point)}.
+	 */
+	@Test
+	public void testCompareTo()
+	{
+		/** For use of the expected result. */
+		boolean expected;
+		/** For use of the result of the comparison. */
+		int actual;
+		String geohash;
+		GeoHashPoint o1;
+		GeoHashPoint o2;
+
+		geohash = GeoHashExtensions.encode(53.5526394, 10.0067103);
+
+		o1 = new GeoHashPoint(geohash);
+		o2 = new GeoHashPoint(geohash);
+		actual = o1.compareTo(o2);
+		expected = actual == 0;
+		assertTrue(expected);
+	}
 
 	/**
 	 * Test method for {@link GeoHashPoint#equals(Object)} , {@link GeoHashPoint#hashCode()} and

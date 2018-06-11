@@ -35,6 +35,31 @@ public class DistancePointTest
 {
 
 	/**
+	 * Test method for {@link DistancePoint#compareTo(DistancePoint)}.
+	 */
+	@Test
+	public void testCompareTo()
+	{
+		boolean expected;
+		int actual;
+		Position point;
+		Double distance;
+
+		point = Point.builder().longitude(0.1d).latitude(20.0d).build();
+		distance = 1000.0d;
+		final DistancePoint distancePoint = DistancePoint.builder().distance(distance).point(point)
+			.build();
+		point = Point.builder().longitude(0.2d).latitude(3.5d).build();
+		distance = 20.0d;
+		DistancePoint anotherPoint = DistancePoint.builder().distance(distance).point(point)
+			.build();
+
+		actual = distancePoint.compareTo(anotherPoint);
+		expected = 0 < actual;
+		assertTrue(expected);
+	}
+
+	/**
 	 * Test method for {@link DistancePoint} constructors
 	 */
 	@Test
@@ -126,30 +151,6 @@ public class DistancePointTest
 		actual = ToStringEvaluator.evaluateConsistency(distancePoint);
 		expected = true;
 		assertEquals(expected, actual);
-	}
-
-	/**
-	 * Test method for {@link DistancePoint#compareTo(DistancePoint)}.
-	 */
-	@Test
-	public void testCompareTo()
-	{
-		boolean expected;
-		int actual;
-		Position point;
-		Double distance;
-
-		point = Point.builder().longitude(0.1d).latitude(20.0d).build();
-		distance = 1000.0d;
-		final DistancePoint distancePoint = DistancePoint.builder().distance(distance).point(point)
-			.build();
-		point = Point.builder().longitude(0.2d).latitude(3.5d).build();
-		distance = 20.0d;
-		DistancePoint anotherPoint = DistancePoint.builder().distance(distance).point(point).build();
-
-		actual = distancePoint.compareTo(anotherPoint);
-		expected = 0 < actual;
-		assertTrue(expected);
 	}
 
 }

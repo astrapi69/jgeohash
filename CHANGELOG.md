@@ -5,6 +5,11 @@
 Version 2.5-SNAPSHOT
 -------------
 
+ADDED: 
+
+- new test dependency of test-objects
+- new test dependency of silly-collections
+
 CHANGED:
 
 - update of parent version to 3.11

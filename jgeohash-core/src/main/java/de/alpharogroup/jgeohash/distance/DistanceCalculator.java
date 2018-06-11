@@ -26,8 +26,8 @@ import de.alpharogroup.jgeohash.api.Position;
 import lombok.experimental.UtilityClass;
 
 /**
- * The class {@link DistanceCalculator} provides methods for calculate the distance between two geohash,
- * position or coordinate values.
+ * The class {@link DistanceCalculator} provides methods for calculate the distance between two
+ * geohash, position or coordinate values.
  */
 @UtilityClass
 public final class DistanceCalculator
@@ -78,7 +78,6 @@ public final class DistanceCalculator
 		return distance;
 	}
 
-
 	/**
 	 * Returns the distance between two points.
 	 *
@@ -97,7 +96,6 @@ public final class DistanceCalculator
 			end.getLatitude(), end.getLongitude(), unit);
 		return distance;
 	}
-
 
 	/**
 	 * Returns the distance between two given geohash values.

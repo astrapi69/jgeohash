@@ -28,8 +28,8 @@ public class FirstAndSecondRingRegionTest
 {
 
 	/**
-	 * Test method for {@link FirstAndSecondRingRegion#equals(Object)} , {@link FirstAndSecondRingRegion#hashCode()}
-	 * and {@link FirstAndSecondRingRegion#toString()}
+	 * Test method for {@link FirstAndSecondRingRegion#equals(Object)} ,
+	 * {@link FirstAndSecondRingRegion#hashCode()} and {@link FirstAndSecondRingRegion#toString()}
 	 */
 	@Test
 	public void testEqualsHashcodeAndToString()

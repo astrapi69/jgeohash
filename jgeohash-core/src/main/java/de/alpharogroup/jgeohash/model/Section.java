@@ -65,7 +65,7 @@ public class Section implements Mergeable<Section>
 	 */
 	public boolean isToLeft(final Section other)
 	{
-		int oneAfter = other.getEnd()+1;
+		int oneAfter = other.getEnd() + 1;
 		return this.start == oneAfter;
 	}
 
@@ -79,7 +79,7 @@ public class Section implements Mergeable<Section>
 	 */
 	public boolean isToRight(final Section other)
 	{
-		int oneBefore = other.getStart()-1;
+		int oneBefore = other.getStart() - 1;
 		return this.end == oneBefore;
 	}
 

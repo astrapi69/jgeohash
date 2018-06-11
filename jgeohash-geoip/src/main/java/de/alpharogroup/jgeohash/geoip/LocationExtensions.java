@@ -139,4 +139,5 @@ public class LocationExtensions
 	{
 		return sortByDistance(startPoint, geohashes, MeasuringUnit.METER);
 	}
+
 }
