@@ -54,10 +54,8 @@ public class Section implements Mergeable<Section>
 		boolean start = isBetween(this.start, this.end, other.start, true, true);
 		boolean end = isBetween(this.start, this.end, other.end, true, true);
 		boolean between = start && end;
-		//final boolean between = this.start >= other.start && this.end <= other.end;
 		return between;
 	}
-
 
 	/**
 	 * Checks the given int index is between the range from min and max.

@@ -89,4 +89,131 @@ public class SectionTest
 		assertEquals(expected, actual);
 	}
 
+
+	/**
+	 * Test method for {@link MathExtensions#isBetween(int, int, int, boolean, boolean)}.
+	 */
+	@Test
+	public void testIsBetweenIntIntIntBooleanBoolean()
+	{
+		boolean expected;
+		boolean actual;
+		int min;
+		int max;
+		int index;
+		final int primitiveOne = 1;
+		boolean includeMin;
+		boolean includeMax;
+		min = 0;
+		max = 10;
+		// first test case
+		index = min;
+		includeMin = false;
+		includeMax = false;
+		actual = Section.isBetween(min, max, index, includeMin, includeMax);
+		expected = false;
+		assertEquals(actual, expected);
+		for (index = min + primitiveOne; index < max; index++)
+		{
+			actual = Section.isBetween(min, max, index, includeMin, includeMax);
+			expected = true;
+			assertEquals(actual, expected);
+		}
+		index = max;
+		actual = Section.isBetween(min, max, index, includeMin, includeMax);
+		expected = false;
+		assertEquals(actual, expected);
+
+		// Now check negative cases
+		index = min - primitiveOne;
+		actual = Section.isBetween(min, max, index, includeMin, includeMax);
+		expected = false;
+		assertEquals(actual, expected);
+		index = max + primitiveOne;
+		actual = Section.isBetween(min, max, index, includeMin, includeMax);
+		expected = false;
+		assertEquals(actual, expected);
+
+		// second test case
+		index = min;
+		includeMin = true;
+		includeMax = true;
+		actual = Section.isBetween(min, max, index, includeMin, includeMax);
+		expected = true;
+		assertEquals(actual, expected);
+		for (index = min + primitiveOne; index < max; index++)
+		{
+			actual = Section.isBetween(min, max, index, includeMin, includeMax);
+			expected = true;
+			assertEquals(actual, expected);
+		}
+		index = max;
+		actual = Section.isBetween(min, max, index, includeMin, includeMax);
+		expected = true;
+		assertEquals(actual, expected);
+		// Now check negative cases
+		index = min - primitiveOne;
+		actual = Section.isBetween(min, max, index, includeMin, includeMax);
+		expected = false;
+		assertEquals(actual, expected);
+		index = max + primitiveOne;
+		actual = Section.isBetween(min, max, index, includeMin, includeMax);
+		expected = false;
+		assertEquals(actual, expected);
+
+		// third test case
+		index = min;
+		includeMin = false;
+		includeMax = true;
+		actual = Section.isBetween(min, max, index, includeMin, includeMax);
+		expected = false;
+		assertEquals(actual, expected);
+		for (index = min + primitiveOne; index < max; index++)
+		{
+			actual = Section.isBetween(min, max, index, includeMin, includeMax);
+			expected = true;
+			assertEquals(actual, expected);
+		}
+		index = max;
+		actual = Section.isBetween(min, max, index, includeMin, includeMax);
+		expected = true;
+		assertEquals(actual, expected);
+		// Now check negative cases
+		index = min - primitiveOne;
+		actual = Section.isBetween(min, max, index, includeMin, includeMax);
+		expected = false;
+		assertEquals(actual, expected);
+		index = max + primitiveOne;
+		actual = Section.isBetween(min, max, index, includeMin, includeMax);
+		expected = false;
+		assertEquals(actual, expected);
+
+		// fourth test case
+		index = min;
+		includeMin = true;
+		includeMax = false;
+		actual = Section.isBetween(min, max, index, includeMin, includeMax);
+		expected = true;
+		assertEquals(actual, expected);
+		for (index = min + primitiveOne; index < max; index++)
+		{
+			actual = Section.isBetween(min, max, index, includeMin, includeMax);
+			expected = true;
+			assertEquals(actual, expected);
+		}
+		index = max;
+		actual = Section.isBetween(min, max, index, includeMin, includeMax);
+		expected = false;
+		assertEquals(actual, expected);
+		// Now check negative cases
+		index = min - primitiveOne;
+		actual = Section.isBetween(min, max, index, includeMin, includeMax);
+		expected = false;
+		assertEquals(actual, expected);
+		index = max + primitiveOne;
+		actual = Section.isBetween(min, max, index, includeMin, includeMax);
+		expected = false;
+		assertEquals(actual, expected);
+	}
+
 }
