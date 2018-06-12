@@ -47,4 +47,16 @@ public class FirstAndSecondRingRegionTest
 		assertEquals(expected, actual);
 	}
 
+	/**
+	 * Test method for {@link FirstAndSecondRingRegion#clone()}
+	 */
+	@Test
+	public void testClone()
+	{
+		FirstAndSecondRingRegion actual;
+		FirstAndSecondRingRegion expected;
+		expected = new FirstAndSecondRingRegion("u1x0etp");
+		actual = (FirstAndSecondRingRegion)expected.clone();
+		assertEquals(expected, actual);
+	}
 }

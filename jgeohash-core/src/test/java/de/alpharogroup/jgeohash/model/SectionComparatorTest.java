@@ -15,50 +15,174 @@
  */
 package de.alpharogroup.jgeohash.model;
 
-import static org.testng.Assert.assertTrue;
-
 import java.util.Comparator;
+import java.util.List;
 
+import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
+
+import de.alpharogroup.collections.list.ListFactory;
 
 /**
  * The unit test class for the class {@link SectionComparator}
  */
-public class SectionComparatorTest
+public class SectionComparatorTest extends BaseComparatorTestCase<Section>
 {
 
-	/** The comparator. */
-	Comparator<Section> comparator;
-
-	/** For use of the expected result. */
-	boolean expected;
-
-	/** For use of the result of the comparator. */
-	int actual;
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected List<Section> newActualList()
+	{
+		Section first = Section.builder().start(10).end(12).build();
+		Section second = Section.builder().start(8).end(13).build();
+		Section third = Section.builder().start(17).end(19).build();
+		Section fourth = Section.builder().start(0).end(2).build();
+		List<Section> actual = ListFactory.newArrayList(first, second, third, fourth);
+		return actual;
+	}
 
 	/**
-	 * Test method for {@link SectionComparator#compare(Section, Section)}
+	 * {@inheritDoc}
 	 */
+	@Override
+	protected Comparator<Section> newComparator()
+	{
+		return new SectionComparator();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected List<Section> newExpectedSortedList()
+	{
+		Section first = Section.builder().start(10).end(12).build();
+		Section second = Section.builder().start(8).end(13).build();
+		Section third = Section.builder().start(17).end(19).build();
+		Section fourth = Section.builder().start(0).end(2).build();
+		List<Section> expected = ListFactory.newArrayList(third, first, second, fourth);
+		return expected;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected List<Section> newExpectedUnsortedList()
+	{
+		Section first = Section.builder().start(10).end(12).build();
+		Section second = Section.builder().start(8).end(13).build();
+		Section third = Section.builder().start(17).end(19).build();
+		Section fourth = Section.builder().start(0).end(2).build();
+		List<Section> expected = ListFactory.newArrayList(first, second, third, fourth);
+		return expected;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected Section newO1Equal()
+	{
+		return Section.builder().start(0).end(2).build();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected Section newO1GreaterThan()
+	{
+		return Section.builder().start(0).end(2).build();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected Section newO1LessThan()
+	{
+		return Section.builder().start(1).end(2).build();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected Section newO2Equal()
+	{
+		return newO1Equal();
+	}
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected Section newO2GreaterThan()
+	{
+		return Section.builder().start(1).end(2).build();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	protected Section newO2LessThan()
+	{
+		return Section.builder().start(0).end(2).build();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
 	@Test
 	public void testCompare()
 	{
-		Section o1;
-		Section o2;
-		comparator = new SectionComparator();
-
-		o1 = Section.builder().start(0).end(2).build();
-		o2 = Section.builder().start(0).end(2).build();
-
-		actual = comparator.compare(o1, o2);
-		expected = actual == 0;
-		assertTrue(expected);
-
-		o1 = Section.builder().start(0).end(2).build();
-		o2 = Section.builder().start(1).end(2).build();
-
-		actual = comparator.compare(o1, o2);
-		expected = actual > 0;
-		assertTrue(expected);
-
+		super.testCompare();
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	@Test
+	public void testEqual()
+	{
+		super.testEqual();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	@Test
+	public void testGreaterThan()
+	{
+		super.testGreaterThan();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	@Test
+	public void testLessThan()
+	{
+		super.testLessThan();
+	}
+
+	/**
+	 * Test method for {@link SectionComparator}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(SectionComparator.class);
+	}
+
 }

@@ -71,9 +71,6 @@ public final class DistanceCalculator
 			case METER :
 				distance = distance * unit.getFactor();
 				break;
-			default :
-				distance = distance * MeasuringUnit.KILOMETER.getFactor();
-				break;
 		}
 		return distance;
 	}

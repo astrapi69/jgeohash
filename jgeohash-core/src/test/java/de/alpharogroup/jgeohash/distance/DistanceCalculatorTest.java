@@ -19,6 +19,9 @@ import static org.testng.AssertJUnit.assertEquals;
 
 import java.util.Map;
 
+import org.meanbean.factories.ObjectCreationException;
+import org.meanbean.test.BeanTestException;
+import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
 import de.alpharogroup.jgeohash.Adjacent;
@@ -32,114 +35,6 @@ import de.alpharogroup.jgeohash.api.Position;
  */
 public class DistanceCalculatorTest
 {
-
-	/**
-	 * The Constant WIDTH_9_CELL represents the width from a cell from a geohash value with 9
-	 * characters.
-	 **/
-	public static final double WIDTH_9_CELL = 0.00477;
-
-	/**
-	 * The Constant HEIGHT_9_CELL represents the height from a cell from a geohash value with 9
-	 * characters.
-	 **/
-	public static final double HEIGHT_9_CELL = 0.00283;
-
-	/**
-	 * The Constant WIDTH_8_CELL represents the width from a cell from a geohash value with 8
-	 * characters.
-	 **/
-	public static final double WIDTH_8_CELL = 0.02509;
-
-	/**
-	 * The Constant HEIGHT_8_CELL represents the height from a cell from a geohash value with 8
-	 * characters.
-	 **/
-	public static final double HEIGHT_8_CELL = 0.01908;
-
-	/**
-	 * The Constant WIDTH_7_CELL represents the width from a cell from a geohash value with 7
-	 * characters.
-	 **/
-	public static final double WIDTH_7_CELL = 0.10039;
-
-	/**
-	 * The Constant HEIGHT_7_CELL represents the height from a cell from a geohash value with 7
-	 * characters.
-	 **/
-	public static final double HEIGHT_7_CELL = 0.15269;
-
-	/**
-	 * The Constant WIDTH_6_CELL represents the width from a cell from a geohash value with 6
-	 * characters.
-	 **/
-	public static final double WIDTH_6_CELL = 0.80315;
-
-	/**
-	 * The Constant HEIGHT_6_CELL represents the height from a cell from a geohash value with 6
-	 * characters.
-	 **/
-	public static final double HEIGHT_6_CELL = 0.61078;
-
-	/**
-	 * The Constant WIDTH_5_CELL represents the width from a cell from a geohash value with 5
-	 * characters.
-	 **/
-	public static final double WIDTH_5_CELL = 3.21280;
-
-	/**
-	 * The Constant HEIGHT_5_CELL represents the height from a cell from a geohash value with 5
-	 * characters.
-	 **/
-	public static final double HEIGHT_5_CELL = 4.88626;
-
-	/**
-	 * The Constant WIDTH_4_CELL represents the width from a cell from a geohash value with 4
-	 * characters.
-	 **/
-	public static final double WIDTH_4_CELL = 25.66850;
-
-	/**
-	 * The Constant HEIGHT_4_CELL represents the height from a cell from a geohash value with 4
-	 * characters.
-	 **/
-	public static final double HEIGHT_4_CELL = 19.54504;
-
-	/**
-	 * The Constant WIDTH_3_CELL represents the width from a cell from a geohash value with 3
-	 * characters.
-	 **/
-	public static final double WIDTH_3_CELL = 103.57409;
-
-	/**
-	 * The Constant HEIGHT_3_CELL represents the height from a cell from a geohash value with 3
-	 * characters.
-	 **/
-	public static final double HEIGHT_3_CELL = 156.36034;
-
-	/**
-	 * The Constant WIDTH_2_CELL represents the width from a cell from a geohash value with 2
-	 * characters.
-	 **/
-	public static final double WIDTH_2_CELL = 625.44137;
-
-	/**
-	 * The Constant HEIGHT_2_CELL represents the height from a cell from a geohash value with 2
-	 * characters.
-	 **/
-	public static final double HEIGHT_2_CELL = 744.37693;
-
-	/**
-	 * The Constant WIDTH_1_CELL represents the width from a cell from a geohash value with 1
-	 * characters.
-	 **/
-	public static final double WIDTH_1_CELL = 4604.31836;
-
-	/**
-	 * The Constant HEIGHT_1_CELL represents the height from a cell from a geohash value with 1
-	 * characters.
-	 **/
-	public static final double HEIGHT_1_CELL = 5003.53096;
 
 	/**
 	 * Test distance between points.
@@ -173,15 +68,37 @@ public class DistanceCalculatorTest
 		final double distance4 = DistanceCalculator.distanceBetweenPoints(
 			firstRingCells.get(Adjacent.CENTER), firstRingCells.get(Adjacent.RIGHT),
 			MeasuringUnit.KILOMETER);
-		// assertEquals(distance4, 25.668503170382518);
+		 assertEquals(distance4, 1872.667779425215);
 		System.out.println("Distance4 width:" + distance4);
 
 		final double distance5 = DistanceCalculator.distanceBetweenPoints(
 			firstRingCells.get(Adjacent.CENTER), firstRingCells.get(Adjacent.BOTTOM),
 			MeasuringUnit.KILOMETER);
-		// assertEquals(distance5, 19.545042824959157);
+		 assertEquals(distance5, 5003.530963199998);
 		System.out.println("Distance5 height:" + distance5);
 
+		final double distance6 = DistanceCalculator.distanceBetweenPoints(
+			firstRingCells.get(Adjacent.CENTER), firstRingCells.get(Adjacent.RIGHT),
+			MeasuringUnit.MILE);
+		 assertEquals(distance6, 1010.4891804690958);
+		System.out.println("Distance6 width:" + distance6);
+
+		final double distance7 = DistanceCalculator.distanceBetweenPoints(
+			firstRingCells.get(Adjacent.CENTER), firstRingCells.get(Adjacent.BOTTOM),
+			MeasuringUnit.MILE);
+		 assertEquals(distance7, 2699.899019999999);
+		System.out.println("Distance7 width:" + distance7);
+
+	}
+
+	/**
+	 * Test method for {@link DistanceCalculator}
+	 */
+	@Test(expectedExceptions = { BeanTestException.class, ObjectCreationException.class })
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(DistanceCalculator.class);
 	}
 
 }

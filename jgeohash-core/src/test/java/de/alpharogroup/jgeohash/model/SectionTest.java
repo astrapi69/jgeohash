@@ -42,4 +42,51 @@ public class SectionTest
 		assertEquals(expected, actual);
 	}
 
+	/**
+	 * Test method for {@link Section#isBetween(Section)}.
+	 */
+	@Test
+	public void testIsBetween()
+	{
+		boolean expected;
+		boolean actual;
+		Section section;
+		Section other;
+
+		section = Section.builder().start(23).end(45).build();
+		other = Section.builder().start(22).end(44).build();
+
+		actual = section.isBetween(other);
+		expected = false;
+		assertEquals(expected, actual);
+
+		section = Section.builder().start(23).end(45).build();
+		other = Section.builder().start(23).end(45).build();
+
+		actual = section.isBetween(other);
+		expected = true;
+		assertEquals(expected, actual);
+
+		section = Section.builder().start(23).end(45).build();
+		other = Section.builder().start(24).end(44).build();
+
+		actual = section.isBetween(other);
+		expected = true;
+		assertEquals(expected, actual);
+
+		section = Section.builder().start(23).end(45).build();
+		other = Section.builder().start(23).end(46).build();
+
+		actual = section.isBetween(other);
+		expected = false;
+		assertEquals(expected, actual);
+
+		section = Section.builder().start(23).end(45).build();
+		other = Section.builder().start(24).end(46).build();
+
+		actual = section.isBetween(other);
+		expected = false;
+		assertEquals(expected, actual);
+	}
+
 }

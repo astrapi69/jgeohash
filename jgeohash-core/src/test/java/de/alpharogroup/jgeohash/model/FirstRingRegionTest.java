@@ -29,6 +29,19 @@ public class FirstRingRegionTest extends AbstractTestCase<String, String>
 {
 
 	/**
+	 * Test method for {@link FirstRingRegion#clone()}
+	 */
+	@Test
+	public void testClone()
+	{
+		FirstRingRegion actual;
+		FirstRingRegion expected;
+		expected = new FirstRingRegion("u1x0etp");
+		actual = (FirstRingRegion)expected.clone();
+		assertEquals(expected, actual);
+	}
+
+	/**
 	 * Test method for {@link FirstRingRegion#equals(Object)} , {@link FirstRingRegion#hashCode()}
 	 * and {@link FirstRingRegion#toString()}
 	 */
