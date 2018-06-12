@@ -21,6 +21,7 @@ import java.util.List;
 import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
+import de.alpharogroup.BaseComparatorTestCase;
 import de.alpharogroup.collections.list.ListFactory;
 
 /**
