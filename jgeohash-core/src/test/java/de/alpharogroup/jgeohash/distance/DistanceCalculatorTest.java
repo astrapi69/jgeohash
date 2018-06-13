@@ -37,58 +37,76 @@ public class DistanceCalculatorTest
 {
 
 	/**
-	 * Test distance between points.
+	 * Test method for
+	 * {@link DistanceCalculator#distanceBetweenPoints(Position, Position, MeasuringUnit)}
 	 */
 	@Test(enabled = true)
-	public void testDistanceBetweenPoints()
+	public void testDistanceBetweenPointsPositionPositionMeasuringUnit()
 	{
+		double actual;
+		double expected;
+
+		final String alterTeichwegGeohash = "u1x0v54rmjwej";
+		final double[] coordinates = GeoHashExtensions.decodeAndRound(alterTeichwegGeohash);
+		final Position alterTeichweg = new Point(coordinates[0], coordinates[1]);
+		final Position ludwigsburg = new GeoHashPoint(48.889380, 9.190459);
+
+		actual = DistanceCalculator.distanceBetweenPoints(ludwigsburg, alterTeichweg,
+			MeasuringUnit.KILOMETER);
+		expected = 525.875517661088d;
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for
+	 * {@link DistanceCalculator#distanceBetweenPoints(String, String, MeasuringUnit)}
+	 */
+	@Test(enabled = true)
+	public void testDistanceBetweenPointsStringStringMeasuringUnit()
+	{
+		double actual;
+		double expected;
+
 		final String alterTeichwegGeohash = "u1x0v54rmjwej";
 		final String subGeohash = alterTeichwegGeohash.substring(0, 1);
 		final Map<String, String> firstRingCells = GeoHashExtensions
 			.getAllAdjacentAreasMap(subGeohash);
-		final double[] coordinates = GeoHashExtensions.decodeAndRound(alterTeichwegGeohash);
-		final Position alterTeichweg = new Point(coordinates[0], coordinates[1]);
 		final Position ludwigsburg = new GeoHashPoint(48.889380, 9.190459);
 		final String ludwigsburgGeohash = ((GeoHashPoint)ludwigsburg).getGeohash();
-		final double distance2 = DistanceCalculator.distanceBetweenPoints(ludwigsburg,
-			alterTeichweg, MeasuringUnit.KILOMETER);
-		assertEquals(distance2, 525.875517661088);
-		System.out.println("Distance2:" + distance2);
 
-		double distance3 = DistanceCalculator.distanceBetweenPoints(ludwigsburgGeohash,
-			alterTeichwegGeohash, MeasuringUnit.KILOMETER);
-		assertEquals(distance3, 525.875517737948);
-		System.out.println("Distance3:" + distance3);
+		actual = DistanceCalculator.distanceBetweenPoints(ludwigsburgGeohash, alterTeichwegGeohash,
+			MeasuringUnit.KILOMETER);
+		expected = 525.875517737948d;
+		assertEquals(expected, actual);
 
-		distance3 = DistanceCalculator.distanceBetweenPoints(ludwigsburgGeohash,
-			alterTeichwegGeohash, MeasuringUnit.METER);
-		assertEquals(distance3, 525875.517737948);
-		System.out.println("Distance3 in meters:" + distance3);
+		actual = DistanceCalculator.distanceBetweenPoints(ludwigsburgGeohash, alterTeichwegGeohash,
+			MeasuringUnit.METER);
+		expected = 525875.517737948d;
+		assertEquals(expected, actual);
 
-		final double distance4 = DistanceCalculator.distanceBetweenPoints(
+		actual = DistanceCalculator.distanceBetweenPoints(
 			firstRingCells.get(Adjacent.CENTER), firstRingCells.get(Adjacent.RIGHT),
 			MeasuringUnit.KILOMETER);
-		 assertEquals(distance4, 1872.667779425215);
-		System.out.println("Distance4 width:" + distance4);
+		expected = 1872.667779425215d;
+		assertEquals(expected, actual);
 
-		final double distance5 = DistanceCalculator.distanceBetweenPoints(
+		actual = DistanceCalculator.distanceBetweenPoints(
 			firstRingCells.get(Adjacent.CENTER), firstRingCells.get(Adjacent.BOTTOM),
 			MeasuringUnit.KILOMETER);
-		 assertEquals(distance5, 5003.530963199998);
-		System.out.println("Distance5 height:" + distance5);
+		expected = 5003.530963199998d;
+		assertEquals(expected, actual);
 
-		final double distance6 = DistanceCalculator.distanceBetweenPoints(
+		actual = DistanceCalculator.distanceBetweenPoints(
 			firstRingCells.get(Adjacent.CENTER), firstRingCells.get(Adjacent.RIGHT),
 			MeasuringUnit.MILE);
-		 assertEquals(distance6, 1010.4891804690958);
-		System.out.println("Distance6 width:" + distance6);
+		expected = 1010.4891804690958d;
+		assertEquals(expected, actual);
 
-		final double distance7 = DistanceCalculator.distanceBetweenPoints(
+		actual = DistanceCalculator.distanceBetweenPoints(
 			firstRingCells.get(Adjacent.CENTER), firstRingCells.get(Adjacent.BOTTOM),
 			MeasuringUnit.MILE);
-		 assertEquals(distance7, 2699.899019999999);
-		System.out.println("Distance7 width:" + distance7);
-
+		expected = 2699.899019999999d;
+		assertEquals(expected, actual);
 	}
 
 	/**

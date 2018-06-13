@@ -28,6 +28,19 @@ public class FirstAndSecondRingRegionTest
 {
 
 	/**
+	 * Test method for {@link FirstAndSecondRingRegion#clone()}
+	 */
+	@Test
+	public void testClone()
+	{
+		FirstAndSecondRingRegion actual;
+		FirstAndSecondRingRegion expected;
+		expected = new FirstAndSecondRingRegion("u1x0etp");
+		actual = (FirstAndSecondRingRegion)expected.clone();
+		assertEquals(expected, actual);
+	}
+
+	/**
 	 * Test method for {@link FirstAndSecondRingRegion#equals(Object)} ,
 	 * {@link FirstAndSecondRingRegion#hashCode()} and {@link FirstAndSecondRingRegion#toString()}
 	 */
@@ -44,19 +57,6 @@ public class FirstAndSecondRingRegionTest
 		actual = EqualsHashCodeAndToStringEvaluator.evaluateEqualsHashcodeAndToString(first, second,
 			third, fourth);
 		expected = true;
-		assertEquals(expected, actual);
-	}
-
-	/**
-	 * Test method for {@link FirstAndSecondRingRegion#clone()}
-	 */
-	@Test
-	public void testClone()
-	{
-		FirstAndSecondRingRegion actual;
-		FirstAndSecondRingRegion expected;
-		expected = new FirstAndSecondRingRegion("u1x0etp");
-		actual = (FirstAndSecondRingRegion)expected.clone();
 		assertEquals(expected, actual);
 	}
 }

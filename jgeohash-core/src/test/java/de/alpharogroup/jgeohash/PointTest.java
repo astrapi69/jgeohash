@@ -30,36 +30,6 @@ public class PointTest
 {
 
 	/**
-	 * Test method for {@link Point} constructors and builders
-	 */
-	@Test
-	public final void testConstructors()
-	{
-		Point model = new Point(53.5526394, 10.0067103);
-		assertNotNull(model);
-		model = Point.builder().build();
-		assertNotNull(model);
-	}
-
-	/**
-	 * Test method for {@link Point} constructors and builders with an unappropriated latitude number.
-	 */
-	@Test(expectedExceptions=IllegalArgumentException.class)
-	public final void testConstructorsWithUnappropriatedLatitudeNumber()
-	{
-		new Point(153.5526394, 10.0067103);
-	}
-
-	/**
-	 * Test method for {@link Point} constructors and builders with an unappropriated longitude number.
-	 */
-	@Test(expectedExceptions=IllegalArgumentException.class)
-	public final void testConstructorsWithUnappropriatedLongitudeNumber()
-	{
-		new Point(53.5526394, 190.0067103);
-	}
-
-	/**
 	 * Test method for {@link Point#compareTo(Point)}.
 	 */
 	@Test
@@ -96,6 +66,53 @@ public class PointTest
 	}
 
 	/**
+	 * Test method for {@link Point} constructors and builders
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		Point model = new Point(53.5526394, 10.0067103);
+		assertNotNull(model);
+		model = Point.builder().build();
+		assertNotNull(model);
+	}
+
+	/**
+	 * Test method for {@link Point} constructors and builders with an unappropriated latitude
+	 * number.
+	 */
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public final void testConstructorsWithUnappropriatedLatitudeNumber()
+	{
+		new Point(153.5526394, 10.0067103);
+	}
+
+	/**
+	 * Test method for {@link Point} constructors and builders with an unappropriated longitude
+	 * number.
+	 */
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public final void testConstructorsWithUnappropriatedLongitudeNumber()
+	{
+		new Point(53.5526394, 190.0067103);
+	}
+
+	/**
+	 * Test method for {@link Point#equals(Object)} , {@link Point#hashCode()} and
+	 * {@link Point#toString()}
+	 */
+	@Test
+	public void testEqualsHashcodeAndToStringWithClassSilently()
+	{
+		boolean expected;
+		boolean actual;
+		actual = SilentEqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToStringQuietly(Point.class);
+		expected = true;
+		assertEquals(expected, actual);
+	}
+
+	/**
 	 * Test method for {@link Point#setLatitude(double)}.
 	 */
 	@Test
@@ -117,7 +134,7 @@ public class PointTest
 	/**
 	 * Test method for {@link Point#setLatitude(double)} with an unappropriated latitude number.
 	 */
-	@Test(expectedExceptions=IllegalArgumentException.class)
+	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void testSetLatitudeUnappropriateLatitudeNumber()
 	{
 		String geohash;
@@ -150,7 +167,7 @@ public class PointTest
 	/**
 	 * Test method for {@link Point#setLongitude(double)} with an unappropriated longitude number.
 	 */
-	@Test(expectedExceptions=IllegalArgumentException.class)
+	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void testSetLongitudeWithUnappropriatedNumber()
 	{
 		String geohash;
@@ -159,21 +176,6 @@ public class PointTest
 
 		o1 = new GeoHashPoint(geohash);
 		o1.setLongitude(190.0d);
-	}
-
-	/**
-	 * Test method for {@link Point#equals(Object)} , {@link Point#hashCode()} and
-	 * {@link Point#toString()}
-	 */
-	@Test
-	public void testEqualsHashcodeAndToStringWithClassSilently()
-	{
-		boolean expected;
-		boolean actual;
-		actual = SilentEqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToStringQuietly(Point.class);
-		expected = true;
-		assertEquals(expected, actual);
 	}
 
 }

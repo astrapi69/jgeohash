@@ -30,6 +30,23 @@ public class SectionizerTest
 {
 
 	/**
+	 * Test method for {@link Sectionizer#getMaxIteration()}.
+	 */
+	@Test
+	public void testGetMaxIteration()
+	{
+		int actual;
+		int expected;
+		Sectionizer sectionizer;
+		sectionizer = Sectionizer.builder().build();
+
+		actual = sectionizer.getMaxIteration();
+		expected = Sectionizer.DEFAULT_MAX_ITERATION;
+		assertEquals(expected, actual);
+	}
+
+
+	/**
 	 * Test method for {@link Sectionizer#merge(Section, Section)}
 	 */
 	@Test
@@ -92,7 +109,6 @@ public class SectionizerTest
 		assertEquals(expected, actual);
 	}
 
-
 	/**
 	 * Test method for {@link Sectionizer#merge(List)}.
 	 */
@@ -124,22 +140,6 @@ public class SectionizerTest
 	{
 		// TODO implement unit test cases...
 
-	}
-
-	/**
-	 * Test method for {@link Sectionizer#getMaxIteration()}.
-	 */
-	@Test
-	public void testGetMaxIteration()
-	{
-		int actual;
-		int expected;
-		Sectionizer sectionizer;
-		sectionizer = Sectionizer.builder().build();
-
-		actual = sectionizer.getMaxIteration();
-		expected = Sectionizer.DEFAULT_MAX_ITERATION;
-		assertEquals(expected, actual);
 	}
 
 	/**

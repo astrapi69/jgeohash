@@ -35,28 +35,6 @@ import lombok.ToString;
 public class Section implements Mergeable<Section>
 {
 
-	/** The start. */
-	private final int start;
-
-	/** The end. */
-	private final int end;
-
-	/**
-	 * Checks if the given {@link Section} is between this {@link Section} object.
-	 *
-	 * @param other
-	 *            the other {@link Section} object
-	 * @return true, if the given {@link Section} is between this {@link Section} object otherwise
-	 *         false.
-	 */
-	public boolean isBetween(final Section other)
-	{
-		boolean start = isBetween(this.start, this.end, other.start, true, true);
-		boolean end = isBetween(this.start, this.end, other.end, true, true);
-		boolean between = start && end;
-		return between;
-	}
-
 	/**
 	 * Checks the given int index is between the range from min and max.
 	 *
@@ -120,6 +98,28 @@ public class Section implements Mergeable<Section>
 		{
 			return false;
 		}
+	}
+
+	/** The start. */
+	private final int start;
+
+	/** The end. */
+	private final int end;
+
+	/**
+	 * Checks if the given {@link Section} is between this {@link Section} object.
+	 *
+	 * @param other
+	 *            the other {@link Section} object
+	 * @return true, if the given {@link Section} is between this {@link Section} object otherwise
+	 *         false.
+	 */
+	public boolean isBetween(final Section other)
+	{
+		boolean start = isBetween(this.start, this.end, other.start, true, true);
+		boolean end = isBetween(this.start, this.end, other.end, true, true);
+		boolean between = start && end;
+		return between;
 	}
 
 	/**

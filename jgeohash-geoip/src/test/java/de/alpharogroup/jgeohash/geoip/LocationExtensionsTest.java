@@ -67,7 +67,7 @@ public class LocationExtensionsTest
 	public void testSortByDistanceInMeters()
 	{
 		// TODO
-//		assertEquals(expected, actual);
+		// assertEquals(expected, actual);
 
 		List<Position> actual;
 		List<Position> expected;
@@ -78,11 +78,8 @@ public class LocationExtensionsTest
 		Position startPoint = new GeoHashPoint("u11fyhzqhp3c");
 
 		actual = LocationExtensions.sortByDistanceInMeters(startPoint, geohashes);
-		expected = ListFactory.newArrayList(
-			new GeoHashPoint("u0vf2w1s5tsy"),
-			new GeoHashPoint("u0td0v9xnz28"),
-			new GeoHashPoint("u0t3z7cnznrx")
-			);
+		expected = ListFactory.newArrayList(new GeoHashPoint("u0vf2w1s5tsy"),
+			new GeoHashPoint("u0td0v9xnz28"), new GeoHashPoint("u0t3z7cnznrx"));
 		for (int i = 0; i < actual.size(); i++)
 		{
 			assertEquals(expected.get(i), actual.get(i));
@@ -96,12 +93,10 @@ public class LocationExtensionsTest
 		startPoint = new GeoHashPoint("u0ww"); // Ludwigsburg
 
 		actual = LocationExtensions.sortByDistanceInMeters(startPoint, geohashes);
-		expected = ListFactory.newArrayList(
-			new GeoHashPoint(49.658203125d, 10.01953125d),
+		expected = ListFactory.newArrayList(new GeoHashPoint(49.658203125d, 10.01953125d),
 			new GeoHashPoint(49.42755460739136d, 11.018106937408447d),
 			new GeoHashPoint(48.779296875d, 11.42578125d),
-			new GeoHashPoint(50.888671875d, 10.01953125d)
-			);
+			new GeoHashPoint(50.888671875d, 10.01953125d));
 		for (int i = 0; i < actual.size(); i++)
 		{
 			assertEquals(expected.get(i), actual.get(i));

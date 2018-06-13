@@ -32,24 +32,6 @@ public class GeoHashPointTest
 {
 
 	/**
-	 * Test method for {@link Point} constructors
-	 */
-	@Test
-	public final void testConstructors()
-	{
-		GeoHashPoint model;
-		model = new GeoHashPoint(Double.valueOf(53.5526394d), Double.valueOf(10.0067103d));
-		assertNotNull(model);
-		model = new GeoHashPoint(Float.valueOf(53.5526394f), Float.valueOf(10.0067103f));
-		assertNotNull(model);
-		model = new GeoHashPoint(53.5526394f, 10.0067103f);
-		assertNotNull(model);
-		model = new GeoHashPoint(
-			Point.builder().latitude(53.5526394d).longitude(10.0067103d).build());
-		assertNotNull(model);
-	}
-
-	/**
 	 * Test method for {@link Point#compareTo(Point)}.
 	 */
 	@Test
@@ -70,6 +52,24 @@ public class GeoHashPointTest
 		actual = o1.compareTo(o2);
 		expected = actual == 0;
 		assertTrue(expected);
+	}
+
+	/**
+	 * Test method for {@link Point} constructors
+	 */
+	@Test
+	public final void testConstructors()
+	{
+		GeoHashPoint model;
+		model = new GeoHashPoint(Double.valueOf(53.5526394d), Double.valueOf(10.0067103d));
+		assertNotNull(model);
+		model = new GeoHashPoint(Float.valueOf(53.5526394f), Float.valueOf(10.0067103f));
+		assertNotNull(model);
+		model = new GeoHashPoint(53.5526394f, 10.0067103f);
+		assertNotNull(model);
+		model = new GeoHashPoint(
+			Point.builder().latitude(53.5526394d).longitude(10.0067103d).build());
+		assertNotNull(model);
 	}
 
 	/**
