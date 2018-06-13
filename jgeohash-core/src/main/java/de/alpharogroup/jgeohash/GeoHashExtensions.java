@@ -29,7 +29,7 @@ import lombok.experimental.UtilityClass;
  * The class {@link GeoHashExtensions}. This class is based on http://en.wikipedia.org/wiki/Geohash.
  */
 @UtilityClass
-public class GeoHashExtensions
+public final class GeoHashExtensions
 {
 
 	/**
