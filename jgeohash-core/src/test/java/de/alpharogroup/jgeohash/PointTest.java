@@ -120,11 +120,8 @@ public class PointTest
 	{
 		double actual;
 		double expected;
-		String geohash;
 		Point o1;
-		geohash = GeoHashExtensions.encode(53.5526394, 10.0067103);
-
-		o1 = new GeoHashPoint(geohash);
+		o1 = new GeoHashPoint(GeoHashExtensions.encode(53.5526394, 10.0067103));
 		o1.setLatitude(52.0d);
 		actual = o1.getLatitude();
 		expected = 52.0d;
@@ -137,11 +134,7 @@ public class PointTest
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public void testSetLatitudeUnappropriateLatitudeNumber()
 	{
-		String geohash;
-		Point o1;
-		geohash = GeoHashExtensions.encode(53.5526394, 10.0067103);
-
-		o1 = new GeoHashPoint(geohash);
+		Point o1 = new GeoHashPoint(GeoHashExtensions.encode(53.5526394, 10.0067103));
 		o1.setLatitude(100.0d);
 	}
 
