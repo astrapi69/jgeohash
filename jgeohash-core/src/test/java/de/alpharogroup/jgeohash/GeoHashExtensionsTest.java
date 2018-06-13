@@ -40,24 +40,6 @@ public class GeoHashExtensionsTest
 {
 
 	/**
-	 * Test method for {@link GeoHashExtensions#decode(String)} with null value
-	 */
-	@Test(expectedExceptions = IllegalArgumentException.class)
-	public final void testDecodeWithNullValue()
-	{
-		GeoHashExtensions.decode(null);
-	}
-
-	/**
-	 * Test method for {@link GeoHashExtensions#decode(String)} with empty value
-	 */
-	@Test(expectedExceptions = IllegalArgumentException.class)
-	public final void testDecodeWithEmptyValue()
-	{
-		GeoHashExtensions.decode("");
-	}
-
-	/**
 	 * Test method for {@link GeoHashExtensions#decode(String)}.
 	 */
 	@Test
@@ -124,6 +106,24 @@ public class GeoHashExtensionsTest
 	}
 
 	/**
+	 * Test method for {@link GeoHashExtensions#decode(String)} with empty value
+	 */
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public final void testDecodeWithEmptyValue()
+	{
+		GeoHashExtensions.decode("");
+	}
+
+	/**
+	 * Test method for {@link GeoHashExtensions#decode(String)} with null value
+	 */
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public final void testDecodeWithNullValue()
+	{
+		GeoHashExtensions.decode(null);
+	}
+
+	/**
 	 * Test method for {@link GeoHashExtensions#encode(double, double)}.
 	 */
 	@Test
@@ -143,45 +143,6 @@ public class GeoHashExtensionsTest
 		actual = GeoHashExtensions.encode(51.4797, -0.0124);
 		expected = "gcpuzewfzp9u";
 		assertEquals(expected, actual);
-	}
-
-	/**
-	 * Test method for {@link GeoHashExtensions#getAdjacent(String, String)} with geohash null value
-	 */
-	@Test(expectedExceptions = IllegalArgumentException.class)
-	public final void testGetAdjacentStringStringGeohashNullValue()
-	{
-		GeoHashExtensions.getAdjacent(null, Adjacent.TOP);
-	}
-
-	/**
-	 * Test method for {@link GeoHashExtensions#getAdjacent(String, String)} with geohash empty
-	 * value
-	 */
-	@Test(expectedExceptions = IllegalArgumentException.class)
-	public final void testGetAdjacentStringStringGeohashEmptyValue()
-	{
-		GeoHashExtensions.getAdjacent("", Adjacent.TOP);
-	}
-
-	/**
-	 * Test method for {@link GeoHashExtensions#getAdjacent(String, String)} with direction null
-	 * value
-	 */
-	@Test(expectedExceptions = IllegalArgumentException.class)
-	public final void testGetAdjacentStringStringDirectionNullValue()
-	{
-		GeoHashExtensions.getAdjacent("u", (String)null);
-	}
-
-	/**
-	 * Test method for {@link GeoHashExtensions#getAdjacent(String, String)} with direction empty
-	 * value
-	 */
-	@Test(expectedExceptions = IllegalArgumentException.class)
-	public final void testGetAdjacentStringStringDirectionEmptyValue()
-	{
-		GeoHashExtensions.getAdjacent("u", "");
 	}
 
 	/**
@@ -301,6 +262,45 @@ public class GeoHashExtensionsTest
 	}
 
 	/**
+	 * Test method for {@link GeoHashExtensions#getAdjacent(String, String)} with direction empty
+	 * value
+	 */
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public final void testGetAdjacentStringStringDirectionEmptyValue()
+	{
+		GeoHashExtensions.getAdjacent("u", "");
+	}
+
+	/**
+	 * Test method for {@link GeoHashExtensions#getAdjacent(String, String)} with direction null
+	 * value
+	 */
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public final void testGetAdjacentStringStringDirectionNullValue()
+	{
+		GeoHashExtensions.getAdjacent("u", (String)null);
+	}
+
+	/**
+	 * Test method for {@link GeoHashExtensions#getAdjacent(String, String)} with geohash empty
+	 * value
+	 */
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public final void testGetAdjacentStringStringGeohashEmptyValue()
+	{
+		GeoHashExtensions.getAdjacent("", Adjacent.TOP);
+	}
+
+	/**
+	 * Test method for {@link GeoHashExtensions#getAdjacent(String, String)} with geohash null value
+	 */
+	@Test(expectedExceptions = IllegalArgumentException.class)
+	public final void testGetAdjacentStringStringGeohashNullValue()
+	{
+		GeoHashExtensions.getAdjacent(null, Adjacent.TOP);
+	}
+
+	/**
 	 * Test method for {@link GeoHashExtensions#getAllAdjacentAreasList(String)}.
 	 */
 	@Test
@@ -388,16 +388,6 @@ public class GeoHashExtensionsTest
 	public final void testGetAllAdjacentAreasMapWithEmptyValue()
 	{
 		GeoHashExtensions.getAllAdjacentAreasMap("");
-	}
-
-	/**
-	 * Test method for {@link GeoHashExtensions}
-	 */
-	@Test(expectedExceptions = { BeanTestException.class, ObjectCreationException.class })
-	public void testWithBeanTester()
-	{
-		final BeanTester beanTester = new BeanTester();
-		beanTester.testBean(GeoHashExtensions.class);
 	}
 
 	/**
@@ -512,5 +502,15 @@ public class GeoHashExtensionsTest
 		{
 			assertEquals(expected.get(entry.getKey()), actual.get(entry.getKey()));
 		}
+	}
+
+	/**
+	 * Test method for {@link GeoHashExtensions}
+	 */
+	@Test(expectedExceptions = { BeanTestException.class, ObjectCreationException.class })
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(GeoHashExtensions.class);
 	}
 }

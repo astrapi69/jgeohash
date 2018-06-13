@@ -84,27 +84,23 @@ public class DistanceCalculatorTest
 		expected = 525875.517737948d;
 		assertEquals(expected, actual);
 
-		actual = DistanceCalculator.distanceBetweenPoints(
-			firstRingCells.get(Adjacent.CENTER), firstRingCells.get(Adjacent.RIGHT),
-			MeasuringUnit.KILOMETER);
+		actual = DistanceCalculator.distanceBetweenPoints(firstRingCells.get(Adjacent.CENTER),
+			firstRingCells.get(Adjacent.RIGHT), MeasuringUnit.KILOMETER);
 		expected = 1872.667779425215d;
 		assertEquals(expected, actual);
 
-		actual = DistanceCalculator.distanceBetweenPoints(
-			firstRingCells.get(Adjacent.CENTER), firstRingCells.get(Adjacent.BOTTOM),
-			MeasuringUnit.KILOMETER);
+		actual = DistanceCalculator.distanceBetweenPoints(firstRingCells.get(Adjacent.CENTER),
+			firstRingCells.get(Adjacent.BOTTOM), MeasuringUnit.KILOMETER);
 		expected = 5003.530963199998d;
 		assertEquals(expected, actual);
 
-		actual = DistanceCalculator.distanceBetweenPoints(
-			firstRingCells.get(Adjacent.CENTER), firstRingCells.get(Adjacent.RIGHT),
-			MeasuringUnit.MILE);
+		actual = DistanceCalculator.distanceBetweenPoints(firstRingCells.get(Adjacent.CENTER),
+			firstRingCells.get(Adjacent.RIGHT), MeasuringUnit.MILE);
 		expected = 1010.4891804690958d;
 		assertEquals(expected, actual);
 
-		actual = DistanceCalculator.distanceBetweenPoints(
-			firstRingCells.get(Adjacent.CENTER), firstRingCells.get(Adjacent.BOTTOM),
-			MeasuringUnit.MILE);
+		actual = DistanceCalculator.distanceBetweenPoints(firstRingCells.get(Adjacent.CENTER),
+			firstRingCells.get(Adjacent.BOTTOM), MeasuringUnit.MILE);
 		expected = 2699.899019999999d;
 		assertEquals(expected, actual);
 	}

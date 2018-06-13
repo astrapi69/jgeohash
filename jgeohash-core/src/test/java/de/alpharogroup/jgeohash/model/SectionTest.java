@@ -89,9 +89,8 @@ public class SectionTest
 		assertEquals(expected, actual);
 	}
 
-
 	/**
-	 * Test method for {@link MathExtensions#isBetween(int, int, int, boolean, boolean)}.
+	 * Test method for {@link Section#isBetween(int, int, int, boolean, boolean)}.
 	 */
 	@Test
 	public void testIsBetweenIntIntIntBooleanBoolean()
