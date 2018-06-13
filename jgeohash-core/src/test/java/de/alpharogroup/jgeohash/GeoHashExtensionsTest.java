@@ -15,6 +15,8 @@
  */
 package de.alpharogroup.jgeohash;
 
+import static org.testng.Assert.assertNotNull;
+import static org.testng.Assert.assertTrue;
 import static org.testng.AssertJUnit.assertEquals;
 
 import java.util.List;
@@ -28,6 +30,8 @@ import org.testng.annotations.Test;
 
 import de.alpharogroup.collections.list.ListFactory;
 import de.alpharogroup.collections.map.MapFactory;
+import de.alpharogroup.jgeohash.model.FirstAndSecondRingRegion;
+import de.alpharogroup.jgeohash.model.FirstRingRegion;
 
 /**
  * The unit test class for the class {@link GeoHashExtensions}.
@@ -151,7 +155,8 @@ public class GeoHashExtensionsTest
 	}
 
 	/**
-	 * Test method for {@link GeoHashExtensions#getAdjacent(String, String)} with geohash empty value
+	 * Test method for {@link GeoHashExtensions#getAdjacent(String, String)} with geohash empty
+	 * value
 	 */
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public final void testGetAdjacentStringStringGeohashEmptyValue()
@@ -160,7 +165,8 @@ public class GeoHashExtensionsTest
 	}
 
 	/**
-	 * Test method for {@link GeoHashExtensions#getAdjacent(String, String)} with direction null value
+	 * Test method for {@link GeoHashExtensions#getAdjacent(String, String)} with direction null
+	 * value
 	 */
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public final void testGetAdjacentStringStringDirectionNullValue()
@@ -169,7 +175,8 @@ public class GeoHashExtensionsTest
 	}
 
 	/**
-	 * Test method for {@link GeoHashExtensions#getAdjacent(String, String)} with direction empty value
+	 * Test method for {@link GeoHashExtensions#getAdjacent(String, String)} with direction empty
+	 * value
 	 */
 	@Test(expectedExceptions = IllegalArgumentException.class)
 	public final void testGetAdjacentStringStringDirectionEmptyValue()
@@ -391,5 +398,119 @@ public class GeoHashExtensionsTest
 	{
 		final BeanTester beanTester = new BeanTester();
 		beanTester.testBean(GeoHashExtensions.class);
+	}
+
+	/**
+	 * Test method for {@link GeoHashExtensions#getFirstAndSecondRingRegion(String)}.
+	 */
+	@Test
+	public void testGetFirstAndSecondRingRegion()
+	{
+		FirstAndSecondRingRegion actual;
+		FirstAndSecondRingRegion expected;
+		String geohash;
+
+		geohash = GeoHashExtensions.encode(53.5526394, 10.0067103);
+		actual = GeoHashExtensions.getFirstAndSecondRingRegion(geohash);
+		assertNotNull(actual);
+		expected = new FirstAndSecondRingRegion(geohash);
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link GeoHashExtensions#getFirstRingRegion(String)}.
+	 */
+	@Test
+	public void testGetFirstRingRegion()
+	{
+		FirstRingRegion actual;
+		FirstRingRegion expected;
+		String geohash;
+
+		geohash = GeoHashExtensions.encode(53.5526394, 10.0067103);
+		actual = GeoHashExtensions.getFirstRingRegion(geohash);
+		assertNotNull(actual);
+		expected = new FirstRingRegion(geohash);
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link GeoHashExtensions#getLatitude(String)}.
+	 */
+	@Test
+	public void testGetLatitude()
+	{
+		double actual;
+		double expected;
+		String geohash;
+
+		geohash = GeoHashExtensions.encode(53.5526394, 10.0067103);
+
+		actual = GeoHashExtensions.getLatitude(geohash);
+		expected = 53.552639;
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link GeoHashExtensions#getLongitude(String)}.
+	 */
+	@Test
+	public void testGetLongitude()
+	{
+		double actual;
+		double expected;
+		String geohash;
+
+		geohash = GeoHashExtensions.encode(53.5526394, 10.0067103);
+
+		actual = GeoHashExtensions.getLongitude(geohash);
+		expected = 10.006710;
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link GeoHashExtensions#getTwentyFiveAreasMap(String)}.
+	 */
+	@Test
+	public void testGetTwentyFiveAreasMap()
+	{
+		Map<String, String> actual;
+		Map<String, String> expected;
+		String geohash;
+
+		geohash = GeoHashExtensions.encode(53.5526394, 10.0067103);
+		actual = GeoHashExtensions.getTwentyFiveAreasMap(geohash);
+		assertNotNull(actual);
+		assertTrue(actual.size() == 25);
+		expected = MapFactory.newLinkedHashMap(25);
+		expected.put("center", "u1x0esywtr81");
+		expected.put("top", "u1x0esywtr84");
+		expected.put("bottom", "u1x0esywtr80");
+		expected.put("right", "u1x0esywtr83");
+		expected.put("left", "u1x0esywtpxc");
+		expected.put("topleft", "u1x0esywtpxf");
+		expected.put("topright", "u1x0esywtr86");
+		expected.put("bottomright", "u1x0esywtr82");
+		expected.put("bottomleft", "u1x0esywtpxb");
+		expected.put("topleft_top", "u1x0esywtpxg");
+		expected.put("topleft_top_left", "u1x0esywtpxe");
+		expected.put("topleft_left", "u1x0esywtpxd");
+		expected.put("top_top", "u1x0esywtr85");
+		expected.put("topright_top", "u1x0esywtr87");
+		expected.put("topright_right", "u1x0esywtr8d");
+		expected.put("topright_top_right", "u1x0esywtr8e");
+		expected.put("right_right", "u1x0esywtr89");
+		expected.put("bottomright_right", "u1x0esywtr88");
+		expected.put("bottomright_bottom", "u1x0esywtr2r");
+		expected.put("bottomright_bottom_right", "u1x0esywtr2x");
+		expected.put("bottom_bottom", "u1x0esywtr2p");
+		expected.put("bottomleft_bottom", "u1x0esywtprz");
+		expected.put("bottomleft_bottom_left", "u1x0esywtprx");
+		expected.put("bottomleft_left", "u1x0esywtpx8");
+		expected.put("left_left", "u1x0esywtpx9");
+		for (Entry<String, String> entry : actual.entrySet())
+		{
+			assertEquals(expected.get(entry.getKey()), actual.get(entry.getKey()));
+		}
 	}
 }
