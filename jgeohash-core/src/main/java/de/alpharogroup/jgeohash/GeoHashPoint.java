@@ -18,10 +18,12 @@ package de.alpharogroup.jgeohash;
 import java.math.BigDecimal;
 
 import de.alpharogroup.jgeohash.api.Position;
+import lombok.EqualsAndHashCode;
 
 /**
  * The class {@link GeoHashPoint}.
  */
+@EqualsAndHashCode(callSuper = true)
 public class GeoHashPoint extends Point
 {
 
@@ -117,33 +119,6 @@ public class GeoHashPoint extends Point
 	}
 
 	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public boolean equals(final Object o)
-	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (!super.equals(o))
-		{
-			return false;
-		}
-		if (o == null)
-		{
-			return false;
-		}
-		if (o.getClass() != getClass())
-		{
-			return false;
-		}
-		final GeoHashPoint castedObj = (GeoHashPoint)o;
-		return ((this.getLatitude() == castedObj.getLatitude())
-			&& (this.getLongitude() == castedObj.getLongitude()));
-	}
-
-	/**
 	 * Gets the geohash.
 	 *
 	 * @return the geohash
@@ -171,18 +146,6 @@ public class GeoHashPoint extends Point
 	public BigDecimal getLng()
 	{
 		return BigDecimal.valueOf(getLongitude());
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public int hashCode()
-	{
-		int hashCode = super.hashCode();
-		hashCode = (31 * hashCode) + (int)(+serialVersionUID ^ (serialVersionUID >>> 32));
-		hashCode = (31 * hashCode) + (GEOHASH_KEY == null ? 0 : GEOHASH_KEY.hashCode());
-		return hashCode;
 	}
 
 	/**
