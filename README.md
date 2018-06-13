@@ -3,7 +3,7 @@
 <div align="center">
 
 [![build status](https://travis-ci.org/astrapi69/jgeohash.svg?branch=master)](https://travis-ci.org/astrapi69/jgeohash) 
-[![coverage status](https://coveralls.io/repos/github/astrapi69/jgeohash/badge.svg?branch=develop)](https://coveralls.io/github/astrapi69/jgeohash?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/github/astrapi69/jgeohash/badge.svg?branch=develop)](https://coveralls.io/github/astrapi69/jgeohash?branch=develop)
 [![open issues](https://img.shields.io/github/issues/astrapi69/jgeohash.svg?style=flat)](https://github.com/astrapi69/jgeohash/issues)
 [![license apache2](https://img.shields.io/badge/license-apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
