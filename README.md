@@ -19,7 +19,7 @@ The library is kept simple and have no dependencies to other libraries.
 
 ## Key features:
 
-1. Very small size (<30Kb)
+1. Very small size (<35Kb)
 2. Can get the adjacent geohash area from the given direction
 3. Can get the geohash from an ip address
 4. Can calculate distance between two geohash values in various measuring units like miles, km, meters
@@ -53,7 +53,7 @@ You can first define the version properties:
 	<properties>
 		...
 		<!-- JGEOHASH version -->
-		<jgeohash.version>2.4.0</jgeohash.version>
+		<jgeohash.version>2.5</jgeohash.version>
 		<jgeohash-core.version>${jgeohash.version}</jgeohash-core.version>
 		<jgeohash-geoip.version>${jgeohash.version}</jgeohash-geoip.version>
 		...
