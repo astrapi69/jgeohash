@@ -21,17 +21,21 @@
 # maven generated files #
 #########################
 /target
+*.versionsBackup
 
 #############
 # Zip files #
 #############
 *.tar
+*.tar.gz
 *.zip
 *.7z
 *.dmg
 *.gz
 *.iso
 *.jar
+*.war
+*.ear
 *.rar
 
 ##############
@@ -55,3 +59,4 @@
 /build
 /.gradle
 /gradle
+/pom.xml.bak

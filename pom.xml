@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -5,12 +6,12 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>2.24.0</version>
+		<version>3.11</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>jgeohash</artifactId>
-	<version>2.4.0</version>
+	<version>2.5</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2010</inceptionYear>
 
@@ -26,18 +27,28 @@
 		and can be applied to generate from the latitude and longitude a geohash code and reverse.
 		The library is kept simple and have no dependencies to other libraries.
 	</description>
-	
-	<licenses>
-
-		<license>
-			<name>The Apache Software License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-		</license>
-
-	</licenses>
 
 	<url>http://astrapi69.github.io/jgeohash/</url>
+
+	<properties>
+		<!-- GEOIP-API version -->
+		<geoip-api.version>1.2.14</geoip-api.version>
+		<!-- EXTENSIONS LIB versions -->
+		<jcommons-lang.version>4.34</jcommons-lang.version>
+		<!-- JOBJECT-EXTENSIONS version -->
+		<jobject-extensions.version>1.11</jobject-extensions.version>
+		<jobject-merge.version>${jobject-extensions.version}</jobject-merge.version>
+		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
+		<!-- TEST-OBJECTS version -->
+		<test-objects.version>4.28</test-objects.version>
+		<!-- SILLY-COLLECTIONS version -->
+		<silly-collections.version>4.29</silly-collections.version>
+	</properties>
+
+	<modules>
+		<module>jgeohash-geoip</module>
+		<module>jgeohash-core</module>
+	</modules>
 
 	<scm>
 		<connection>scm:git:git:@github.com:astrapi69/jgeohash.git</connection>
@@ -45,23 +56,15 @@
 		<url>git:@github.com:astrapi69/jgeohash.git</url>
 	</scm>
 
-	<ciManagement>
-		<system>travis-ci</system>
-		<url>https://travis-ci.org/astrapi69/jgeohash</url>
-	</ciManagement>
-
 	<issueManagement>
 		<system>github</system>
 		<url>https://github.com/astrapi69/jgeohash/issues</url>
 	</issueManagement>
 
-	<properties>
-		<!-- GEOIP-API version -->
-		<geoip-api.version>1.2.14</geoip-api.version>
-		<!-- EXTENSIONS LIB versions -->
-		<extensions-lib.version>4.19.0</extensions-lib.version>
-		<jcommons-lang.version>${extensions-lib.version}</jcommons-lang.version>
-	</properties>
+	<ciManagement>
+		<system>travis-ci</system>
+		<url>https://travis-ci.org/astrapi69/jgeohash</url>
+	</ciManagement>
 
 	<dependencyManagement>
 
@@ -78,12 +81,35 @@
 				<artifactId>jgeohash-core</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-
 			<!-- EXTENSIONS LIB DEPENDENCIES -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jcommons-lang</artifactId>
 				<version>${jcommons-lang.version}</version>
+			</dependency>
+			<!-- JOBJECT-MERGE DEPENDENCIES -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>jobject-merge</artifactId>
+				<version>${jobject-merge.version}</version>
+			</dependency>
+			<!-- JOBJECT-EVALUATE DEPENDENCY -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>jobject-evaluate</artifactId>
+				<version>${jobject-evaluate.version}</version>
+			</dependency>
+			<!-- TEST-OBJECTS DEPENDENCY -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>test-objects</artifactId>
+				<version>${test-objects.version}</version>
+			</dependency>
+			<!-- SILLY-COLLECTIONS DEPENDENCY -->
+			<dependency>
+				<groupId>de.alpharogroup</groupId>
+				<artifactId>silly-collections</artifactId>
+				<version>${silly-collections.version}</version>
 			</dependency>
 
 		</dependencies>
@@ -95,6 +121,35 @@
 		<dependency>
 			<groupId>com.maxmind.geoip</groupId>
 			<artifactId>geoip-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>jcommons-lang</artifactId>
+		</dependency>
+		<!-- MEANBEAN DEPENDENCY -->
+		<dependency>
+			<groupId>org.meanbean</groupId>
+			<artifactId>meanbean</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- JOBJECT-EVALUATE DEPENDENCY -->
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>jobject-evaluate</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- TEST-OBJECTS DEPENDENCY -->
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>test-objects</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- SILLY-COLLECTIONS DEPENDENCY -->
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>silly-collections</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
@@ -116,37 +171,38 @@
 				</plugin>
 
 				<plugin>
-					<groupId>com.mycila</groupId>
-					<artifactId>license-maven-plugin</artifactId>
-					<version>${license-maven-plugin.version}</version>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>cobertura-maven-plugin</artifactId>
 					<configuration>
-						<header>src/main/resources/LICENSE.txt</header>
-						<properties>
-							<owner>Asterios Raptis</owner>
-							<year>${project.inceptionYear}</year>
-							<email>asterios.raptis@gmx.net</email>
-						</properties>
-						<excludes>
-							<exclude>**/README.md</exclude>
-							<exclude>**/pom.xml</exclude>
-							<exclude>**/*.xml</exclude>
-							<exclude>**/*.xsl</exclude>
-							<exclude>**/*.xsd</exclude>
-							<exclude>**/*.dtd</exclude>
-							<exclude>**/*.html</exclude>
-							<exclude>**/*.properties</exclude>
-							<exclude>**/*.bat</exclude>
-							<exclude>**/*.gradle</exclude>
-							<exclude>**/*.MF</exclude>
-							<exclude>**/*.txt</exclude>
-							<exclude>src/test/resources/**</exclude>
-							<exclude>src/main/resources/**</exclude>
-						</excludes>
+						<instrumentation>
+							<excludes>
+								<!-- abstract classes -->
+								<!-- annotations -->
+								<!-- enums -->
+								<!-- beans -->
+								<!-- exceptions -->
+								<!-- interfaces -->
+								<!-- deprecated classes -->
+								<!-- constant classes with only constants -->
+								<!-- explicit abstract classes -->
+								<!-- explicit annotations -->
+								<!-- explicit bean classes -->
+								<exclude>de/alpharogroup/jgeohash/geoip/LookupServiceSingleton.class</exclude>
+								<!-- explicit deprecated classes -->
+								<!-- explicit enums -->
+								<!-- explicit exceptions -->
+								<!-- explicit interfaces -->
+								<exclude>de/alpharogroup/jgeohash/api/Position.class</exclude>
+								<!-- explicit abstract classes -->
+								<!-- explicit constant classes with only constants -->
+								<!-- explicit delegation classes -->
+							</excludes>
+						</instrumentation>
 					</configuration>
 					<executions>
 						<execution>
 							<goals>
-								<goal>format</goal>
+								<goal>clean</goal>
 							</goals>
 						</execution>
 					</executions>
@@ -177,8 +233,4 @@
 
 	</build>
 
-	<modules>
-		<module>jgeohash-geoip</module>
-		<module>jgeohash-core</module>
-	</modules>
 </project>

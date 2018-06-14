@@ -15,8 +15,10 @@
  */
 package de.alpharogroup.jgeohash.distance;
 
+import lombok.Getter;
+
 /**
- * The Enum MeasuringUnit.
+ * The enum class {@link MeasuringUnit} provides the factors for kilometer, meter and miles.
  */
 public enum MeasuringUnit
 {
@@ -41,6 +43,7 @@ public enum MeasuringUnit
 	public static final double MILE_FACTOR = 0.8684;
 
 	/** The factor. */
+	@Getter
 	private final double factor;
 
 	/**
@@ -54,13 +57,4 @@ public enum MeasuringUnit
 		this.factor = factor;
 	}
 
-	/**
-	 * Gets the factor.
-	 *
-	 * @return the factor
-	 */
-	public double getFactor()
-	{
-		return factor;
-	}
 }

@@ -3,8 +3,16 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
-      <class name="de.alpharogroup.jgeohash.GeoHashExtensionsTest"/>
       <class name="de.alpharogroup.jgeohash.distance.DistanceCalculatorTest"/>
+      <class name="de.alpharogroup.jgeohash.distance.DistancePointTest"/>
+      <class name="de.alpharogroup.jgeohash.distance.MeasuringUnitTest"/>
+      <class name="de.alpharogroup.jgeohash.model.FirstAndSecondRingRegionTest"/>
+      <class name="de.alpharogroup.jgeohash.model.FirstRingRegionTest"/>
+      <class name="de.alpharogroup.jgeohash.model.SectionComparatorTest"/>
+      <class name="de.alpharogroup.jgeohash.model.SectionizerTest"/>
+      <class name="de.alpharogroup.jgeohash.model.SectionTest"/>
+      <class name="de.alpharogroup.jgeohash.GeoHashExtensionsTest"/>
+      <class name="de.alpharogroup.jgeohash.GeoHashPointTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

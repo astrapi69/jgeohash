@@ -15,9 +15,13 @@
  */
 package de.alpharogroup.jgeohash.distance;
 
+import static org.testng.AssertJUnit.assertEquals;
+
 import java.util.Map;
 
-import org.testng.AssertJUnit;
+import org.meanbean.factories.ObjectCreationException;
+import org.meanbean.test.BeanTestException;
+import org.meanbean.test.BeanTester;
 import org.testng.annotations.Test;
 
 import de.alpharogroup.jgeohash.Adjacent;
@@ -27,160 +31,88 @@ import de.alpharogroup.jgeohash.Point;
 import de.alpharogroup.jgeohash.api.Position;
 
 /**
- * The Class DistanceCalculatorTest.
+ * The unit test class for the class {@link DistanceCalculator}.
  */
 public class DistanceCalculatorTest
 {
 
 	/**
-	 * The Constant WIDTH_9_CELL represents the width from a cell from a geohash value with 9
-	 * characters.
-	 **/
-	public static final double WIDTH_9_CELL = 0.00477;
-
-	/**
-	 * The Constant HEIGHT_9_CELL represents the height from a cell from a geohash value with 9
-	 * characters.
-	 **/
-	public static final double HEIGHT_9_CELL = 0.00283;
-
-	/**
-	 * The Constant WIDTH_8_CELL represents the width from a cell from a geohash value with 8
-	 * characters.
-	 **/
-	public static final double WIDTH_8_CELL = 0.02509;
-
-	/**
-	 * The Constant HEIGHT_8_CELL represents the height from a cell from a geohash value with 8
-	 * characters.
-	 **/
-	public static final double HEIGHT_8_CELL = 0.01908;
-
-	/**
-	 * The Constant WIDTH_7_CELL represents the width from a cell from a geohash value with 7
-	 * characters.
-	 **/
-	public static final double WIDTH_7_CELL = 0.10039;
-
-	/**
-	 * The Constant HEIGHT_7_CELL represents the height from a cell from a geohash value with 7
-	 * characters.
-	 **/
-	public static final double HEIGHT_7_CELL = 0.15269;
-
-	/**
-	 * The Constant WIDTH_6_CELL represents the width from a cell from a geohash value with 6
-	 * characters.
-	 **/
-	public static final double WIDTH_6_CELL = 0.80315;
-
-	/**
-	 * The Constant HEIGHT_6_CELL represents the height from a cell from a geohash value with 6
-	 * characters.
-	 **/
-	public static final double HEIGHT_6_CELL = 0.61078;
-
-	/**
-	 * The Constant WIDTH_5_CELL represents the width from a cell from a geohash value with 5
-	 * characters.
-	 **/
-	public static final double WIDTH_5_CELL = 3.21280;
-
-	/**
-	 * The Constant HEIGHT_5_CELL represents the height from a cell from a geohash value with 5
-	 * characters.
-	 **/
-	public static final double HEIGHT_5_CELL = 4.88626;
-
-	/**
-	 * The Constant WIDTH_4_CELL represents the width from a cell from a geohash value with 4
-	 * characters.
-	 **/
-	public static final double WIDTH_4_CELL = 25.66850;
-
-	/**
-	 * The Constant HEIGHT_4_CELL represents the height from a cell from a geohash value with 4
-	 * characters.
-	 **/
-	public static final double HEIGHT_4_CELL = 19.54504;
-
-	/**
-	 * The Constant WIDTH_3_CELL represents the width from a cell from a geohash value with 3
-	 * characters.
-	 **/
-	public static final double WIDTH_3_CELL = 103.57409;
-
-	/**
-	 * The Constant HEIGHT_3_CELL represents the height from a cell from a geohash value with 3
-	 * characters.
-	 **/
-	public static final double HEIGHT_3_CELL = 156.36034;
-
-	/**
-	 * The Constant WIDTH_2_CELL represents the width from a cell from a geohash value with 2
-	 * characters.
-	 **/
-	public static final double WIDTH_2_CELL = 625.44137;
-
-	/**
-	 * The Constant HEIGHT_2_CELL represents the height from a cell from a geohash value with 2
-	 * characters.
-	 **/
-	public static final double HEIGHT_2_CELL = 744.37693;
-
-	/**
-	 * The Constant WIDTH_1_CELL represents the width from a cell from a geohash value with 1
-	 * characters.
-	 **/
-	public static final double WIDTH_1_CELL = 4604.31836;
-
-	/**
-	 * The Constant HEIGHT_1_CELL represents the height from a cell from a geohash value with 1
-	 * characters.
-	 **/
-	public static final double HEIGHT_1_CELL = 5003.53096;
-
-	/**
-	 * Test distance between points.
+	 * Test method for
+	 * {@link DistanceCalculator#distanceBetweenPoints(Position, Position, MeasuringUnit)}
 	 */
 	@Test(enabled = true)
-	public void testDistanceBetweenPoints()
+	public void testDistanceBetweenPointsPositionPositionMeasuringUnit()
 	{
+		double actual;
+		double expected;
+
+		final String alterTeichwegGeohash = "u1x0v54rmjwej";
+		final double[] coordinates = GeoHashExtensions.decodeAndRound(alterTeichwegGeohash);
+		final Position alterTeichweg = new Point(coordinates[0], coordinates[1]);
+		final Position ludwigsburg = new GeoHashPoint(48.889380, 9.190459);
+
+		actual = DistanceCalculator.distanceBetweenPoints(ludwigsburg, alterTeichweg,
+			MeasuringUnit.KILOMETER);
+		expected = 525.875517661088d;
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for
+	 * {@link DistanceCalculator#distanceBetweenPoints(String, String, MeasuringUnit)}
+	 */
+	@Test(enabled = true)
+	public void testDistanceBetweenPointsStringStringMeasuringUnit()
+	{
+		double actual;
+		double expected;
+
 		final String alterTeichwegGeohash = "u1x0v54rmjwej";
 		final String subGeohash = alterTeichwegGeohash.substring(0, 1);
 		final Map<String, String> firstRingCells = GeoHashExtensions
 			.getAllAdjacentAreasMap(subGeohash);
-		final double[] coordinates = GeoHashExtensions.decodeAndRound(alterTeichwegGeohash);
-		final Position alterTeichweg = new Point(coordinates[0], coordinates[1]);
 		final Position ludwigsburg = new GeoHashPoint(48.889380, 9.190459);
 		final String ludwigsburgGeohash = ((GeoHashPoint)ludwigsburg).getGeohash();
-		final double distance2 = DistanceCalculator.distanceBetweenPoints(ludwigsburg,
-			alterTeichweg, MeasuringUnit.KILOMETER);
-		AssertJUnit.assertEquals(distance2, 525.875517661088);
-		System.out.println("Distance2:" + distance2);
 
-		double distance3 = DistanceCalculator.distanceBetweenPoints(ludwigsburgGeohash,
-			alterTeichwegGeohash, MeasuringUnit.KILOMETER);
-		AssertJUnit.assertEquals(distance3, 525.875517737948);
-		System.out.println("Distance3:" + distance3);
-
-		distance3 = DistanceCalculator.distanceBetweenPoints(ludwigsburgGeohash,
-			alterTeichwegGeohash, MeasuringUnit.METER);
-		AssertJUnit.assertEquals(distance3, 525875.517737948);
-		System.out.println("Distance3 in meters:" + distance3);
-
-		final double distance4 = DistanceCalculator.distanceBetweenPoints(
-			firstRingCells.get(Adjacent.CENTER), firstRingCells.get(Adjacent.RIGHT),
+		actual = DistanceCalculator.distanceBetweenPoints(ludwigsburgGeohash, alterTeichwegGeohash,
 			MeasuringUnit.KILOMETER);
-		// AssertJUnit.assertEquals(distance4, 25.668503170382518);
-		System.out.println("Distance4 width:" + distance4);
+		expected = 525.875517737948d;
+		assertEquals(expected, actual);
 
-		final double distance5 = DistanceCalculator.distanceBetweenPoints(
-			firstRingCells.get(Adjacent.CENTER), firstRingCells.get(Adjacent.BOTTOM),
-			MeasuringUnit.KILOMETER);
-		// AssertJUnit.assertEquals(distance5, 19.545042824959157);
-		System.out.println("Distance5 height:" + distance5);
+		actual = DistanceCalculator.distanceBetweenPoints(ludwigsburgGeohash, alterTeichwegGeohash,
+			MeasuringUnit.METER);
+		expected = 525875.517737948d;
+		assertEquals(expected, actual);
 
+		actual = DistanceCalculator.distanceBetweenPoints(firstRingCells.get(Adjacent.CENTER),
+			firstRingCells.get(Adjacent.RIGHT), MeasuringUnit.KILOMETER);
+		expected = 1872.667779425215d;
+		assertEquals(expected, actual);
+
+		actual = DistanceCalculator.distanceBetweenPoints(firstRingCells.get(Adjacent.CENTER),
+			firstRingCells.get(Adjacent.BOTTOM), MeasuringUnit.KILOMETER);
+		expected = 5003.530963199998d;
+		assertEquals(expected, actual);
+
+		actual = DistanceCalculator.distanceBetweenPoints(firstRingCells.get(Adjacent.CENTER),
+			firstRingCells.get(Adjacent.RIGHT), MeasuringUnit.MILE);
+		expected = 1010.4891804690958d;
+		assertEquals(expected, actual);
+
+		actual = DistanceCalculator.distanceBetweenPoints(firstRingCells.get(Adjacent.CENTER),
+			firstRingCells.get(Adjacent.BOTTOM), MeasuringUnit.MILE);
+		expected = 2699.899019999999d;
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link DistanceCalculator}
+	 */
+	@Test(expectedExceptions = { BeanTestException.class, ObjectCreationException.class })
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(DistanceCalculator.class);
 	}
 
 }

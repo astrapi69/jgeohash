@@ -23,11 +23,13 @@ import java.util.Map;
 
 import de.alpharogroup.jgeohash.model.FirstAndSecondRingRegion;
 import de.alpharogroup.jgeohash.model.FirstRingRegion;
+import lombok.experimental.UtilityClass;
 
 /**
  * The class {@link GeoHashExtensions}. This class is based on http://en.wikipedia.org/wiki/Geohash.
  */
-public class GeoHashExtensions
+@UtilityClass
+public final class GeoHashExtensions
 {
 
 	/**
@@ -308,7 +310,7 @@ public class GeoHashExtensions
 	/**
 	 * Gets the geohash cells around the given geohash cell. With other words it gets eight cells
 	 * around the given geohash cell so the first ring inclusive the given geohash cell.
-	 * 
+	 *
 	 * @param geohash
 	 *            the geohash
 	 * @return all geohash cells around the given geohash cell.
@@ -359,7 +361,7 @@ public class GeoHashExtensions
 
 	/**
 	 * Gets the geohash cells around the given geohash cell as a {@link FirstRingRegion} object.
-	 * 
+	 *
 	 * @param geohash
 	 *            the geohash cell.
 	 * @return the {@link FirstRingRegion} object calculated from the given geohash value.
@@ -413,7 +415,7 @@ public class GeoHashExtensions
 	 * Gets the eight cells around the given geohash cell so the first ring inclusive the given
 	 * geohash cell and cells from the second ring. The result is 24 cells plus the given geohash
 	 * cell.
-	 * 
+	 *
 	 * @param geohash
 	 *            the geohash
 	 * @return the eight cells around the given geohash cell so the first ring inclusive the given
@@ -473,73 +475,5 @@ public class GeoHashExtensions
 
 		return adjacentAreas;
 	}
-
-
-	/**
-	 * The main method.
-	 *
-	 * @param args
-	 *            the arguments
-	 */
-	public static void main(final String[] args)
-	{
-		final String alterTeichwegGeohash = "u1x0v54rmjwej";
-		final String gc1 = GeoHashExtensions.encode(30.0, -90.0);
-		final String gc2 = GeoHashExtensions.encode(51.4797, -0.0124);
-		final String geohash = GeoHashExtensions.encode(53.5526394, 10.0067103);
-		System.out.println("geohash:" + geohash);
-
-		System.out.println("gc1:" + gc1);
-		System.out.println("gc2:" + gc2);
-
-		double[] gd1 = GeoHashExtensions.decodeAndRound(gc1);
-		double[] gd2 = GeoHashExtensions.decodeAndRound(gc2);
-
-		System.out.println(gd1[0] + ", " + gd1[1]);
-		System.out.println(gd2[0] + ", " + gd2[1]);
-
-		gd1 = GeoHashExtensions.decode(gc1);
-		gd2 = GeoHashExtensions.decode(gc2);
-		final double[] decoded = GeoHashExtensions.decode(geohash);
-		System.out.println(gd1[0] + ", " + gd1[1]);
-		System.out.println(gd2[0] + ", " + gd2[1]);
-		System.out.println(decoded[0] + ", " + decoded[1]);
-
-
-		final String geohashTest = alterTeichwegGeohash;
-
-		final String top = GeoHashExtensions.getAdjacent(geohashTest, "top");
-		System.out.println("top:\t\t" + top);
-		final String bottom = GeoHashExtensions.getAdjacent(geohashTest, "bottom");
-		System.out.println("bottom:\t\t" + bottom);
-		final String right = GeoHashExtensions.getAdjacent(geohashTest, "right");
-		System.out.println("right:\t\t" + right);
-		final String left = GeoHashExtensions.getAdjacent(geohashTest, "left");
-		System.out.println("left:\t\t" + left);
-		final String topleft = GeoHashExtensions.getAdjacent(left, "top");
-		System.out.println("topleft:\t" + topleft);
-		final String topright = GeoHashExtensions.getAdjacent(right, "top");
-		System.out.println("topright:\t" + topright);
-		final String bottomright = GeoHashExtensions.getAdjacent(right, "bottom");
-		System.out.println("bottomright:\t" + bottomright);
-		final String bottomleft = GeoHashExtensions.getAdjacent(left, "bottom");
-		System.out.println("bottomleft:\t" + bottomleft);
-
-		final String subGeohash = geohash.substring(0, 7);
-		final Map<String, String> adjacentAreas = GeoHashExtensions
-			.getAllAdjacentAreasMap(subGeohash);
-		System.out.println(adjacentAreas);
-		System.out.println("=======================================");
-		final List<String> aa = GeoHashExtensions.getAllAdjacentAreasList(subGeohash);
-		System.out.println(aa);
-		System.out.println("=======================================");
-		final GeoHashPoint geohashPoint1 = new GeoHashPoint(geohash);
-		final GeoHashPoint geohashPoint2 = new GeoHashPoint(geohash);
-		System.out.println(geohashPoint1);
-		System.out.println(geohashPoint2);
-		final int c = geohashPoint1.compareTo(geohashPoint2);
-		System.out.println(c);
-	}
-
 
 }

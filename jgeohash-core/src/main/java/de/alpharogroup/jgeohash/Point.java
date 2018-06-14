@@ -16,10 +16,14 @@
 package de.alpharogroup.jgeohash;
 
 import de.alpharogroup.jgeohash.api.Position;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
 
 /**
- * The Class Point represents a point on earth with the latitude and longitude.
+ * The class {@link Point} represents a point on earth with the latitude and longitude.
  */
+@EqualsAndHashCode
+@Builder(toBuilder = true)
 public class Point implements Comparable<Point>, Cloneable, Position
 {
 
@@ -35,7 +39,7 @@ public class Point implements Comparable<Point>, Cloneable, Position
 	private double longitude;
 
 	/**
-	 * Instantiates a new point.
+	 * Instantiates a new {@link Point} object.
 	 *
 	 * @param latitude
 	 *            the latitude
@@ -99,28 +103,6 @@ public class Point implements Comparable<Point>, Cloneable, Position
 	 * {@inheritDoc}
 	 */
 	@Override
-	public boolean equals(final Object o)
-	{
-		if (this == o)
-		{
-			return true;
-		}
-		if (o == null)
-		{
-			return false;
-		}
-		if (o.getClass() != getClass())
-		{
-			return false;
-		}
-		final Point castedObj = (Point)o;
-		return ((this.latitude == castedObj.latitude) && (this.longitude == castedObj.longitude));
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
 	public double getLatitude()
 	{
 		return latitude;
@@ -133,21 +115,6 @@ public class Point implements Comparable<Point>, Cloneable, Position
 	public double getLongitude()
 	{
 		return longitude;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	public int hashCode()
-	{
-		int hashCode = 1;
-		hashCode = 31 * hashCode + (int)(+serialVersionUID ^ (serialVersionUID >>> 32));
-		hashCode = 31 * hashCode
-			+ (int)(Double.doubleToLongBits(latitude) ^ (Double.doubleToLongBits(latitude) >>> 32));
-		hashCode = 31 * hashCode + (int)(Double.doubleToLongBits(longitude)
-			^ (Double.doubleToLongBits(longitude) >>> 32));
-		return hashCode;
 	}
 
 	/**
