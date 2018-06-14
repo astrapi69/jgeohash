@@ -9,7 +9,7 @@
 
 </div>
 
-An easy-to-implement library that can assist Java developers in using the GeoHash algorithm in order to create geocodes based on custom latitude and longitude values.
+An easy-to-implement library that can assist Java developers in using the [GeoHash](https://en.wikipedia.org/wiki/Geohash) algorithm in order to create geocodes based on custom latitude and longitude values.
 
 With the help of jGeohash, Java developers will be able to quickly and easily generate a geohash code using user-defined latitude and longitude values. By using the GeoHash algorithm, the space can be divided into multiple grid shapes.
 
@@ -40,6 +40,12 @@ The source code comes under the liberal Apache License V2.0, making jgeohash gre
 [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jgeohash.svg)](http://www.javadoc.io/doc/de.alpharogroup/jgeohash-core) jgeohash-core 
 
 [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jgeohash.svg)](http://www.javadoc.io/doc/de.alpharogroup/jgeohash-geoip) jgeohash-geoip 
+
+## javadoc
+
+jgeohash-core [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jgeohash.svg)](http://www.javadoc.io/doc/de.alpharogroup/jgeohash-core)
+
+jgeohash-geoip [![Javadocs](http://www.javadoc.io/badge/de.alpharogroup/jgeohash.svg)](http://www.javadoc.io/doc/de.alpharogroup/jgeohash-geoip)
 
 ## Maven dependency
 
