@@ -69,25 +69,25 @@
 	<dependencyManagement>
 
 		<dependencies>
-
+        	<!-- GEOIP-API DEPENDENCY -->
 			<dependency>
 				<groupId>com.maxmind.geoip</groupId>
 				<artifactId>geoip-api</artifactId>
 				<version>${geoip-api.version}</version>
 			</dependency>
-
+        	<!-- JGEOHASH-CORE DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jgeohash-core</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			<!-- EXTENSIONS LIB DEPENDENCIES -->
+            <!-- JCOMMONS-LANG DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jcommons-lang</artifactId>
 				<version>${jcommons-lang.version}</version>
 			</dependency>
-			<!-- JOBJECT-MERGE DEPENDENCIES -->
+			<!-- JOBJECT-MERGE DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jobject-merge</artifactId>
@@ -117,16 +117,6 @@
 	</dependencyManagement>
 
 	<dependencies>
-
-		<dependency>
-			<groupId>com.maxmind.geoip</groupId>
-			<artifactId>geoip-api</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>de.alpharogroup</groupId>
-			<artifactId>jcommons-lang</artifactId>
-		</dependency>
 		<!-- MEANBEAN DEPENDENCY -->
 		<dependency>
 			<groupId>org.meanbean</groupId>

@@ -12,7 +12,7 @@
 	<artifactId>jgeohash-core</artifactId>
 
 	<dependencies>
-		<!-- JOBJECT-MERGE DEPENDENCIES -->
+		<!-- JOBJECT-MERGE DEPENDENCY -->
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
 			<artifactId>jobject-merge</artifactId>

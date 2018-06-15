@@ -5,6 +5,9 @@
 Version 2.6-SNAPSHOT
 -------------
 
+CHANGED:
+
+- moved dependencies from parent to the specific jgeohash-geoip project
 
 Version 2.5
 -------------

@@ -12,15 +12,20 @@
 	<artifactId>jgeohash-geoip</artifactId>
 
 	<dependencies>
-
+        <!-- GEOIP-API DEPENDENCY -->
 		<dependency>
 			<groupId>com.maxmind.geoip</groupId>
 			<artifactId>geoip-api</artifactId>
 		</dependency>
-
+        <!-- JGEOHASH-CORE DEPENDENCY -->
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
 			<artifactId>jgeohash-core</artifactId>
+		</dependency>
+        <!-- JCOMMONS-LANG DEPENDENCY -->
+		<dependency>
+			<groupId>de.alpharogroup</groupId>
+			<artifactId>jcommons-lang</artifactId>
 		</dependency>
 
 	</dependencies>
