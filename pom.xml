@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>3.11</version>
+		<version>4.1</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -34,15 +34,15 @@
 		<!-- GEOIP-API version -->
 		<geoip-api.version>1.2.14</geoip-api.version>
 		<!-- EXTENSIONS LIB versions -->
-		<jcommons-lang.version>4.34</jcommons-lang.version>
+		<jcommons-lang.version>4.35</jcommons-lang.version>
 		<!-- JOBJECT-EXTENSIONS version -->
-		<jobject-extensions.version>1.11</jobject-extensions.version>
+		<jobject-extensions.version>1.12</jobject-extensions.version>
 		<jobject-merge.version>${jobject-extensions.version}</jobject-merge.version>
 		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
 		<!-- TEST-OBJECTS version -->
 		<test-objects.version>4.28</test-objects.version>
 		<!-- SILLY-COLLECTIONS version -->
-		<silly-collections.version>4.29</silly-collections.version>
+		<silly-collections.version>4.33</silly-collections.version>
 	</properties>
 
 	<modules>

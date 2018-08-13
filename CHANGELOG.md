@@ -7,6 +7,10 @@ Version 2.6-SNAPSHOT
 
 CHANGED:
 
+- update of parent version to 4.1
+- update of jcommons-lang version to 4.35
+- update of jobject-extensions version to 1.12
+- update of silly-collections version to 4.33
 - moved dependencies from parent to the specific jgeohash-geoip project
 
 Version 2.5
@@ -25,9 +29,15 @@ CHANGED:
 
 Version 2.4.0
 -------------
-- update of java parent version.
-- Note section added.
-- Moved changelog to its own file
+
+ADDED: 
+
+- Note section added
+
+CHANGED:
+
+- update of java parent version
+- moved changelog to its own file
 
 Version 2.3.0
 -------------
