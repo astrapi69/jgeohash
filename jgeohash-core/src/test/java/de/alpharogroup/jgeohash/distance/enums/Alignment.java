@@ -20,5 +20,5 @@ package de.alpharogroup.jgeohash.distance.enums;
  */
 public enum Alignment
 {
-	WIDTH, HEIGHT;
+	HEIGHT, WIDTH;
 }

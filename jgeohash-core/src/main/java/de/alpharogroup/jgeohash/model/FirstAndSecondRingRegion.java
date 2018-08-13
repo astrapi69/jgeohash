@@ -34,8 +34,23 @@ public class FirstAndSecondRingRegion extends FirstRingRegion
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -6668301917974379694L;
 
+	/** The east east. */
+	private final String eastEast;
+
+	/** The east north east. */
+	private final String eastNorthEast;
+
+	/** The east south east. */
+	private final String eastSouthEast;
+
+	/** The north east north east. */
+	private final String northEastNorthEast;
+
 	/** The north north. */
 	private final String northNorth;
+
+	/** The north north east. */
+	private final String northNorthEast;
 
 	/** The north north west. */
 	private final String northNorthWest;
@@ -43,38 +58,23 @@ public class FirstAndSecondRingRegion extends FirstRingRegion
 	/** The north west north west. */
 	private final String northWestNorthWest;
 
-	/** The west north west. */
-	private final String westNorthWest;
-
-	/** The north north east. */
-	private final String northNorthEast;
-
-	/** The north east north east. */
-	private final String northEastNorthEast;
-
-	/** The east north east. */
-	private final String eastNorthEast;
-
-	/** The east east. */
-	private final String eastEast;
-
-	/** The east south east. */
-	private final String eastSouthEast;
-
-	/** The south south east. */
-	private final String southSouthEast;
-
 	/** The south east south east. */
 	private final String southEastSouthEast;
 
 	/** The south south. */
 	private final String southSouth;
 
+	/** The south south east. */
+	private final String southSouthEast;
+
 	/** The south south west. */
 	private final String southSouthWest;
 
 	/** The south west south west. */
 	private final String southWestSouthWest;
+
+	/** The west north west. */
+	private final String westNorthWest;
 
 	/** The west south west. */
 	private final String westSouthWest;

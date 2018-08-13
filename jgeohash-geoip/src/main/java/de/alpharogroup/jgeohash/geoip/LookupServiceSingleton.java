@@ -36,11 +36,11 @@ import de.alpharogroup.lang.ClassExtensions;
  */
 public final class LookupServiceSingleton
 {
-	/** The Constant logger. */
-	private static final Logger LOGGER = Logger.getLogger(LookupServiceSingleton.class.getName());
-
 	/** The single instance of the {@link LookupService}. */
 	private static volatile LookupService instance;
+
+	/** The Constant logger. */
+	private static final Logger LOGGER = Logger.getLogger(LookupServiceSingleton.class.getName());
 
 	/** The constant for the file name prefix. */
 	private static final String PREFIX = "GeoLiteCity";

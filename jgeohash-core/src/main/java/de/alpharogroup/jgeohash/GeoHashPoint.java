@@ -27,13 +27,13 @@ import lombok.EqualsAndHashCode;
 public class GeoHashPoint extends Point
 {
 
+	/** The Constant GEOHASH_KEY. */
+	public static final String GEOHASH_KEY = "GEOHASH_KEY";
+
 	/**
 	 * The serialVersionUID.
 	 */
 	private static final long serialVersionUID = -3580536765079661097L;
-
-	/** The Constant GEOHASH_KEY. */
-	public static final String GEOHASH_KEY = "GEOHASH_KEY";
 
 	/**
 	 * Instantiates a new {@link GeoHashPoint}.

@@ -100,11 +100,11 @@ public class Section implements Mergeable<Section>
 		}
 	}
 
-	/** The start. */
-	private final int start;
-
 	/** The end. */
 	private final int end;
+
+	/** The start. */
+	private final int start;
 
 	/**
 	 * Checks if the given {@link Section} is between this {@link Section} object.
