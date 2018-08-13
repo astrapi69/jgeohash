@@ -32,14 +32,28 @@ import lombok.ToString;
 public class DistancePoint implements Comparable<DistancePoint>
 {
 
-	/** The position point. */
-	private final Position point;
-
 	/** The distance. */
 	private final Double distance;
 
+	/** The position point. */
+	private final Position point;
+
 	/**
-	 * Instantiates a new {@link DistancePoint} object.
+	 * Instantiates a new {@link DistancePoint} object from the given arguments
+	 *
+	 * @param distance
+	 *            the distance
+	 * @param point
+	 *            the position point
+	 */
+	public DistancePoint(final Double distance, final Position point)
+	{
+		this.distance = distance;
+		this.point = point;
+	}
+
+	/**
+	 * Instantiates a new {@link DistancePoint} object from the given arguments
 	 *
 	 * @param point
 	 *            the position point
