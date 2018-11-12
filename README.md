@@ -153,6 +153,10 @@ Here is a list of awesome projects that uses geohash:
 
  * [Designing a Spacial Index](https://dzone.com/articles/designing-spacial-index)
  
+## Useful links
+
+* [geohash browser](https://www.movable-type.co.uk/scripts/geohash.html)
+ 
 ## Change log
 
 The changelog is moved in its own file. It can be found on following [page](https://github.com/astrapi69/jgeohash/blob/develop/CHANGELOG.md)
