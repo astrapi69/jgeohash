@@ -155,7 +155,8 @@ Here is a list of awesome projects that uses geohash:
  
 ## Useful links
 
-* [geohash browser](https://www.movable-type.co.uk/scripts/geohash.html)
+* [geohash.org browser](http://geohash.org/)
+* [alternative geohash browser](https://www.movable-type.co.uk/scripts/geohash.html)
  
 ## Change log
 
