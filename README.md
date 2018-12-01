@@ -136,11 +136,11 @@ If you like this library, please consider a donation through paypal: <a href="ht
 
 or over bitcoin or bitcoin-cash with:
 
-1Jzso5h7U82QCNmgxxSCya1yUK7UVcSXsW
+36JxRRDfRazLNqUV6NsywCw1q7TK38ukpC
 
 or over ether with:
 
-0xaB6EaE10F352268B0CA672Dd6e999C86344D49D8
+0x588Aa02De98B1Ef70afeDC3ec5290130a3E5e273
 
 or over flattr:
   
@@ -158,6 +158,11 @@ Here is a list of awesome projects that uses geohash:
 ## Blogs
 
  * [Designing a Spacial Index](https://dzone.com/articles/designing-spacial-index)
+ 
+## Useful links
+
+* [geohash.org browser](http://geohash.org/)
+* [alternative geohash browser](https://www.movable-type.co.uk/scripts/geohash.html)
  
 ## Change log
 

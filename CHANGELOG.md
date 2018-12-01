@@ -2,6 +2,18 @@
 ## Change log
 ----------------------
 
+Version 2.5.1
+-------------
+
+CHANGED:
+
+- update of parent version to 4.2
+- update of jcommons-lang version to 5
+- update of jobject-extensions version to 2.3
+- update of silly-collections version to 4.35
+- moved dependencies from parent to the specific jgeohash-geoip project
+- added exclusions to unneeded transitive dependencies from dependency jcommons-lang
+
 Version 2.5
 -------------
 
@@ -18,9 +30,15 @@ CHANGED:
 
 Version 2.4.0
 -------------
-- update of java parent version.
-- Note section added.
-- Moved changelog to its own file
+
+ADDED: 
+
+- Note section added
+
+CHANGED:
+
+- update of java parent version
+- moved changelog to its own file
 
 Version 2.3.0
 -------------

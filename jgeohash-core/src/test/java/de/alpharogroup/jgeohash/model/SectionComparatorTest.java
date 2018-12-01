@@ -34,9 +34,9 @@ public class SectionComparatorTest extends BaseComparatorTestCase<Section>
 {
 
 	Section first = Section.builder().start(10).end(12).build();
+	Section fourth = Section.builder().start(0).end(2).build();
 	Section second = Section.builder().start(8).end(13).build();
 	Section third = Section.builder().start(17).end(19).build();
-	Section fourth = Section.builder().start(0).end(2).build();
 
 	/**
 	 * {@inheritDoc}

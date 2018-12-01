@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>3.11</version>
+		<version>4.2</version>
 		<relativePath></relativePath>
 	</parent>
 
 	<artifactId>jgeohash</artifactId>
-	<version>2.5</version>
+	<version>2.5.1</version>
 	<packaging>pom</packaging>
 	<inceptionYear>2010</inceptionYear>
 
@@ -34,15 +35,15 @@
 		<!-- GEOIP-API version -->
 		<geoip-api.version>1.2.14</geoip-api.version>
 		<!-- EXTENSIONS LIB versions -->
-		<jcommons-lang.version>4.34</jcommons-lang.version>
+		<jcommons-lang.version>5</jcommons-lang.version>
 		<!-- JOBJECT-EXTENSIONS version -->
-		<jobject-extensions.version>1.11</jobject-extensions.version>
-		<jobject-merge.version>${jobject-extensions.version}</jobject-merge.version>
+		<jobject-extensions.version>2.3</jobject-extensions.version>
+		<jobject-merge-api.version>${jobject-extensions.version}</jobject-merge-api.version>
 		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
 		<!-- TEST-OBJECTS version -->
 		<test-objects.version>4.28</test-objects.version>
 		<!-- SILLY-COLLECTIONS version -->
-		<silly-collections.version>4.29</silly-collections.version>
+		<silly-collections.version>4.35</silly-collections.version>
 	</properties>
 
 	<modules>
@@ -69,29 +70,59 @@
 	<dependencyManagement>
 
 		<dependencies>
-
+			<!-- GEOIP-API DEPENDENCY -->
 			<dependency>
 				<groupId>com.maxmind.geoip</groupId>
 				<artifactId>geoip-api</artifactId>
 				<version>${geoip-api.version}</version>
 			</dependency>
-
+			<!-- JGEOHASH-CORE DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jgeohash-core</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			<!-- EXTENSIONS LIB DEPENDENCIES -->
+			<!-- JCOMMONS-LANG DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jcommons-lang</artifactId>
 				<version>${jcommons-lang.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>de.alpharogroup</groupId>
+						<artifactId>jobject-compare</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>de.alpharogroup</groupId>
+						<artifactId>jobject-core</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>de.alpharogroup</groupId>
+						<artifactId>jobject-diff</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>de.alpharogroup</groupId>
+						<artifactId>model-core</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>commons-codec</groupId>
+						<artifactId>commons-codec</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.commons</groupId>
+						<artifactId>commons-collections4</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.apache.commons</groupId>
+						<artifactId>commons-lang3</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
-			<!-- JOBJECT-MERGE DEPENDENCIES -->
+			<!-- JOBJECT-MERGE DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
-				<artifactId>jobject-merge</artifactId>
-				<version>${jobject-merge.version}</version>
+				<artifactId>jobject-merge-api</artifactId>
+				<version>${jobject-merge-api.version}</version>
 			</dependency>
 			<!-- JOBJECT-EVALUATE DEPENDENCY -->
 			<dependency>
@@ -117,16 +148,6 @@
 	</dependencyManagement>
 
 	<dependencies>
-
-		<dependency>
-			<groupId>com.maxmind.geoip</groupId>
-			<artifactId>geoip-api</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>de.alpharogroup</groupId>
-			<artifactId>jcommons-lang</artifactId>
-		</dependency>
 		<!-- MEANBEAN DEPENDENCY -->
 		<dependency>
 			<groupId>org.meanbean</groupId>

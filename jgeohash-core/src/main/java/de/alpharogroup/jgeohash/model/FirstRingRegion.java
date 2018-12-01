@@ -43,17 +43,8 @@ public class FirstRingRegion implements Serializable, Cloneable
 	/** The east. */
 	private final String east;
 
-	/** The west. */
-	private final String west;
-
 	/** The north. */
 	private final String north;
-
-	/** The south. */
-	private final String south;
-
-	/** The south east. */
-	private final String southEast;
 
 	/** The north east. */
 	private final String northEast;
@@ -61,8 +52,17 @@ public class FirstRingRegion implements Serializable, Cloneable
 	/** The north west. */
 	private final String northWest;
 
+	/** The south. */
+	private final String south;
+
+	/** The south east. */
+	private final String southEast;
+
 	/** The south west. */
 	private final String southWest;
+
+	/** The west. */
+	private final String west;
 
 	/**
 	 * Instantiates a new FirstRingRegion object from the given geohash value.
