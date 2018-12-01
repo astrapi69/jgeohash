@@ -15,7 +15,7 @@
 		<!-- JOBJECT-MERGE DEPENDENCY -->
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
-			<artifactId>jobject-merge</artifactId>
+			<artifactId>jobject-merge-api</artifactId>
 		</dependency>
 
 	</dependencies>
