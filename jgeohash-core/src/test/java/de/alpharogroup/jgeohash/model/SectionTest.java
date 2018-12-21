@@ -19,7 +19,8 @@ import static org.testng.Assert.assertEquals;
 
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
+import io.github.benas.randombeans.api.EnhancedRandom;
 
 /**
  * The unit test class for the class {@link Section}
@@ -36,8 +37,11 @@ public class SectionTest
 	{
 		boolean expected;
 		boolean actual;
-		actual = SilentEqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToStringQuietly(Section.class);
+		actual = EqualsHashCodeAndToStringEvaluator
+			.evaluateEqualsHashcodeAndToString(Section.builder()
+				.start(EnhancedRandom.random(Integer.class))
+				.end(EnhancedRandom.random(Integer.class))
+				.build());
 		expected = true;
 		assertEquals(expected, actual);
 	}

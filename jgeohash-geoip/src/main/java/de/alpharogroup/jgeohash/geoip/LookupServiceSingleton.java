@@ -25,7 +25,6 @@ import org.apache.commons.io.IOUtils;
 import com.maxmind.geoip.LookupService;
 
 import de.alpharogroup.lang.ClassExtensions;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * The class {@link LookupServiceSingleton} is a singleton class for the {@link LookupService}.<br>
@@ -34,7 +33,6 @@ import lombok.extern.slf4j.Slf4j;
  * There have to be the file with the file name 'GeoLiteCity.dat' in the classpath for appropriate
  * work of the {@link LookupService}.
  */
-@Slf4j
 public final class LookupServiceSingleton
 {
 	/** The single instance of the {@link LookupService}. */
@@ -51,7 +49,7 @@ public final class LookupServiceSingleton
 	 *
 	 * @return the single instance of the {@link LookupService}.
 	 */
-	public static LookupService getInstance()
+	public static LookupService getInstance() throws IOException
 	{
 		if (instance == null)
 		{
@@ -61,16 +59,8 @@ public final class LookupServiceSingleton
 				{
 					File fileLocation = null;
 					final InputStream is = ClassExtensions.getResourceAsStream(PREFIX + SUFFIX);
-					try
-					{
-						fileLocation = inputStreamToFile(is);
-						instance = new LookupService(fileLocation,
-							LookupService.GEOIP_MEMORY_CACHE);
-					}
-					catch (final IOException e)
-					{
-						log.error("IOException in the initialization of the LookupService.", e);
-					}
+					fileLocation = inputStreamToFile(is);
+					instance = new LookupService(fileLocation, LookupService.GEOIP_MEMORY_CACHE);
 				}
 			}
 		}
