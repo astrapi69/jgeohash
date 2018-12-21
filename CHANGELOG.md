@@ -2,8 +2,18 @@
 ## Change log
 ----------------------
 
-Version 2.6-SNAPSHOT
+Version 2.5.2
 -------------
+
+CHANGED:
+
+- update of parent version to 4.4
+- update of jcommons-lang version to 5.2
+- update of jobject-extensions version to 2.5
+- update of silly-collections version to 5
+- update of silly-collections version to 5
+- update of dependency test-objects version to 5
+- removed exclusions from dependency jcommons-lang
 
 Version 2.5.1
 -------------

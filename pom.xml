@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>4.2</version>
+		<version>4.4</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -35,15 +35,15 @@
 		<!-- GEOIP-API version -->
 		<geoip-api.version>1.2.14</geoip-api.version>
 		<!-- EXTENSIONS LIB versions -->
-		<jcommons-lang.version>5</jcommons-lang.version>
+		<jcommons-lang.version>5.1</jcommons-lang.version>
 		<!-- JOBJECT-EXTENSIONS version -->
-		<jobject-extensions.version>2.3</jobject-extensions.version>
+		<jobject-extensions.version>2.5</jobject-extensions.version>
 		<jobject-merge-api.version>${jobject-extensions.version}</jobject-merge-api.version>
 		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>4.28</test-objects.version>
+		<test-objects.version>5</test-objects.version>
 		<!-- SILLY-COLLECTIONS version -->
-		<silly-collections.version>4.35</silly-collections.version>
+		<silly-collections.version>5</silly-collections.version>
 	</properties>
 
 	<modules>
@@ -86,37 +86,7 @@
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jcommons-lang</artifactId>
-				<version>${jcommons-lang.version}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>de.alpharogroup</groupId>
-						<artifactId>jobject-compare</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>de.alpharogroup</groupId>
-						<artifactId>jobject-core</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>de.alpharogroup</groupId>
-						<artifactId>jobject-diff</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>de.alpharogroup</groupId>
-						<artifactId>model-core</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>commons-codec</groupId>
-						<artifactId>commons-codec</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.apache.commons</groupId>
-						<artifactId>commons-collections4</artifactId>
-					</exclusion>
-					<exclusion>
-						<groupId>org.apache.commons</groupId>
-						<artifactId>commons-lang3</artifactId>
-					</exclusion>
-				</exclusions>
+				<version>${jcommons-lang.version}</version>				
 			</dependency>
 			<!-- JOBJECT-MERGE DEPENDENCY -->
 			<dependency>

@@ -21,11 +21,11 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.log4j.Logger;
 
 import com.maxmind.geoip.LookupService;
 
 import de.alpharogroup.lang.ClassExtensions;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * The class {@link LookupServiceSingleton} is a singleton class for the {@link LookupService}.<br>
@@ -34,13 +34,11 @@ import de.alpharogroup.lang.ClassExtensions;
  * There have to be the file with the file name 'GeoLiteCity.dat' in the classpath for appropriate
  * work of the {@link LookupService}.
  */
+@Slf4j
 public final class LookupServiceSingleton
 {
 	/** The single instance of the {@link LookupService}. */
 	private static volatile LookupService instance;
-
-	/** The Constant logger. */
-	private static final Logger LOGGER = Logger.getLogger(LookupServiceSingleton.class.getName());
 
 	/** The constant for the file name prefix. */
 	private static final String PREFIX = "GeoLiteCity";
@@ -71,7 +69,7 @@ public final class LookupServiceSingleton
 					}
 					catch (final IOException e)
 					{
-						LOGGER.error("IOException in the initialization of the LookupService.", e);
+						log.error("IOException in the initialization of the LookupService.", e);
 					}
 				}
 			}
