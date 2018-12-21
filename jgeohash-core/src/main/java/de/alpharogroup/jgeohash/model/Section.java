@@ -16,12 +16,14 @@
 package de.alpharogroup.jgeohash.model;
 
 import de.alpharogroup.merge.api.Mergeable;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.FieldDefaults;
 
 /**
  * The class {@link Section} represents a section with start and end point.
@@ -32,6 +34,7 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 @Builder(toBuilder = true)
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class Section implements Mergeable<Section>
 {
 
@@ -101,10 +104,10 @@ public class Section implements Mergeable<Section>
 	}
 
 	/** The end. */
-	private final int end;
+	int end;
 
 	/** The start. */
-	private final int start;
+	int start;
 
 	/**
 	 * Checks if the given {@link Section} is between this {@link Section} object.
@@ -210,11 +213,10 @@ public class Section implements Mergeable<Section>
 	 */
 	public boolean overlapsWith(final Section other)
 	{
-		final boolean overlapping = ((this.start <= other.start && this.end >= other.start)
+		return ((this.start <= other.start && this.end >= other.start)
 			|| (this.start <= other.end && this.end >= other.end))
 			|| ((this.start >= other.start && this.start <= other.end)
 				|| (this.end >= other.start && this.end <= other.end));
-		return overlapping;
 	}
 
 }
