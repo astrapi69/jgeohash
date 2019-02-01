@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>4.4</version>
+		<version>4.5</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -29,23 +29,21 @@
 		The library is kept simple and have no dependencies to other libraries.
 	</description>
 
-	<url>http://astrapi69.github.io/jgeohash/</url>
+	<url>http://astrapi69.github.io/${project.artifactId}</url>
 
 	<properties>
 		<!-- GEOIP-API version -->
 		<geoip-api.version>1.2.14</geoip-api.version>
 		<!-- EXTENSIONS LIB versions -->
-		<jcommons-lang.version>5.1</jcommons-lang.version>
+		<jcommons-lang.version>5.1.1</jcommons-lang.version>
 		<!-- JOBJECT-EXTENSIONS version -->
 		<jobject-extensions.version>2.5</jobject-extensions.version>
 		<jobject-merge-api.version>${jobject-extensions.version}</jobject-merge-api.version>
 		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
 		<!-- TEST-OBJECTS version -->
-		<test-objects.version>5</test-objects.version>
+		<test-objects.version>5.0.1</test-objects.version>
 		<!-- SILLY-COLLECTIONS version -->
-		<silly-collections.version>5</silly-collections.version>
-		<!-- MEANBEAN-FACTORIES version -->
-		<meanbean-factories.version>1.1.1</meanbean-factories.version>
+		<silly-collections.version>5.1</silly-collections.version>
 	</properties>
 
 	<modules>
@@ -54,19 +52,19 @@
 	</modules>
 
 	<scm>
-		<connection>scm:git:git:@github.com:astrapi69/jgeohash.git</connection>
-		<developerConnection>scm:git:git@github.com:astrapi69/jgeohash.git</developerConnection>
-		<url>git:@github.com:astrapi69/jgeohash.git</url>
+		<connection>scm:git:git:@github.com:astrapi69/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:git@github.com:astrapi69/${project.artifactId}.git</developerConnection>
+		<url>git:@github.com:astrapi69/${project.artifactId}.git</url>
 	</scm>
 
 	<issueManagement>
 		<system>github</system>
-		<url>https://github.com/astrapi69/jgeohash/issues</url>
+		<url>https://github.com/astrapi69/${project.artifactId}/issues</url>
 	</issueManagement>
 
 	<ciManagement>
 		<system>travis-ci</system>
-		<url>https://travis-ci.org/astrapi69/jgeohash</url>
+		<url>https://travis-ci.org/astrapi69/${project.artifactId}</url>
 	</ciManagement>
 
 	<dependencyManagement>
@@ -88,7 +86,7 @@
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
 				<artifactId>jcommons-lang</artifactId>
-				<version>${jcommons-lang.version}</version>				
+				<version>${jcommons-lang.version}</version>
 			</dependency>
 			<!-- JOBJECT-MERGE DEPENDENCY -->
 			<dependency>
