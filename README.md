@@ -16,6 +16,30 @@ With the help of jGeohash, Java developers will be able to quickly and easily ge
 This library is a basic implementation from the GeoHash algorithm written in the java and can be applied to generate from the latitude and longitude a geohash code and reverse.
 
 The library is kept simple and have no dependencies to other libraries.
+   
+## Note
+
+No animals were harmed in the making of this library.
+
+# Donations
+
+If you like this library, please consider a donation through paypal: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MJ7V43GU2H386" target="_blank">
+<img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" alt="PayPal this" title="PayPal – The safer, easier way to pay online!" border="0" />
+</a>
+
+or over bitcoin or bitcoin-cash with:
+
+36JxRRDfRazLNqUV6NsywCw1q7TK38ukpC
+
+or over ether with:
+
+0x588Aa02De98B1Ef70afeDC3ec5290130a3E5e273
+
+or over flattr:
+  
+<a href="http://flattr.com/thing/4067696/astrapi69jgeohash-on-GitHub" target="_blank">
+<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
+</a>
 
 ## Key features:
 
@@ -117,30 +141,7 @@ Do not hesitate to contact the jgeohash developers with your questions, concerns
    [SpatialDataQueries]: https://github.com/astrapi69/jgeohash/wiki/Adding-spatial-data-queries-to-Phoenix-on-HBase "Adding spatial data queries to Phoenix on HBase"
    [Simple-example]: https://github.com/astrapi69/jgeohash/wiki/Simple-example "Simple-example"
    [Hibernate-example]: https://github.com/astrapi69/jgeohash/wiki/Hibernate-example "Hibernate-example"
-   
-## Note
 
-No animals were harmed in the making of this library.
-
-# Donations
-
-If you like this library, please consider a donation through paypal: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MJ7V43GU2H386" target="_blank">
-<img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" alt="PayPal this" title="PayPal – The safer, easier way to pay online!" border="0" />
-</a>
-
-or over bitcoin or bitcoin-cash with:
-
-36JxRRDfRazLNqUV6NsywCw1q7TK38ukpC
-
-or over ether with:
-
-0x588Aa02De98B1Ef70afeDC3ec5290130a3E5e273
-
-or over flattr:
-  
-<a href="http://flattr.com/thing/4067696/astrapi69jgeohash-on-GitHub" target="_blank">
-<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
-</a>
 
 ## Similar projects
 
