@@ -7,7 +7,7 @@ Version 2.6-SNAPSHOT
 
 CHANGED:
 
-- update of parent version to 4.5
+- update of parent version to 4.7
 - update of jcommons-lang version to 5.1.1
 - update of test-objects version to 5.0.1
 - update of silly-collections version to 5.1

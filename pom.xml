@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>4.5</version>
+		<version>4.7</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -37,7 +37,7 @@
 		<!-- EXTENSIONS LIB versions -->
 		<jcommons-lang.version>5.1.1</jcommons-lang.version>
 		<!-- JOBJECT-EXTENSIONS version -->
-		<jobject-extensions.version>2.5</jobject-extensions.version>
+		<jobject-extensions.version>2.5.1</jobject-extensions.version>
 		<jobject-merge-api.version>${jobject-extensions.version}</jobject-merge-api.version>
 		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
 		<!-- TEST-OBJECTS version -->
