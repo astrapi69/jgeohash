@@ -38,8 +38,9 @@
 		<jcommons-lang.version>5.1.1</jcommons-lang.version>
 		<!-- JOBJECT-EXTENSIONS version -->
 		<jobject-extensions.version>2.5.1</jobject-extensions.version>
-		<jobject-merge-api.version>${jobject-extensions.version}</jobject-merge-api.version>
 		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
+		<!-- MERGE-API version -->
+		<merge-api.version>3</merge-api.version>
 		<!-- TEST-OBJECTS version -->
 		<test-objects.version>5.0.1</test-objects.version>
 		<!-- SILLY-COLLECTIONS version -->
@@ -88,11 +89,11 @@
 				<artifactId>jcommons-lang</artifactId>
 				<version>${jcommons-lang.version}</version>
 			</dependency>
-			<!-- JOBJECT-MERGE DEPENDENCY -->
+			<!-- MERGE-API DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
-				<artifactId>jobject-merge-api</artifactId>
-				<version>${jobject-merge-api.version}</version>
+				<artifactId>merge-api</artifactId>
+				<version>${merge-api.version}</version>
 			</dependency>
 			<!-- JOBJECT-EVALUATE DEPENDENCY -->
 			<dependency>
