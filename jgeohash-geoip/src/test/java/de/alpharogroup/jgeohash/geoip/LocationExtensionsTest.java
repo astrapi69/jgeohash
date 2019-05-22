@@ -66,9 +66,6 @@ public class LocationExtensionsTest
 	@Test
 	public void testSortByDistanceInMeters()
 	{
-		// TODO
-		// assertEquals(expected, actual);
-
 		List<Position> actual;
 		List<Position> expected;
 		List<Position> geohashes = ListFactory.newArrayList();

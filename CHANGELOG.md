@@ -7,11 +7,13 @@ Version 2.6-SNAPSHOT
 
 CHANGED:
 
-- update of parent version to 4.7
-- update of jcommons-lang version to 5.1.1
+- update of parent version to 5
+- update of jcommons-lang version to 5.2.2
 - update of test-objects version to 5.0.1
 - update of silly-collections version to 5.1
 - update of jobject-extensions version to 2.5.1
+- dependency jobject-evaluate replaced with jobj-contract-verifier
+- new launch scripts for ide intellij created
 
 Version 2.5.2
 -------------

@@ -6,9 +6,14 @@
 ##################
 # intellij files #
 ##################
+*.iws
 *.iml
-.idea
-*/.idea
+*.ipr
+!.idea/runConfigurations
+.idea/inspectionProfiles
+.idea/libraries
+.idea/codeStyles
+.idea/*.*
 
 #################
 # eclipse files #

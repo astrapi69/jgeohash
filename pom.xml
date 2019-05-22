@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>de.alpharogroup</groupId>
 		<artifactId>mvn-java-parent</artifactId>
-		<version>4.7</version>
+		<version>5</version>
 		<relativePath></relativePath>
 	</parent>
 
@@ -33,18 +33,17 @@
 
 	<properties>
 		<!-- GEOIP-API version -->
-		<geoip-api.version>1.2.14</geoip-api.version>
+		<geoip-api.version>1.3.1</geoip-api.version>
 		<!-- EXTENSIONS LIB versions -->
-		<jcommons-lang.version>5.1.1</jcommons-lang.version>
-		<!-- JOBJECT-EXTENSIONS version -->
-		<jobject-extensions.version>2.5.1</jobject-extensions.version>
-		<jobject-evaluate.version>${jobject-extensions.version}</jobject-evaluate.version>
+		<jcommons-lang.version>5.2.2</jcommons-lang.version>
+		<!-- JOBJ-CONTRACT-VERIFIER version -->
+		<jobj-contract-verifier.version>3.1.1</jobj-contract-verifier.version>
 		<!-- MERGE-API version -->
 		<merge-api.version>3</merge-api.version>
 		<!-- TEST-OBJECTS version -->
 		<test-objects.version>5.0.1</test-objects.version>
 		<!-- SILLY-COLLECTIONS version -->
-		<silly-collections.version>5.1</silly-collections.version>
+		<silly-collections.version>5.2.1</silly-collections.version>
 	</properties>
 
 	<modules>
@@ -95,11 +94,17 @@
 				<artifactId>merge-api</artifactId>
 				<version>${merge-api.version}</version>
 			</dependency>
-			<!-- JOBJECT-EVALUATE DEPENDENCY -->
+			<!-- JOBJ-CONTRACT-VERIFIER DEPENDENCY -->
 			<dependency>
 				<groupId>de.alpharogroup</groupId>
-				<artifactId>jobject-evaluate</artifactId>
-				<version>${jobject-evaluate.version}</version>
+				<artifactId>jobj-contract-verifier</artifactId>
+				<exclusions>
+					<exclusion>
+						<artifactId>de.alpharogroup</artifactId>
+						<groupId>jcommons-lang</groupId>
+					</exclusion>
+				</exclusions>
+				<version>${jobj-contract-verifier.version}</version>
 			</dependency>
 			<!-- TEST-OBJECTS DEPENDENCY -->
 			<dependency>
@@ -125,10 +130,10 @@
 			<artifactId>meanbean</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<!-- JOBJECT-EVALUATE DEPENDENCY -->
+		<!-- JOBJ-CONTRACT-VERIFIER DEPENDENCY -->
 		<dependency>
 			<groupId>de.alpharogroup</groupId>
-			<artifactId>jobject-evaluate</artifactId>
+			<artifactId>jobj-contract-verifier</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<!-- TEST-OBJECTS DEPENDENCY -->
