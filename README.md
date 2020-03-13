@@ -19,7 +19,7 @@ The library is kept simple and have no dependencies to other libraries.
 
 
 > Please support this project by simply putting a Github <!-- Place this tag where you want the button to render. -->
-                                                         <a class="github-button" href="https://github.com/astrapi69/jgeohash" data-icon="octicon-star" aria-label="Star astrapi69/jgeohash on GitHub">Star ⭐</script></a>. Share this library with friends on Twitter and everywhere else you can.
+                                                         <a class="github-button" href="https://github.com/astrapi69/jgeohash" data-icon="octicon-star" aria-label="Star astrapi69/jgeohash on GitHub">Star ⭐</a>. Share this library with friends on Twitter and everywhere else you can.
 If you love this project [![donation](https://img.shields.io/badge/donate-❤-ff2244.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GVBTWLRAZ7HB8)
    
 ## Note
