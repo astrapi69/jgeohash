@@ -1,5 +1,5 @@
 # Overview
-<div align="center">
+<div style="text-align: center">
 
 [![build status](https://travis-ci.com/astrapi69/jgeohash.svg?branch=master)](https://travis-ci.com/astrapi69/jgeohash)
 [![Coverage Status](https://codecov.io/gh/astrapi69/jgeohash/branch/develop/graph/badge.svg)](https://codecov.io/gh/astrapi69/jgeohash)
