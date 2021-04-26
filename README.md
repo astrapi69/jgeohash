@@ -1,7 +1,8 @@
 # Overview
 <div align="center">
 
-[![build status](https://travis-ci.org/astrapi69/jgeohash.svg?branch=master)](https://travis-ci.org/astrapi69/jgeohash) 
+[![build status](https://travis-ci.com/astrapi69/jgeohash.svg?branch=master)](https://travis-ci.com/astrapi69/jgeohash)
+[![Coverage Status](https://codecov.io/gh/astrapi69/jgeohash/branch/develop/graph/badge.svg)](https://codecov.io/gh/astrapi69/jgeohash)
 [![Coverage Status](https://coveralls.io/repos/github/astrapi69/jgeohash/badge.svg?branch=develop)](https://coveralls.io/github/astrapi69/jgeohash?branch=develop)
 [![open issues](https://img.shields.io/github/issues/astrapi69/jgeohash.svg?style=flat)](https://github.com/astrapi69/jgeohash/issues)
 [![license apache2](https://img.shields.io/badge/license-apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
@@ -173,8 +174,8 @@ The changelog is moved in its own file. It can be found on following [page](http
 |**Travis CI**|
 |     :---:      |
 |![Travis CI](https://travis-ci.com/images/logos/TravisCI-Full-Color.png) <img width=500/>|
-|[![build status](https://travis-ci.org/astrapi69/jgeohash.svg?branch=master)](https://travis-ci.org/astrapi69/jgeohash) |
-|Special thanks to [Travis CI](https://travis-ci.org) for providing a free continuous integration service for open source projects|
+|[![build status](https://travis-ci.com/astrapi69/jgeohash.svg?branch=master)](https://travis-ci.com/astrapi69/jgeohash) |
+|Special thanks to [Travis CI](https://travis-ci.com) for providing a free continuous integration service for open source projects|
 |     <img width=1000/>     |
 
 |**Nexus Sonatype repositories**|
