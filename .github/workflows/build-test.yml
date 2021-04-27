@@ -19,6 +19,4 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
 
-      - name: Verify with gradle
-        run: gradle clean verify
 ...
