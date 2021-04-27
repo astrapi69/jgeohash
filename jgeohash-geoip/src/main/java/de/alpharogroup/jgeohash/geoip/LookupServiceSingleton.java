@@ -45,9 +45,12 @@ public final class LookupServiceSingleton
 	private static final String SUFFIX = ".dat";
 
 	/**
-	 * Gets the single instance of the {@link LookupService}.
+	 * Gets the single instance of the {@link LookupService}
 	 *
-	 * @return the single instance of the {@link LookupService}.
+	 * @return the single instance of the {@link LookupService}
+	 *
+	 * @throws IOException
+	 *             Signals that an I/O exception has occurred.
 	 */
 	public static LookupService getInstance() throws IOException
 	{

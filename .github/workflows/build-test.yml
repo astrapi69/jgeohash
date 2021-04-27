@@ -19,6 +19,6 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
 
-      - name: Verify with Maven
-        run: mvn -X verify -B --file pom.xml
+      - name: Verify with gradle
+        run: gradle clean verify
 ...
