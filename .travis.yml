@@ -12,4 +12,5 @@ notifications:
         on_failure: always
         
 after_success:
-    - bash <(curl -s https://codecov.io/bash)
+  - mvn clean cobertura:cobertura org.eluder.coveralls:coveralls-maven-plugin:report
+  - bash <(curl -s https://codecov.io/bash)
