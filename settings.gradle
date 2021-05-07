@@ -1,0 +1,4 @@
+
+rootProject.name = 'jgeohash'
+include(':jgeohash-geoip')
+include(':jgeohash-core')

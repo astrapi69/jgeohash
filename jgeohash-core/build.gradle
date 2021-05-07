@@ -1,0 +1,115 @@
+
+dependencies {
+    implementation("de.alpharogroup:merge-api:$mergeApiVersion")
+}
+
+license {
+    ext.year="$projectInceptionYear"
+    ext.owner="$projectLeaderName"
+    header rootProject.file('src/main/resources/LICENSE.txt')
+    excludes(["**/README",
+              "**/README.md",
+              "**/LICENSE",
+              "**/NOTICE",
+              "**/*.xml",
+              "**/*.xsl",
+              "**/*.xsd",
+              "**/*.dtd",
+              "**/*.html",
+              "**/*.jsp",
+              "**/*.jpa",
+              "**/*.sql",
+              "**/*.properties",
+              "**/*.bat",
+              "**/*.gradle",
+              "**/*.MF",
+              "**/*.txt",
+              "**/*.vm",
+              "**/*.log",
+              "**/*.map",
+              "**/*.js.map",
+              "**/*.tmpl",
+              "**/*.js.tmpl",
+              "**/*.editorconfig",
+              "**/*.lombok.config",
+              "src/test/resources/**",
+              "src/main/resources/**",
+              "out/**",
+              "build/**"])
+}
+
+task sourcesJar(type: Jar) {
+    archiveClassifier.set("sources")
+    from(sourceSets.main.allJava)
+}
+
+task javadocJar(type: Jar) {
+    from javadoc
+    archiveClassifier.set("javadoc")
+    javadoc.properties.failOnError = true
+}
+
+def releaseVersion = !version.endsWith("SNAPSHOT")
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = "$project.name"
+            from components.java
+            artifact sourcesJar
+            artifact javadocJar
+            pom {
+                name = "$project.name"
+                description = "$projectCoreDescription"
+                url = "$projectScmProviderUrl"+"$projectHolderUsername"+"$slash"+"$rootProject.name"
+                organization {
+                    name = "$projectOrganizationName"
+                    url = "$projectOrganizationUrl"
+                }
+                issueManagement {
+                    system = "$projectIssueManagementSystem"
+                    url = "$projectScmProviderUrl"+"$projectHolderUsername"+"$slash"+"$rootProject.name"+"$issuesPath"
+                }
+                licenses {
+                    license {
+                        name = "$projectLicenseName"
+                        url = "$projectLicenseUrl"
+                        distribution = "$projectLicenseDistribution"
+                    }
+                }
+                developers {
+                    developer {
+                        id = "$projectHolderUsername"
+                        name = "$projectLeaderName"
+                    }
+                }
+                scm {
+                    connection = "$projectScmGitUrlPrefix" + "$projectScmProviderDomain" + "$colon" + "$projectHolderUsername" + "$slash" + "$rootProject.name" + "$projectScmGitUrlSuffix"
+                    developerConnection = "$projectScmGitUrlPrefix" + "$projectScmProviderDomain" + "$colon" + "$projectHolderUsername" + "$slash" + "$rootProject.name" + "$projectScmGitUrlSuffix"
+                    url = "$projectScmGitUrlPrefix" + "$projectScmProviderDomain" + "$colon" + "$projectHolderUsername" + "$slash" + "$rootProject.name" + "$projectScmGitUrlSuffix"
+                }
+            }
+        }
+    }
+    repositories {
+        if (releaseVersion) {
+            maven {
+                credentials {
+                    username System.getenv("$projectRepositoriesUserNameKey") ?: project.property("$projectRepositoriesUserNameKey")
+                    password System.getenv("$projectRepositoriesPasswordKey") ?: project.property("$projectRepositoriesPasswordKey")
+                }
+                def releasesRepoUrl = "$projectRepositoriesReleasesRepoUrl"
+                def snapshotsRepoUrl = "$projectRepositoriesSnapshotsRepoUrl"
+                url = releaseVersion ? releasesRepoUrl : snapshotsRepoUrl
+            }
+        }
+    }
+}
+
+signing {
+    if (releaseVersion) {
+        sign publishing.publications.mavenJava
+    }
+}
+
+

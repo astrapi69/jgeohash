@@ -35,7 +35,7 @@ public class DistancePointTest
 {
 
 	/**
-	 * Test method for {@link DistancePoint#compareTo(DistancePoint)}.
+	 * Test method for {@link DistancePoint#compareTo(DistancePoint)}
 	 */
 	@Test
 	public void testCompareTo()
@@ -152,5 +152,4 @@ public class DistancePointTest
 		expected = true;
 		assertEquals(expected, actual);
 	}
-
 }

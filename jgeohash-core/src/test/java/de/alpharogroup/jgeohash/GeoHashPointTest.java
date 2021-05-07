@@ -23,7 +23,7 @@ import java.math.BigDecimal;
 
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link GeoHashPoint}
@@ -77,16 +77,10 @@ public class GeoHashPointTest
 	 * {@link GeoHashPoint#toString()}
 	 */
 	@Test
-	public void testEqualsHashcodeAndToStringWithClassSilently()
+	public void verifyEqualsHashcodeAndToStringWithClass()
 	{
-		boolean expected;
-		boolean actual;
-		actual = SilentEqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToStringQuietly(GeoHashPoint.class);
-		expected = true;
-		assertEquals(expected, actual);
+		ContractVerifier.of(GeoHashPoint.class).verify();
 	}
-
 
 	/**
 	 * Test method for {@link GeoHashPoint#getLat()}.

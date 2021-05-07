@@ -21,7 +21,7 @@ import static org.testng.AssertJUnit.assertTrue;
 
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.SilentEqualsHashCodeAndToStringEvaluator;
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link Point}.
@@ -102,14 +102,9 @@ public class PointTest
 	 * {@link Point#toString()}
 	 */
 	@Test
-	public void testEqualsHashcodeAndToStringWithClassSilently()
+	public void verifyEqualsHashcodeAndToStringWithClass()
 	{
-		boolean expected;
-		boolean actual;
-		actual = SilentEqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToStringQuietly(Point.class);
-		expected = true;
-		assertEquals(expected, actual);
+		ContractVerifier.of(Point.class).verify();
 	}
 
 	/**

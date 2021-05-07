@@ -24,7 +24,7 @@ import org.testng.annotations.Test;
 import de.alpharogroup.collections.list.ListFactory;
 
 /**
- * The unit test class for the class {@link Sectionizer}.
+ * The unit test class for the class {@link Sectionizer}
  */
 public class SectionizerTest
 {
@@ -130,37 +130,6 @@ public class SectionizerTest
 		{
 			assertEquals(expected.get(i), actual.get(i));
 		}
-	}
-
-	/**
-	 * Test method for {@link Sectionizer#merge(Section, Section)}.
-	 */
-	@Test
-	public void testMergeSectionSection()
-	{
-		// TODO implement unit test cases...
-
-	}
-
-	/**
-	 * Test method for {@link Sectionizer#setMaxIteration(int)}.
-	 */
-	@Test
-	public void testSetMaxIteration()
-	{
-		int actual;
-		int expected;
-		Sectionizer sectionizer;
-		sectionizer = Sectionizer.builder().build();
-
-		actual = sectionizer.getMaxIteration();
-		expected = Sectionizer.DEFAULT_MAX_ITERATION;
-		assertEquals(expected, actual);
-
-		sectionizer.setMaxIteration(10);
-		actual = sectionizer.getMaxIteration();
-		expected = 10;
-		assertEquals(expected, actual);
 	}
 
 }

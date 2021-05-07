@@ -19,32 +19,13 @@ import static org.testng.Assert.assertEquals;
 
 import org.testng.annotations.Test;
 
-import de.alpharogroup.evaluate.object.evaluators.EqualsHashCodeAndToStringEvaluator;
-import io.github.benas.randombeans.api.EnhancedRandom;
+import de.alpharogroup.evaluate.object.verifier.ContractVerifier;
 
 /**
  * The unit test class for the class {@link Section}
  */
 public class SectionTest
 {
-
-	/**
-	 * Test method for {@link Section#equals(Object)} , {@link Section#hashCode()} and
-	 * {@link Section#toString()}
-	 */
-	@Test
-	public void testEqualsHashcodeAndToStringWithClassSilently()
-	{
-		boolean expected;
-		boolean actual;
-		actual = EqualsHashCodeAndToStringEvaluator
-			.evaluateEqualsHashcodeAndToString(Section.builder()
-				.start(EnhancedRandom.random(Integer.class))
-				.end(EnhancedRandom.random(Integer.class))
-				.build());
-		expected = true;
-		assertEquals(expected, actual);
-	}
 
 	/**
 	 * Test method for {@link Section#isBetween(Section)}.
@@ -217,6 +198,16 @@ public class SectionTest
 		actual = Section.isBetween(min, max, index, includeMin, includeMax);
 		expected = false;
 		assertEquals(actual, expected);
+	}
+
+	/**
+	 * Test method for {@link Section#equals(Object)} , {@link Section#hashCode()} and
+	 * {@link Section#toString()}
+	 */
+	@Test
+	public void verifyEqualsHashcodeAndToStringWithClass()
+	{
+		ContractVerifier.of(Section.class).verify();
 	}
 
 }
