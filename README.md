@@ -35,7 +35,8 @@ If you like this library, please consider a donation through paypal: <a href="ht
 
 or over bitcoin or bitcoin-cash with:
 
-36JxRRDfRazLNqUV6NsywCw1q7TK38ukpC
+bc1ql2y99q7e8psndhcc3gferk03esw3qqf677rhjy
+<img src="./src/main/resources/bitcoin:bc1ql2y99q7e8psndhcc3gferk03esw3qqf677rhjy.png" alt="Donation Bitcoin Wallet" width="250"/>
 
 or over ether with:
 
