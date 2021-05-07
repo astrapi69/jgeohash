@@ -30,23 +30,53 @@ No animals were harmed in the making of this library.
 
 # Donations
 
-If you like this library, please consider a donation through paypal: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MJ7V43GU2H386" target="_blank">
-<img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" alt="PayPal this" title="PayPal – The safer, easier way to pay online!" border="0" />
+If you like this library, please consider a donation
+
+over paypal: 
+* <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MJ7V43GU2H386" target="_blank">
+<img src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" alt="PayPal this" title="PayPal – The safer, easier way to pay online!" style="border: none" />
 </a>
 
-or over bitcoin or bitcoin-cash with:
+or over bitcoin(BTC) with this address:
 
 bc1ql2y99q7e8psndhcc3gferk03esw3qqf677rhjy
-<img src="./src/main/resources/img/bitcoin:bc1ql2y99q7e8psndhcc3gferk03esw3qqf677rhjy.png" alt="Donation Bitcoin Wallet" width="250"/>
 
-or over ether with:
+* <img src="src/main/resources/img/bc1ql2y99q7e8psndhcc3gferk03esw3qqf677rhjy.png" alt="Donation Bitcoin Wallet" width="250"/>
 
-0x588Aa02De98B1Ef70afeDC3ec5290130a3E5e273
+or over FIO with this address:
+
+FIO7tFMUVAA9cHiPPqKMfMXiSxHrbpiFyRYqTketNuM67aULuwjop
+
+* <img src="./src/main/resources/img/FIO7tFMUVAA9cHiPPqKMfMXiSxHrbpiFyRYqTketNuM67aULuwjop.png" alt="Donation FIO Wallet" width="250"/>
+
+or over Ethereum(ETH) with:
+
+0xc057D159D3C8f3311E73568b334FF6fE82EB2b7D
+
+* <img src="./src/main/resources/img/0xc057D159D3C8f3311E73568b334FF6fE82EB2b7D.png" alt="Donation Ethereum Wallet" width="250"/>
+
+or over Ethereum Classic(ETC) with:
+
+0xF708cA86D86C246B69c3F4BAe431eBbe0c2bfddD
+
+* <img src="./src/main/resources/img/0xF708cA86D86C246B69c3F4BAe431eBbe0c2bfddD.png" alt="Donation Ethereum Classic Wallet" width="250"/>
+
+or over Dogecoin(DOGE) with:
+
+D5yi4Um8cpakd6yPRm2hGWuQ5nrVzhSSW1
+
+* <img src="./src/main/resources/img/D5yi4Um8cpakd6yPRm2hGWuQ5nrVzhSSW1.png" alt="Donation Dogecoin Wallet" width="250"/>
+
+or over Monero(XMR) with:
+
+49bqeRQ7Bf49oJFVC72pqpe5hFbb62pfXDYPdLsadGGF81KZW2ZfrPZ8PbAVu5X2v1TYAspeczMya3cYQysNS4usRRPQHVw
+
+* <img src="./src/main/resources/img/49bqeRQ7Bf49oJFVC72pqpe5hFbb62pfXDYPdLsadGGF81KZW2ZfrPZ8PbAVu5X2v1TYAspeczMya3cYQysNS4usRRPQHVw.png" alt="Donation Monero Wallet" width="250"/>
 
 or over flattr:
   
 <a href="http://flattr.com/thing/4067696/astrapi69jgeohash-on-GitHub" target="_blank">
-<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" />
+<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this"  style="border: none" />
 </a>
 
 ## Key features:
