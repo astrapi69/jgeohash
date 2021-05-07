@@ -2,6 +2,7 @@
 <div style="text-align: center">
 
 [![build status](https://travis-ci.com/astrapi69/jgeohash.svg?branch=master)](https://travis-ci.com/astrapi69/jgeohash)
+[![Java CI build and test](https://github.com/astrapi69/jgeohash/actions/workflows/build-test.yml/badge.svg)](https://github.com/astrapi69/jgeohash/actions/workflows/build-test.yml)
 [![Coverage Status](https://codecov.io/gh/astrapi69/jgeohash/branch/develop/graph/badge.svg)](https://codecov.io/gh/astrapi69/jgeohash)
 [![Coverage Status](https://coveralls.io/repos/github/astrapi69/jgeohash/badge.svg?branch=develop)](https://coveralls.io/github/astrapi69/jgeohash?branch=develop)
 [![open issues](https://img.shields.io/github/issues/astrapi69/jgeohash.svg?style=flat)](https://github.com/astrapi69/jgeohash/issues)
