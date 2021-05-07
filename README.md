@@ -121,7 +121,7 @@ You can first define the version properties:
 	<properties>
 		...
 		<!-- JGEOHASH version -->
-		<jgeohash.version>2.6</jgeohash.version>
+		<jgeohash.version>2.5.2</jgeohash.version>
 		<jgeohash-core.version>${jgeohash.version}</jgeohash-core.version>
 		<jgeohash-geoip.version>${jgeohash.version}</jgeohash-geoip.version>
 		...
