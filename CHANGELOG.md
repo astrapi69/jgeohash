@@ -8,6 +8,7 @@ Version 2.6-SNAPSHOT
 ADDED:
 
 - gradle as build system
+- new barcode images for several crypto addresses
 
 CHANGED:
 
