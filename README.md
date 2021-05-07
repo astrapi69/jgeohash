@@ -41,7 +41,7 @@ or over bitcoin(BTC) with this address:
 
 bc1ql2y99q7e8psndhcc3gferk03esw3qqf677rhjy
 
-<img src="src/main/resources/img/bc1ql2y99q7e8psndhcc3gferk03esw3qqf677rhjy.png" alt="Donation Bitcoin Wallet" width="250"/>
+<img src="https://github.com/astrapi69/jgeohash/blob/master/src/main/resources/img/bc1ql2y99q7e8psndhcc3gferk03esw3qqf677rhjy.png" alt="Donation Bitcoin Wallet" width="250"/>
 
 or over FIO with this address:
 
