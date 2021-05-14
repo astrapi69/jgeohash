@@ -30,7 +30,8 @@ No animals were harmed in the making of this library.
 
 # Donations
 
-If you like this library, please consider a donation
+This project is kept as an open source product and relies on contributions to remain being
+developed. If you like this library, please consider a donation
 
 over paypal: <br><br>
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MJ7V43GU2H386" target="_blank">
