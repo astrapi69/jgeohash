@@ -25,6 +25,13 @@ subprojects {
     apply plugin: "maven-publish"
     apply plugin: "com.github.ben-manes.versions"
     apply plugin: "com.github.hierynomus.license"
+    // license-gradle-plugin 0.16.1 on Gradle 8.14.6: licenseFormat writes exactly the header every
+    // file carries, and the check still reports each file as missing it (measured by removing a
+    // header and letting licenseFormat write it back, #31). The check tasks are off;
+    // licenseFormat stays
+    tasks.matching { it.name == "licenseMain" || it.name == "licenseTest" }.configureEach {
+        enabled = false
+    }
 
     repositories {
         mavenLocal()
@@ -60,12 +67,18 @@ subprojects {
 
     test {
         useTestNG()
+        // The contract checks of the de.alpharogroup test libraries clone objects through
+        // reflection into java.util, which JDK 17 refuses unless the package is opened (#31);
+        // JDK 8 knows no --add-opens
+        if (JavaVersion.current().isJava9Compatible()) {
+            jvmArgs "--add-opens", "java.base/java.util=ALL-UNNAMED"
+        }
     }
 
     jacocoTestReport {
         reports {
-            xml.enabled true
-            html.enabled true
+            xml.required = true
+            html.required = true
         }
     }
 
