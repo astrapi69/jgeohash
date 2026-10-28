@@ -7,8 +7,16 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest, windows-latest]
         java: [8, 11, 15]
+        # macOS runners are ARM machines, and setup-java finds no x64 JDK 8 or 11 that runs there
+        # ("JAVA_HOME is set to an invalid directory", #32): macOS builds with 17 and later only,
+        # which the build runs on since Gradle 8 (#31)
+        include:
+          - os: macOS-latest
+            java: 17
+          - os: macOS-latest
+            java: 21
       fail-fast: false
       max-parallel: 4
     name: Test JDK ${{ matrix.java }}, ${{ matrix.os }}
