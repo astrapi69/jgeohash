@@ -7,17 +7,28 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest, windows-latest]
         java: [8, 11, 15]
+        # macOS builds with 17 and later only (#32), which the build runs on since Gradle 8 (#31);
+        # JDK 8 and 11 stay on Linux and Windows
+        include:
+          - os: macOS-latest
+            java: 17
+          - os: macOS-latest
+            java: 21
       fail-fast: false
       max-parallel: 4
     name: Test JDK ${{ matrix.java }}, ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK ${{ matrix.java }}
-        uses: actions/setup-java@v1
+        # setup-java 1 installed an x64 JDK on the ARM macOS runners, which did not run there for any
+        # version ("JAVA_HOME is set to an invalid directory", #32). The current one installs the
+        # runner's own architecture; zulu is the distribution version 1 used, and it still has 15
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5.7.0
         with:
           java-version: ${{ matrix.java }}
+          distribution: 'zulu'
 
       - name: Verify with Gradle
         run: ./gradlew build
